@@ -6,7 +6,6 @@
 export.cfg
 export_presets.cfg
 *.tmp
-editor_layout.cfg
 
 # Imported translations (automatically generated from CSV files)
 *.translation
