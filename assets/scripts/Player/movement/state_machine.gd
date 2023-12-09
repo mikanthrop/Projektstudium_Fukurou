@@ -21,7 +21,6 @@ func change_state(new_state: Base_State) -> void:
 	if current_state: 
 		current_state.exit()
 	var parent = get_parent()
-	print("Player is on floor: ", parent.is_on_floor())
 	print("State Machine gives event to ", new_state, ".")
 	current_state = new_state
 	current_state.enter()

@@ -1,26 +1,30 @@
 extends Base_State
 
-@export var jump_state: Base_State
-@export var idle_state: Base_State
-@export var fall_state: Base_State
+#@export var jump_state: Base_State
+#@export var idle_state: Base_State
+#@export var fall_state: Base_State
+
+@export var coyote_timer: Timer
 
 
-# called on when state is changed to walking
+# called when state is changed to walking
 func enter() -> void: 
 	super()
-	
-	parent.has_jumped = false
-	
 	print("changed state to walking")
 	
 	if parent.velocity.x == 0:
 		parent.velocity.x += 100
-		print("parent velocity at ", parent.velocity.x)
+
+
+func exit() -> void:
+	parent.was_on_floor = false
+	coyote_timer.start()
 
 
 # handles input
 func process_input(_event: InputEvent) -> Base_State: 
 	if Input.is_action_just_pressed("jump") and parent.is_on_floor():
+		exit()
 		return jump_state
 	if !InputEvent:
 		return idle_state

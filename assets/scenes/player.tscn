@@ -18,7 +18,7 @@ platform_floor_layers = 2
 platform_wall_layers = 4
 script = ExtResource("1_wr5ff")
 MOVE_SPEED = 400.0
-JUMP_VELOCITY = -900.0
+JUMP_VELOCITY = -600.0
 state_machine = NodePath("state_machine")
 metadata/_edit_group_ = true
 
@@ -32,26 +32,30 @@ shape = SubResource("CapsuleShape2D_fitw2")
 script = ExtResource("3_o2ahg")
 starting_state = NodePath("idling")
 
-[node name="idling" type="Node" parent="state_machine" node_paths=PackedStringArray("fall_state", "jump_state", "walk_state")]
+[node name="idling" type="Node" parent="state_machine" node_paths=PackedStringArray("coyote_timer", "walk_state", "jump_state", "fall_state")]
 script = ExtResource("4_fc6ut")
-fall_state = NodePath("../falling")
-jump_state = NodePath("../jumping")
+coyote_timer = NodePath("../../CoyoteTimer")
 walk_state = NodePath("../walking")
+jump_state = NodePath("../jumping")
+fall_state = NodePath("../falling")
 
-[node name="walking" type="Node" parent="state_machine" node_paths=PackedStringArray("jump_state", "idle_state", "fall_state")]
+[node name="walking" type="Node" parent="state_machine" node_paths=PackedStringArray("coyote_timer", "idle_state", "jump_state", "fall_state")]
 script = ExtResource("5_r8n51")
-jump_state = NodePath("../jumping")
+coyote_timer = NodePath("../../CoyoteTimer")
 idle_state = NodePath("../idling")
+jump_state = NodePath("../jumping")
 fall_state = NodePath("../falling")
 
-[node name="jumping" type="Node" parent="state_machine" node_paths=PackedStringArray("fall_state", "idle_state", "walk_state")]
+[node name="jumping" type="Node" parent="state_machine" node_paths=PackedStringArray("coyote_timer", "idle_state", "walk_state", "fall_state")]
 script = ExtResource("6_afkgb")
-fall_state = NodePath("../falling")
+coyote_timer = NodePath("../../CoyoteTimer")
 idle_state = NodePath("../idling")
 walk_state = NodePath("../walking")
+fall_state = NodePath("../falling")
 
-[node name="falling" type="Node" parent="state_machine" node_paths=PackedStringArray("idle_state", "walk_state", "jump_state")]
+[node name="falling" type="Node" parent="state_machine" node_paths=PackedStringArray("coyote_timer", "idle_state", "walk_state", "jump_state")]
 script = ExtResource("7_hs6ll")
+coyote_timer = NodePath("../../CoyoteTimer")
 idle_state = NodePath("../idling")
 walk_state = NodePath("../walking")
 jump_state = NodePath("../jumping")
@@ -60,5 +64,5 @@ jump_state = NodePath("../jumping")
 editor_description = "Timer that starts when Player transitions to falling state and has not yet jumped since they were last on the ground. For the duration, the Player can jump. 
 Used for smoother platforming as the Player won't fall from platforms unintendedly. "
 process_callback = 0
-wait_time = 0.5
+wait_time = 0.2
 one_shot = true
