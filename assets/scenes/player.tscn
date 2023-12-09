@@ -1,0 +1,64 @@
+[gd_scene load_steps=9 format=3 uid="uid://dj1j6ywsgiml0"]
+
+[ext_resource type="Texture2D" uid="uid://ch7dttdt73lmt" path="res://assets/sprites/Player.png" id="1_3s3ns"]
+[ext_resource type="Script" path="res://assets/scripts/Player/player.gd" id="1_wr5ff"]
+[ext_resource type="Script" path="res://assets/scripts/Player/movement/state_machine.gd" id="3_o2ahg"]
+[ext_resource type="Script" path="res://assets/scripts/Player/movement/idling.gd" id="4_fc6ut"]
+[ext_resource type="Script" path="res://assets/scripts/Player/movement/walking.gd" id="5_r8n51"]
+[ext_resource type="Script" path="res://assets/scripts/Player/movement/jumping.gd" id="6_afkgb"]
+[ext_resource type="Script" path="res://assets/scripts/Player/movement/falling.gd" id="7_hs6ll"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_fitw2"]
+radius = 260.0
+height = 684.0
+
+[node name="Player" type="CharacterBody2D" node_paths=PackedStringArray("state_machine")]
+collision_mask = 2
+platform_floor_layers = 2
+platform_wall_layers = 4
+script = ExtResource("1_wr5ff")
+MOVE_SPEED = 400.0
+JUMP_VELOCITY = -900.0
+state_machine = NodePath("state_machine")
+metadata/_edit_group_ = true
+
+[node name="PlayerSprite" type="Sprite2D" parent="."]
+texture = ExtResource("1_3s3ns")
+
+[node name="CollisionShape" type="CollisionShape2D" parent="."]
+shape = SubResource("CapsuleShape2D_fitw2")
+
+[node name="state_machine" type="Node" parent="." node_paths=PackedStringArray("starting_state")]
+script = ExtResource("3_o2ahg")
+starting_state = NodePath("idling")
+
+[node name="idling" type="Node" parent="state_machine" node_paths=PackedStringArray("fall_state", "jump_state", "walk_state")]
+script = ExtResource("4_fc6ut")
+fall_state = NodePath("../falling")
+jump_state = NodePath("../jumping")
+walk_state = NodePath("../walking")
+
+[node name="walking" type="Node" parent="state_machine" node_paths=PackedStringArray("jump_state", "idle_state", "fall_state")]
+script = ExtResource("5_r8n51")
+jump_state = NodePath("../jumping")
+idle_state = NodePath("../idling")
+fall_state = NodePath("../falling")
+
+[node name="jumping" type="Node" parent="state_machine" node_paths=PackedStringArray("fall_state", "idle_state", "walk_state")]
+script = ExtResource("6_afkgb")
+fall_state = NodePath("../falling")
+idle_state = NodePath("../idling")
+walk_state = NodePath("../walking")
+
+[node name="falling" type="Node" parent="state_machine" node_paths=PackedStringArray("idle_state", "walk_state", "jump_state")]
+script = ExtResource("7_hs6ll")
+idle_state = NodePath("../idling")
+walk_state = NodePath("../walking")
+jump_state = NodePath("../jumping")
+
+[node name="CoyoteTimer" type="Timer" parent="."]
+editor_description = "Timer that starts when Player transitions to falling state and has not yet jumped since they were last on the ground. For the duration, the Player can jump. 
+Used for smoother platforming as the Player won't fall from platforms unintendedly. "
+process_callback = 0
+wait_time = 0.5
+one_shot = true
