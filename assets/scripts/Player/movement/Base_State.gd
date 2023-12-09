@@ -2,7 +2,10 @@ class_name Base_State
 extends Node
 
 @export var animation_name: String
-@export var move_speed: float = 400
+@export var idle_state: Base_State
+@export var walk_state: Base_State
+@export var jump_state: Base_State
+@export var fall_state: Base_State
 
 var gravity: int = ProjectSettings.get_setting("physics/2d/default_gravity")
 
