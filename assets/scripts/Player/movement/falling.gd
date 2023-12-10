@@ -2,10 +2,10 @@ extends Base_State
 
 @export var coyote_timer: Timer
 
-@export var jump_height: float
+#var jump_height: float = jump_state.jump_height
 @export var jump_time_to_descent: float
 
-@onready var FALL_GRAVITY: float =  (-1) * ((-2 * jump_height) / (jump_time_to_descent * jump_time_to_descent))
+@onready var FALL_GRAVITY: float =  (-1) * ((-2 * jump_state.jump_height) / (jump_time_to_descent * jump_time_to_descent))
 
 func enter() -> void: 
 	super()
@@ -23,7 +23,7 @@ func process_input(_event: InputEvent) -> Base_State:
 
 func _process_physics(delta: float) -> Base_State: 
 	if not parent.is_on_floor():
-		parent.velocity.y += gravity * delta
+		parent.velocity.y += FALL_GRAVITY * delta
 	
 	var movement = Input.get_axis("move_left", "move_right") * (parent.MOVE_SPEED)
 	parent.velocity.x = movement

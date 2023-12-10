@@ -60,8 +60,7 @@ fall_state = NodePath("../falling")
 [node name="falling" type="Node" parent="state_machine" node_paths=PackedStringArray("coyote_timer", "idle_state", "walk_state", "jump_state", "fall_state")]
 script = ExtResource("7_hs6ll")
 coyote_timer = NodePath("../../CoyoteTimer")
-jump_height = 200.0
-jump_time_to_descent = 0.2
+jump_time_to_descent = 0.3
 idle_state = NodePath("../idling")
 walk_state = NodePath("../walking")
 jump_state = NodePath("../jumping")
