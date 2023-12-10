@@ -5,7 +5,7 @@
 [ext_resource type="Script" path="res://assets/scripts/Player/movement/state_machine.gd" id="3_o2ahg"]
 [ext_resource type="Script" path="res://assets/scripts/Player/movement/idling.gd" id="4_fc6ut"]
 [ext_resource type="Script" path="res://assets/scripts/Player/movement/walking.gd" id="5_r8n51"]
-[ext_resource type="Script" path="res://assets/scripts/Player/movement/jumping.gd" id="6_afkgb"]
+[ext_resource type="Script" path="res://assets/scripts/Player/movement/jumping.gd" id="6_ggv8h"]
 [ext_resource type="Script" path="res://assets/scripts/Player/movement/falling.gd" id="7_hs6ll"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_fitw2"]
@@ -18,7 +18,6 @@ platform_floor_layers = 2
 platform_wall_layers = 4
 script = ExtResource("1_wr5ff")
 MOVE_SPEED = 400.0
-JUMP_VELOCITY = -600.0
 state_machine = NodePath("state_machine")
 metadata/_edit_group_ = true
 
@@ -32,33 +31,41 @@ shape = SubResource("CapsuleShape2D_fitw2")
 script = ExtResource("3_o2ahg")
 starting_state = NodePath("idling")
 
-[node name="idling" type="Node" parent="state_machine" node_paths=PackedStringArray("coyote_timer", "walk_state", "jump_state", "fall_state")]
+[node name="idling" type="Node" parent="state_machine" node_paths=PackedStringArray("coyote_timer", "idle_state", "walk_state", "jump_state", "fall_state")]
 script = ExtResource("4_fc6ut")
 coyote_timer = NodePath("../../CoyoteTimer")
+idle_state = NodePath(".")
 walk_state = NodePath("../walking")
 jump_state = NodePath("../jumping")
 fall_state = NodePath("../falling")
 
-[node name="walking" type="Node" parent="state_machine" node_paths=PackedStringArray("coyote_timer", "idle_state", "jump_state", "fall_state")]
+[node name="walking" type="Node" parent="state_machine" node_paths=PackedStringArray("coyote_timer", "idle_state", "walk_state", "jump_state", "fall_state")]
 script = ExtResource("5_r8n51")
 coyote_timer = NodePath("../../CoyoteTimer")
 idle_state = NodePath("../idling")
+walk_state = NodePath(".")
 jump_state = NodePath("../jumping")
 fall_state = NodePath("../falling")
 
-[node name="jumping" type="Node" parent="state_machine" node_paths=PackedStringArray("coyote_timer", "idle_state", "walk_state", "fall_state")]
-script = ExtResource("6_afkgb")
+[node name="jumping" type="Node" parent="state_machine" node_paths=PackedStringArray("coyote_timer", "idle_state", "walk_state", "jump_state", "fall_state")]
+script = ExtResource("6_ggv8h")
 coyote_timer = NodePath("../../CoyoteTimer")
+jump_height = 300.0
+jump_time_to_peak = 0.4
 idle_state = NodePath("../idling")
 walk_state = NodePath("../walking")
+jump_state = NodePath(".")
 fall_state = NodePath("../falling")
 
-[node name="falling" type="Node" parent="state_machine" node_paths=PackedStringArray("coyote_timer", "idle_state", "walk_state", "jump_state")]
+[node name="falling" type="Node" parent="state_machine" node_paths=PackedStringArray("coyote_timer", "idle_state", "walk_state", "jump_state", "fall_state")]
 script = ExtResource("7_hs6ll")
 coyote_timer = NodePath("../../CoyoteTimer")
+jump_height = 200.0
+jump_time_to_descent = 0.2
 idle_state = NodePath("../idling")
 walk_state = NodePath("../walking")
 jump_state = NodePath("../jumping")
+fall_state = NodePath(".")
 
 [node name="CoyoteTimer" type="Timer" parent="."]
 editor_description = "Timer that starts when Player transitions to falling state and has not yet jumped since they were last on the ground. For the duration, the Player can jump. 

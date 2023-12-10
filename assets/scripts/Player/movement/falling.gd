@@ -2,6 +2,10 @@ extends Base_State
 
 @export var coyote_timer: Timer
 
+@export var jump_height: float
+@export var jump_time_to_descent: float
+
+@onready var FALL_GRAVITY: float =  (-1) * ((-2 * jump_height) / (jump_time_to_descent * jump_time_to_descent))
 
 func enter() -> void: 
 	super()
@@ -28,6 +32,9 @@ func _process_physics(delta: float) -> Base_State:
 	print("state falling: parent velocity at ", parent.velocity.y)
 	
 	# if player stops falling and moves change state to walking
-	if parent.is_on_floor() and parent.velocity.x != 0: 
-		return walk_state
-	return self 
+	if parent.is_on_floor():
+		if parent.velocity.x != 0: 
+			return walk_state
+		if parent.velocity.x == 0: 
+			return idle_state
+	return null 

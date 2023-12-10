@@ -34,7 +34,7 @@ func process_input(_event: InputEvent) -> Base_State:
 # handles actual movement and returns states that change without needing inputs
 func _process_physics(delta: float) -> Base_State:
 	parent.velocity.y += gravity*delta
-	print("velocity: ",  parent.velocity.y)
+	print("state walking: parent velocity x: ",  parent.velocity.x)
 	# if player has negativ y velocity change state to falling
 	if parent.velocity.y > 0 and !parent.is_on_floor():
 		return fall_state
@@ -55,5 +55,5 @@ func _process_physics(delta: float) -> Base_State:
 	parent.move_and_slide()
 	
 	# if player doesn't move change state to idle
-	return self
+	return null
 
