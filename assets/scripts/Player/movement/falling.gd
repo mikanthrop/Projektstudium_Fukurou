@@ -2,10 +2,7 @@ extends Base_State
 
 @export var coyote_timer: Timer
 
-#var jump_height: float = jump_state.jump_height
-@export var jump_time_to_descent: float
-
-@onready var FALL_GRAVITY: float =  (-1) * ((-2 * jump_state.jump_height) / (jump_time_to_descent * jump_time_to_descent))
+@onready var FALL_GRAVITY: float =  (-1) * ((-2 * parent.JUMP_HEIGHT) / (parent.JUMP_TIME_TO_DESCENT * parent.JUMP_TIME_TO_DESCENT))
 
 func enter() -> void: 
 	super()

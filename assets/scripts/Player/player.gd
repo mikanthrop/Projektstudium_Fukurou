@@ -3,6 +3,10 @@ extends CharacterBody2D
 
 
 @export var MOVE_SPEED: float
+@export var JUMP_HEIGHT: float
+@export var JUMP_TIME_TO_PEAK: float
+@export var JUMP_TIME_TO_DESCENT: float
+
 
 @export var state_machine: Node
 
