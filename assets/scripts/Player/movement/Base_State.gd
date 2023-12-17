@@ -6,6 +6,7 @@ extends Node
 @export var walk_state: Base_State
 @export var jump_state: Base_State
 @export var fall_state: Base_State
+@export var dash_state: Base_State
 
 var gravity: int = ProjectSettings.get_setting("physics/2d/default_gravity")
 
@@ -22,8 +23,8 @@ func exit() -> void:
 func process_input(_event: InputEvent) -> Base_State:
 	return null
 
-func process_frame(_delta: float) -> Base_State:
+func _process_physics(_delta: float) -> Base_State:
 	return null
-
-func _process_physics(_delta:float) -> Base_State:
+	
+func process_frame(_delta: float) -> Base_State:
 	return null

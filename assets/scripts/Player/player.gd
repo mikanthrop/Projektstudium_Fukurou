@@ -12,6 +12,7 @@ extends CharacterBody2D
 
 #flags
 var was_on_floor
+var has_dashed
 
 # Get the gravity from the project settings to be synced with RigidBody nodes.
 var gravity = ProjectSettings.get_setting("physics/2d/default_gravity")

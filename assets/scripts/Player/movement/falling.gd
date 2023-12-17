@@ -15,6 +15,8 @@ func process_input(_event: InputEvent) -> Base_State:
 			print("remaining coyote time ",coyote_timer.time_left)
 			coyote_timer.stop()
 			return jump_state
+	if !parent.has_dashed: 
+		return dash_state
 	return null
 
 

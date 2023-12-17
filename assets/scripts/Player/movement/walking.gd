@@ -26,6 +26,8 @@ func process_input(_event: InputEvent) -> Base_State:
 	if Input.is_action_just_pressed("jump") and parent.is_on_floor():
 		exit()
 		return jump_state
+	if Input.is_action_just_pressed("dash"):
+		return dash_state
 	if !InputEvent:
 		return idle_state
 	return null

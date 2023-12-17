@@ -21,6 +21,8 @@ func process_input(_event: InputEvent) -> Base_State:
 	# If the jump button is released, transition to falling state
 	if !Input.is_action_pressed("jump"):
 		return fall_state
+	if Input.is_action_pressed("dash"):
+		return dash_state
 	return null
 
 func _process_physics(delta: float) -> Base_State:

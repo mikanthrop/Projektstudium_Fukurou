@@ -19,8 +19,8 @@ func process_input(_event: InputEvent) -> Base_State:
 		return jump_state
 	if Input.is_action_pressed("move_left") or Input.is_action_pressed("move_right"):
 			return walk_state
-	#if Input.is_action_just_pressed("dash"):
-	#	return dash_state
+	if Input.is_action_pressed("dash"):
+		return dash_state
 	return null
 
 
