@@ -2,15 +2,21 @@ class_name Player
 extends CharacterBody2D
 
 # general variables
+## How fast the player moves in pixels.
 @export var MOVE_SPEED: float
 
 # jump variables
+## How high the player can jump at max in pixels.
 @export var JUMP_HEIGHT: float
+## How long it takes the player to reach the maximum peak of the jump in seconds.
 @export var JUMP_TIME_TO_PEAK: float
+## How long it takes the player to reach the ground after reaching the peak of the jump in seconds.
 @export var JUMP_TIME_TO_DESCENT: float
 
 # dash variables
+## How far the player dashes in pixels.
 @export var DASH_DISTANCE: float
+## How fast the player dashes in pixels.
 @export var DASH_SPEED: float
 
 # state machine
