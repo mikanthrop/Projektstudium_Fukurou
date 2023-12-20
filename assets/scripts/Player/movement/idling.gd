@@ -11,6 +11,7 @@ func enter() -> void:
 
 func exit() -> void: 
 	parent.was_on_floor = false
+	parent.has_dashed = false
 	coyote_timer.start()
 
 
@@ -19,7 +20,7 @@ func process_input(_event: InputEvent) -> Base_State:
 		return jump_state
 	if Input.is_action_pressed("move_left") or Input.is_action_pressed("move_right"):
 			return walk_state
-	if Input.is_action_pressed("dash"):
+	if !parent.has_dashed and Input.is_action_pressed("dash"):
 		return dash_state
 	return null
 

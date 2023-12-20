@@ -13,11 +13,12 @@ func enter() -> void:
 	print("changed state to walking")
 	
 	if parent.velocity.x == 0:
-		parent.velocity.x += 100
+		parent.velocity.x += parent.MOVE_SPEED
 
 
 func exit() -> void:
 	parent.was_on_floor = false
+	parent.has_dashed = false
 	coyote_timer.start()
 
 
@@ -48,13 +49,12 @@ func _process_physics(delta: float) -> Base_State:
 	else:
 		parent.velocity.x = move_toward(parent.velocity.x, 0, parent.MOVE_SPEED)
 	
-	# if player is moving and on floor flip animations for walking to the left
-#	if parent.velocity.x != 0 and parent.is_on_floor(): 
-#		parent.animations.flip_h = direction < 0
+	parent.move_and_slide()
+	
 	if direction == 0: 
 		return idle_state
-
-	parent.move_and_slide()
+	else: 
+		parent.set_facing_direction(direction)
 	
 	# if player doesn't move change state to idle
 	return null

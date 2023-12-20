@@ -22,6 +22,8 @@ MOVE_SPEED = 400.0
 JUMP_HEIGHT = 300.0
 JUMP_TIME_TO_PEAK = 0.4
 JUMP_TIME_TO_DESCENT = 0.3
+DASH_DISTANCE = 300.0
+DASH_SPEED = 1000.0
 state_machine = NodePath("state_machine")
 metadata/_edit_group_ = true
 
@@ -75,8 +77,9 @@ fall_state = NodePath(".")
 dash_state = NodePath("../dashing")
 parent = NodePath("../..")
 
-[node name="dashing" type="Node" parent="state_machine" node_paths=PackedStringArray("idle_state", "walk_state", "jump_state", "fall_state", "dash_state", "parent")]
+[node name="dashing" type="Node" parent="state_machine" node_paths=PackedStringArray("dash_timer", "idle_state", "walk_state", "jump_state", "fall_state", "dash_state", "parent")]
 script = ExtResource("8_ecfh4")
+dash_timer = NodePath("../../DashTimer")
 idle_state = NodePath("../idling")
 walk_state = NodePath("../walking")
 jump_state = NodePath("../jumping")
@@ -90,3 +93,9 @@ Used for smoother platforming as the Player won't fall from platforms unintended
 process_callback = 0
 wait_time = 0.2
 one_shot = true
+
+[node name="DashTimer" type="Timer" parent="."]
+wait_time = 0.5
+one_shot = true
+
+[connection signal="timeout" from="DashTimer" to="state_machine/dashing" method="_on_dash_timer_timeout"]

@@ -7,6 +7,7 @@ extends Base_State
 func enter() -> void: 
 	super()
 	print("changed state to falling")
+	print("state falling: enter: parent has dashed: ", parent.has_dashed)
 
 
 func process_input(_event: InputEvent) -> Base_State: 
@@ -15,7 +16,7 @@ func process_input(_event: InputEvent) -> Base_State:
 			print("remaining coyote time ",coyote_timer.time_left)
 			coyote_timer.stop()
 			return jump_state
-	if !parent.has_dashed: 
+	if !parent.has_dashed and Input.is_action_just_pressed("dash"): 
 		return dash_state
 	return null
 
@@ -24,11 +25,13 @@ func _process_physics(delta: float) -> Base_State:
 	if not parent.is_on_floor():
 		parent.velocity.y += FALL_GRAVITY * delta
 	
-	var movement = Input.get_axis("move_left", "move_right") * (parent.MOVE_SPEED)
-	parent.velocity.x = movement
+	var direction = Input.get_axis("move_left", "move_right")
+	parent.velocity.x = direction * (parent.MOVE_SPEED)
+	if direction != 0:
+		parent.set_facing_direction(direction)
 	parent.move_and_slide()
 	
-	print("state falling: parent velocity at ", parent.velocity.y)
+	print("state falling: parent y velocity at ", parent.velocity.y)
 	
 	# if player stops falling and moves change state to walking
 	if parent.is_on_floor():

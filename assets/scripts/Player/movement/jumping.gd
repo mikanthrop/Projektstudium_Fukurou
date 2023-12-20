@@ -11,7 +11,6 @@ func enter() -> void:
 	super()
 	print("changed state to jumping")
 	print("JUMP_VELOCITY: ", JUMP_VELOCITY, " | JUMP_GRAVITY: ", JUMP_GRAVITY)
-	# Start the jump height timer
 	# set player velocity to calculated jump velocity
 	parent.velocity.y = JUMP_VELOCITY
 	coyote_timer.stop()
@@ -21,7 +20,7 @@ func process_input(_event: InputEvent) -> Base_State:
 	# If the jump button is released, transition to falling state
 	if !Input.is_action_pressed("jump"):
 		return fall_state
-	if Input.is_action_pressed("dash"):
+	if !parent.has_dashed and Input.is_action_pressed("dash"):
 		return dash_state
 	return null
 
@@ -35,13 +34,11 @@ func _process_physics(delta: float) -> Base_State:
 	if parent.velocity.y > 0 or jump_height_timer == parent.JUMP_TIME_TO_PEAK:
 		return fall_state
 	
-	# flipping animations
-#	if movement != 0: 
-#		parent.animations.flip_h = movement < 0
-	
 	# aerial movement 
-	var movement = Input.get_axis("move_left", "move_right") * (parent.MOVE_SPEED)
-	parent.velocity.x = movement
+	var direction = Input.get_axis("move_left", "move_right")
+	parent.velocity.x = direction * (parent.MOVE_SPEED)
+	if direction != 0:
+		parent.set_facing_direction(direction)
 	parent.move_and_slide()
 	
 	# do NOT return self - Player will launch straight into the air
