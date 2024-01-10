@@ -7,6 +7,7 @@ extends Node
 @export var jump_state: Base_State
 @export var fall_state: Base_State
 @export var dash_state: Base_State
+@export var wall_hold_state: Base_State
 
 var gravity: int = ProjectSettings.get_setting("physics/2d/default_gravity")
 
