@@ -1,12 +1,14 @@
-[gd_scene load_steps=6 format=3 uid="uid://dcmj68qtvrdqr"]
+[gd_scene load_steps=8 format=3 uid="uid://dcmj68qtvrdqr"]
 
-[ext_resource type="Texture2D" uid="uid://34dtkv0g1can" path="res://assets/sprites/platformPack_tilesheet.png" id="1_ww6re"]
-[ext_resource type="PackedScene" uid="uid://dj1j6ywsgiml0" path="res://assets/scenes/player.tscn" id="2_fsqt4"]
+[ext_resource type="PackedScene" uid="uid://dj1j6ywsgiml0" path="res://assets/scenes/prefabs/player.tscn" id="1_rvx31"]
+[ext_resource type="Texture2D" uid="uid://34dtkv0g1can" path="res://assets/sprites/platformPack_tilesheet.png" id="2_rruyw"]
+[ext_resource type="PackedScene" uid="uid://c5fothc6h3nlb" path="res://assets/scenes/prefabs/player_respawner.tscn" id="3_ep1mn"]
+[ext_resource type="PackedScene" uid="uid://cfvxij5pedplm" path="res://assets/scenes/prefabs/death_zone.tscn" id="4_thcun"]
 
 [sub_resource type="PhysicsMaterial" id="PhysicsMaterial_wyeo7"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_ufcqu"]
-texture = ExtResource("1_ww6re")
+texture = ExtResource("2_rruyw")
 texture_region_size = Vector2i(64, 64)
 0:0/0 = 0
 0:0/0/physics_layer_0/linear_velocity = Vector2(0, 0)
@@ -315,11 +317,21 @@ sources/1 = SubResource("TileSetAtlasSource_ufcqu")
 
 [node name="main" type="Node2D"]
 
+[node name="Player" parent="." instance=ExtResource("1_rvx31")]
+position = Vector2(258, 433)
+scale = Vector2(0.09, 0.09)
+
 [node name="TileMap" type="TileMap" parent="."]
 tile_set = SubResource("TileSet_8r06m")
 format = 2
-layer_0/tile_data = PackedInt32Array(589824, 1, 0, 589825, 1, 0, 589826, 1, 0, 589827, 1, 0, 589828, 1, 0, 589829, 1, 0, 589830, 1, 0, 589831, 1, 0, 589832, 1, 0, 589833, 1, 0, 589834, 1, 0, 589835, 1, 0, 589836, 1, 0, 589837, 1, 0, 589838, 1, 0, 589839, 1, 0, 589840, 1, 0, 589841, 1, 0, 655359, 1, 0, 589842, 1, 0, 720895, 196609, 0, 655360, 196609, 0, 655361, 196609, 0, 655362, 196609, 0, 655363, 196609, 0, 655364, 196609, 0, 655365, 196609, 0, 655366, 196609, 0, 655367, 196609, 0, 655368, 196609, 0, 655369, 196609, 0, 655370, 196609, 0, 655371, 196609, 0, 655372, 196609, 0, 655373, 196609, 0, 655374, 196609, 0, 655375, 196609, 0, 655376, 196609, 0, 655377, 196609, 0, 655378, 196609, 0, 458765, 1, 0, 458766, 1, 0, 327695, 196609, 0, 327696, 786433, 2, 196610, 1, 0, 196611, 1, 0, 458752, 1, 0, 458753, 1, 0, 327681, 1, 0, 327682, 1, 0, 589843, 1, 0, 589844, 1, 0, 589845, 1, 0, 589846, 1, 0, 589847, 1, 0, 655358, 1, 0, 655357, 1, 0, 655356, 1, 0, 655355, 1, 0, 655354, 1, 0, 393231, 196609, 0, 524300, 1, 0, 524301, 196609, 0, 524302, 196609, 0, 524303, 196609, 0, 524304, 196609, 0, 458768, 1, 0, 458767, 196609, 0, 393232, 786433, 2, 393233, 786433, 2, 327697, 786433, 2, 458769, 786433, 2, 524305, 786433, 2, 262161, 786433, 2, 262159, 196609, 0, 196623, 196609, 0, 131087, 196609, 0, 65551, 1, 0)
+layer_0/tile_data = PackedInt32Array(589824, 1, 0, 589825, 1, 0, 589826, 1, 0, 589827, 1, 0, 589828, 1, 0, 589829, 1, 0, 589830, 1, 0, 589831, 1, 0, 589832, 1, 0, 589833, 851969, 3, 589834, 1, 0, 589835, 1, 0, 589836, 1, 0, 589837, 1, 0, 589838, 1, 0, 589839, 1, 0, 589840, 1, 0, 589841, 1, 0, 655359, 1, 0, 589842, 1, 0, 720895, 196609, 0, 655360, 196609, 0, 655361, 196609, 0, 655362, 196609, 0, 655363, 196609, 0, 655364, 196609, 0, 655365, 196609, 0, 655366, 196609, 0, 655367, 196609, 0, 655368, 196609, 0, 655369, 851969, 3, 655370, 196609, 0, 655371, 196609, 0, 655372, 196609, 0, 655373, 196609, 0, 655374, 196609, 0, 655375, 196609, 0, 655376, 196609, 0, 655377, 196609, 0, 655378, 196609, 0, 458765, 1, 0, 458766, 1, 0, 327695, 196609, 0, 327696, 786433, 2, 196610, 1, 0, 196611, 1, 0, 458752, 1, 0, 458753, 1, 0, 327681, 1, 0, 327682, 1, 0, 589843, 1, 0, 589844, 1, 0, 589845, 1, 0, 589846, 1, 0, 589847, 1, 0, 655358, 1, 0, 655357, 1, 0, 655356, 1, 0, 655355, 1, 0, 655354, 1, 0, 393231, 196609, 0, 524300, 1, 0, 524301, 196609, 0, 524302, 196609, 0, 524303, 196609, 0, 524304, 196609, 0, 458768, 1, 0, 458767, 196609, 0, 393232, 786433, 2, 393233, 786433, 2, 327697, 786433, 2, 458769, 786433, 2, 524305, 786433, 2, 262161, 786433, 2, 262159, 196609, 0, 196623, 196609, 0, 131087, 196609, 0, 65551, 1, 0)
 
-[node name="Player" parent="." instance=ExtResource("2_fsqt4")]
-position = Vector2(258, 433)
-scale = Vector2(0.09, 0.09)
+[node name="PlayerRespawner" parent="." instance=ExtResource("3_ep1mn")]
+position = Vector2(175, 461)
+
+[node name="DeathZone" parent="." instance=ExtResource("4_thcun")]
+position = Vector2(609, 779)
+scale = Vector2(5, 5)
+
+[connection signal="body_entered" from="DeathZone" to="PlayerRespawner" method="_on_death_zone_body_entered"]
+[connection signal="body_exited" from="DeathZone" to="PlayerRespawner" method="_on_death_zone_body_exited"]
