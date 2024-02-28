@@ -1,5 +1,7 @@
 extends Base_State
 
+class_name Jump_State
+
 @export var coyote_timer: Timer 
 
 @onready var JUMP_VELOCITY: float = (-1.0) * ((2.0 * parent.JUMP_HEIGHT) / parent.JUMP_TIME_TO_PEAK) 

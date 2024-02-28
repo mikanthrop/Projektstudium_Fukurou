@@ -30,22 +30,25 @@ var has_dashed: bool = false
 # Get the gravity from the project settings to be synced with RigidBody nodes.
 var gravity = ProjectSettings.get_setting("physics/2d/default_gravity")
 
+
 # initialize state_machine on boot
-func _ready():
+func _ready() -> void:
 	print_tree_pretty()
 	state_machine.init(self)
 
+
 # give input to state_machine
-func _unhandled_input(event):
+func _unhandled_input(event: InputEvent) -> void:
 	state_machine.process_input(event)
 
+
 # give physicy handling to state machine
-func _physics_process(delta):
+func _physics_process(delta: float) -> void:
 	state_machine._process_physics(delta)
 
 
 # give other processing to state machine
-func _process(delta): 
+func _process(delta: float) -> void: 
 	state_machine.process_frame(delta)
 
 

@@ -1,5 +1,7 @@
 extends Base_State
 
+class_name Idle_State
+
 @export var coyote_timer: Timer
 
 

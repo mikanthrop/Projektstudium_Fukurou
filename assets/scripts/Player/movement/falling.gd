@@ -1,5 +1,7 @@
 extends Base_State
 
+class_name Fall_State
+
 @export var coyote_timer: Timer
 
 @onready var FALL_GRAVITY: float =  (-1) * ((-2 * parent.JUMP_HEIGHT) / (parent.JUMP_TIME_TO_DESCENT * parent.JUMP_TIME_TO_DESCENT))

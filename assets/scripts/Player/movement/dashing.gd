@@ -1,9 +1,11 @@
 extends Base_State
 
+class_name Dash_State
+
 @export var dash_timer: Timer
 
-@onready var dash_speed_modifier = parent.DASH_SPEED * parent.MOVE_SPEED
-@onready var dash_timer_length = parent.DASH_DISTANCE / parent.DASH_SPEED
+@onready var dash_speed_modifier: float = parent.DASH_SPEED * parent.MOVE_SPEED
+@onready var dash_timer_length: float = parent.DASH_DISTANCE / parent.DASH_SPEED
 
 var dash_direction: Vector2
 var up: int = -1
@@ -84,7 +86,7 @@ func process_frame(delta: float) -> Base_State:
 	return null
 
 
-func _on_dash_timer_timeout():
+func _on_dash_timer_timeout() -> void:
 	var jump_velocity = (-1.0) * ((-2.0 * parent.JUMP_HEIGHT) / (parent.JUMP_TIME_TO_PEAK * parent.JUMP_TIME_TO_PEAK))
 	var fall_gravity = (-1) * ((-2 * parent.JUMP_HEIGHT) / (parent.JUMP_TIME_TO_DESCENT * parent.JUMP_TIME_TO_DESCENT))
 	# Reset the velocity when dash timer timed out
