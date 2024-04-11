@@ -1,4 +1,4 @@
-extends State
+extends Base_State
 
 func enter() -> void: 
 	super()

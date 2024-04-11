@@ -1,0 +1,83 @@
+[gd_scene load_steps=8 format=3 uid="uid://bdpksvvhgfls5"]
+
+[ext_resource type="Script" path="res://assets/scenes/prefabs/moving_platform.gd" id="1_71ae0"]
+[ext_resource type="Texture2D" uid="uid://dqkvhqpb2e1ov" path="res://assets/sprites/leaf.png" id="2_01arx"]
+
+[sub_resource type="Curve2D" id="Curve2D_gp2jx"]
+_data = {
+"points": PackedVector2Array(0, 0, 0, 0, -6, 646, 0, 0, 0, 0, 0, 0)
+}
+point_count = 2
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_xqguo"]
+radius = 1.11
+height = 155.27
+
+[sub_resource type="Animation" id="Animation_cj2mg"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("PathFollow2D:progress_ratio")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.0]
+}
+
+[sub_resource type="Animation" id="Animation_f2udl"]
+resource_name = "move"
+length = 2.0
+loop_mode = 2
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("PathFollow2D:progress_ratio")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 2),
+"transitions": PackedFloat32Array(-1.99851, 1),
+"update": 0,
+"values": [0.0, 1.0]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_fvrh0"]
+_data = {
+"RESET": SubResource("Animation_cj2mg"),
+"move": SubResource("Animation_f2udl")
+}
+
+[node name="MovingPlattform" type="Path2D"]
+curve = SubResource("Curve2D_gp2jx")
+script = ExtResource("1_71ae0")
+
+[node name="PathFollow2D" type="PathFollow2D" parent="."]
+position = Vector2(-6, 646)
+rotation = -1.56151
+
+[node name="RemoteTransform2D" type="RemoteTransform2D" parent="PathFollow2D"]
+remote_path = NodePath("../../AnimatableBody2D")
+
+[node name="AnimatableBody2D" type="AnimatableBody2D" parent="."]
+position = Vector2(-6, 646)
+rotation = -1.56151
+scale = Vector2(1, 1)
+collision_layer = 2
+collision_mask = 2
+
+[node name="Sprite2D" type="Sprite2D" parent="AnimatableBody2D"]
+rotation = 1.5708
+texture = ExtResource("2_01arx")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="AnimatableBody2D"]
+scale = Vector2(37.2662, -0.910186)
+shape = SubResource("CapsuleShape2D_xqguo")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_fvrh0")
+}

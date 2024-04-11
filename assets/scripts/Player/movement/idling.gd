@@ -35,7 +35,7 @@ func process_input(_event: InputEvent) -> Base_State:
 
 
 func _process_physics(_delta: float) -> Base_State:
-	
+	parent.move_and_slide()
 	# returns fall state if parent isn't on the floor anymore (breakable platforms)
 	if !parent.is_on_floor():
 		self.exit()
