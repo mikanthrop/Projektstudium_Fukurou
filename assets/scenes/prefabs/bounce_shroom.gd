@@ -12,6 +12,7 @@ func _on_body_entered(body):
 	## check if body entered is player (via name)
 	if (body.name == "Player"):
 		var player: Player = owner.get_node_or_null(NodePath(body.name))
+		
 	
 		if player: 
 			## instantiate y coordinate of jump_velocity
