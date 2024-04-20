@@ -62,7 +62,7 @@ func process_input(event: InputEvent) -> Base_State:
 	return null
 
 
-func _process_physics(delta: float) -> Base_State:
+func _process_physics(_delta: float) -> Base_State:
 	# Handle physics logic during the dash (if needed)
 	parent.velocity = dash_direction * parent.DASH_SPEED
 	print("state dashing: physics: dash_direction: ", dash_direction)

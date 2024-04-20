@@ -330,11 +330,11 @@ physics_layer_0/physics_material = SubResource("PhysicsMaterial_wyeo7")
 sources/1 = SubResource("TileSetAtlasSource_ufcqu")
 sources/2 = SubResource("TileSetAtlasSource_qybcp")
 
-[sub_resource type="Curve2D" id="Curve2D_tp16d"]
+[sub_resource type="Curve2D" id="Curve2D_mw6x1"]
 _data = {
-"points": PackedVector2Array(0, 0, 0, 0, 83.3333, -16.6666, 0, 0, 0, 0, 82.9103, -259)
+"points": PackedVector2Array(0, 0, 0, 0, 75.2961, -43, 0, 0, 0, 0, -43.9932, -162, 0, 0, 0, 0, 154.822, -357, 0, 0, 0, 0, 241.963, -211)
 }
-point_count = 2
+point_count = 4
 
 [node name="main" type="Node2D"]
 
@@ -363,9 +363,9 @@ position = Vector2(352, 561)
 [node name="MovingPlattform" parent="." instance=ExtResource("6_ogoal")]
 position = Vector2(510, 622)
 scale = Vector2(1.182, 1)
-curve = SubResource("Curve2D_tp16d")
-loop = false
-speed_scale = 1.4
+curve = SubResource("Curve2D_mw6x1")
+speed = 0.4
+float_duration = 2.0
 
 [connection signal="body_entered" from="DeathZone" to="PlayerRespawner" method="_on_death_zone_body_entered"]
 [connection signal="body_exited" from="DeathZone" to="PlayerRespawner" method="_on_death_zone_body_exited"]
