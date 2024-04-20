@@ -345,6 +345,8 @@ JUMP_HEIGHT = 163.488
 JUMP_TIME_TO_PEAK = 0.355
 JUMP_TIME_TO_DESCENT = 0.26
 
+[node name="Camera2D" type="Camera2D" parent="Player"]
+
 [node name="TileMap" type="TileMap" parent="."]
 tile_set = SubResource("TileSet_8r06m")
 format = 2
