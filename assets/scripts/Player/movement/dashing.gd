@@ -81,8 +81,6 @@ func process_frame(delta: float) -> Base_State:
 		if !parent.is_on_floor() :
 			return fall_state
 		return idle_state
-	if parent.is_on_wall() and Input.is_action_pressed("hold"):
-		return wall_hold_state
 	return null
 
 
