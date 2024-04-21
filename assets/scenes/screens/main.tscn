@@ -339,8 +339,7 @@ point_count = 2
 [node name="main" type="Node2D"]
 
 [node name="Player" parent="." instance=ExtResource("1_rvx31")]
-position = Vector2(91, 542)
-scale = Vector2(0.09, 0.09)
+position = Vector2(107, 513)
 JUMP_HEIGHT = 163.488
 JUMP_TIME_TO_PEAK = 0.355
 JUMP_TIME_TO_DESCENT = 0.26

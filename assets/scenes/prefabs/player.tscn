@@ -1,7 +1,7 @@
 [gd_scene load_steps=11 format=3 uid="uid://dj1j6ywsgiml0"]
 
-[ext_resource type="Texture2D" uid="uid://ch7dttdt73lmt" path="res://assets/sprites/Player.png" id="1_3s3ns"]
 [ext_resource type="Script" path="res://assets/scripts/Player/player.gd" id="1_wr5ff"]
+[ext_resource type="Texture2D" uid="uid://cieljqgtbe7am" path="res://assets/sprites/Fuku_png.png" id="2_k26bn"]
 [ext_resource type="Script" path="res://assets/scripts/Player/movement/state_machine.gd" id="3_o2ahg"]
 [ext_resource type="Script" path="res://assets/scripts/Player/movement/idling.gd" id="4_fc6ut"]
 [ext_resource type="Script" path="res://assets/scripts/Player/movement/walking.gd" id="5_r8n51"]
@@ -11,8 +11,8 @@
 [ext_resource type="Script" path="res://assets/scripts/Player/movement/wall_holding.gd" id="9_5g8pa"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_fitw2"]
-radius = 260.0
-height = 684.0
+radius = 39.0
+height = 128.0
 
 [node name="Player" type="CharacterBody2D" node_paths=PackedStringArray("state_machine")]
 collision_mask = 2
@@ -29,7 +29,8 @@ state_machine = NodePath("state_machine")
 metadata/_edit_group_ = true
 
 [node name="PlayerSprite" type="Sprite2D" parent="."]
-texture = ExtResource("1_3s3ns")
+scale = Vector2(4, 4)
+texture = ExtResource("2_k26bn")
 
 [node name="CollisionShape" type="CollisionShape2D" parent="."]
 shape = SubResource("CapsuleShape2D_fitw2")
