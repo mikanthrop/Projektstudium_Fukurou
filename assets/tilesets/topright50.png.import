@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://grm64xevc3b6"
-path="res://.godot/imported/topright50.png-8ceffb2297b6caf8d6a98f69afa80f09.ctex"
+path="res://.godot/imported/topright50.png-08c4dbd0e9ca899fe9b4dbdcaaa3fb2a.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/sprites/50%/topright50.png"
-dest_files=["res://.godot/imported/topright50.png-8ceffb2297b6caf8d6a98f69afa80f09.ctex"]
+source_file="res://assets/tilesets/topright50.png"
+dest_files=["res://.godot/imported/topright50.png-08c4dbd0e9ca899fe9b4dbdcaaa3fb2a.ctex"]
 
 [params]
 

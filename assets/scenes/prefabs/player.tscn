@@ -11,8 +11,8 @@
 [ext_resource type="Script" path="res://assets/scripts/Player/movement/wall_holding.gd" id="9_5g8pa"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_fitw2"]
-radius = 39.0
-height = 128.0
+radius = 9.0
+height = 32.0
 
 [node name="Player" type="CharacterBody2D" node_paths=PackedStringArray("state_machine")]
 collision_mask = 2
@@ -29,7 +29,6 @@ state_machine = NodePath("state_machine")
 metadata/_edit_group_ = true
 
 [node name="PlayerSprite" type="Sprite2D" parent="."]
-scale = Vector2(4, 4)
 texture = ExtResource("2_k26bn")
 
 [node name="CollisionShape" type="CollisionShape2D" parent="."]

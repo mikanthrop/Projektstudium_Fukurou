@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://chk0pnp1qic50"
-path="res://.godot/imported/slimmid50.png-001b50950feadb90ba6312afe6ce3e55.ctex"
+path="res://.godot/imported/slimmid50.png-41ad159c0db067e1843596c783bbbfe9.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/sprites/50%/slimmid50.png"
-dest_files=["res://.godot/imported/slimmid50.png-001b50950feadb90ba6312afe6ce3e55.ctex"]
+source_file="res://assets/tilesets/slimmid50.png"
+dest_files=["res://.godot/imported/slimmid50.png-41ad159c0db067e1843596c783bbbfe9.ctex"]
 
 [params]
 

@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://2yfa8rr1o3rx"
-path="res://.godot/imported/right50.png-1fb34093e8fcc8c4da8d295ec2682398.ctex"
+path="res://.godot/imported/right50.png-855458e209c346c688547ea656f8fd79.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/sprites/50%/right50.png"
-dest_files=["res://.godot/imported/right50.png-1fb34093e8fcc8c4da8d295ec2682398.ctex"]
+source_file="res://assets/tilesets/right50.png"
+dest_files=["res://.godot/imported/right50.png-855458e209c346c688547ea656f8fd79.ctex"]
 
 [params]
 
