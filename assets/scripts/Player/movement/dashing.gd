@@ -58,6 +58,8 @@ func exit() -> void:
 
 func process_input(event: InputEvent) -> Base_State:
 	print("state dashing: process input: ", event)
+	if Input.is_action_pressed("jump"):
+			return jump_state
 	
 	return null
 
