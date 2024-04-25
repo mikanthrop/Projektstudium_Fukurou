@@ -1,5 +1,7 @@
 extends Base_State
 
+class_name Wall_Hold_State
+
 var pos: Vector2
 
 
@@ -8,7 +10,6 @@ func enter() -> void:
 	print("changed state to wall_holding")
 	pos = parent.get_position_delta()
 	print(pos)
-	
 
 
 func exit() -> void:
@@ -23,8 +24,3 @@ func process_input(_event: InputEvent) -> Base_State:
 	while Input.is_action_pressed('hold') and parent.is_on_wall():
 		return null
 	return fall_state
-
-
-func pro_process_physics(delta: float) -> Base_State:
-	parent.position = pos
-	return null

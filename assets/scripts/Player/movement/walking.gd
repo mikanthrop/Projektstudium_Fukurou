@@ -1,8 +1,6 @@
 extends Base_State
 
-#@export var jump_state: Base_State
-#@export var idle_state: Base_State
-#@export var fall_state: Base_State
+class_name Walk_State
 
 @export var coyote_timer: Timer
 
@@ -41,6 +39,8 @@ func _process_physics(delta: float) -> Base_State:
 	parent.velocity.y += gravity*delta
 	print("state walking: parent velocity x: ",  parent.velocity.x)
 	# if player has negativ y velocity change state to falling
+	if parent.velocity.y < 0 and !parent.is_on_floor():
+		return idle_state
 	if parent.velocity.y > 0 and !parent.is_on_floor():
 		return fall_state
 	

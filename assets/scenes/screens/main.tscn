@@ -1,12 +1,17 @@
-[gd_scene load_steps=6 format=3 uid="uid://dcmj68qtvrdqr"]
+[gd_scene load_steps=13 format=3 uid="uid://dcmj68qtvrdqr"]
 
-[ext_resource type="Texture2D" uid="uid://34dtkv0g1can" path="res://assets/sprites/platformPack_tilesheet.png" id="1_ww6re"]
-[ext_resource type="PackedScene" uid="uid://dj1j6ywsgiml0" path="res://assets/scenes/player.tscn" id="2_fsqt4"]
+[ext_resource type="PackedScene" uid="uid://dj1j6ywsgiml0" path="res://assets/scenes/prefabs/player.tscn" id="1_rvx31"]
+[ext_resource type="Texture2D" uid="uid://34dtkv0g1can" path="res://assets/sprites/platformPack_tilesheet.png" id="2_rruyw"]
+[ext_resource type="PackedScene" uid="uid://c5fothc6h3nlb" path="res://assets/scenes/prefabs/player_respawner.tscn" id="3_ep1mn"]
+[ext_resource type="Texture2D" uid="uid://dqkvhqpb2e1ov" path="res://assets/sprites/leaf.png" id="3_lbefl"]
+[ext_resource type="PackedScene" uid="uid://cfvxij5pedplm" path="res://assets/scenes/prefabs/death_zone.tscn" id="4_thcun"]
+[ext_resource type="PackedScene" uid="uid://di6xxbgxcv8wm" path="res://assets/scenes/prefabs/bounce_shroom.tscn" id="5_wf2ux"]
+[ext_resource type="PackedScene" uid="uid://bdpksvvhgfls5" path="res://assets/scenes/prefabs/moving_plattform.tscn" id="6_ogoal"]
 
 [sub_resource type="PhysicsMaterial" id="PhysicsMaterial_wyeo7"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_ufcqu"]
-texture = ExtResource("1_ww6re")
+texture = ExtResource("2_rruyw")
 texture_region_size = Vector2i(64, 64)
 0:0/0 = 0
 0:0/0/physics_layer_0/linear_velocity = Vector2(0, 0)
@@ -66,6 +71,7 @@ texture_region_size = Vector2i(64, 64)
 3:1/0 = 0
 3:1/0/physics_layer_0/linear_velocity = Vector2(0, 0)
 3:1/0/physics_layer_0/angular_velocity = 0.0
+3:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(-32, -32, 32, -32, 32, 32, -32, 32, -32, -32)
 4:1/0 = 0
 4:1/0/physics_layer_0/linear_velocity = Vector2(0, 0)
 4:1/0/physics_layer_0/angular_velocity = 0.0
@@ -307,19 +313,62 @@ texture_region_size = Vector2i(64, 64)
 13:6/0/physics_layer_0/linear_velocity = Vector2(0, 0)
 13:6/0/physics_layer_0/angular_velocity = 0.0
 
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_qybcp"]
+texture = ExtResource("3_lbefl")
+texture_region_size = Vector2i(144, 96)
+0:0/0 = 0
+0:0/0/physics_layer_0/linear_velocity = Vector2(0, 0)
+0:0/0/physics_layer_0/angular_velocity = 0.0
+0:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-34.1179, -33.5876, -34.2947, -36.416, -28.2843, -36.5928, -28.2843, -39.7748, -21.2132, -40.1283, -21.2132, -42.78, -11.4905, -42.9567, -11.3137, -47.3762, 13.7886, -47.5529, 13.7886, -43.1335, 19.4454, -43.1335, 19.9758, -40.3051, 29.8753, -40.1283, 29.6985, -42.78, 50.3814, -43.1335, 50.5581, -47.0226, 64.8771, -47.1994, 64.8771, -43.6638, 67.8823, -43.3103, 68.059, -40.4819, 71.7713, -40.3051, 71.5946, -36.416, 68.4126, -36.0624, 68.059, -33.5876, 64.5235, -32.8805, 63.8164, -29.6985, 44.1942, -30.2288, 43.8406, -26.3397, 48.0833, -26.3397, 48.26, -23.6881, 50.3814, -23.3345, 50.9117, -2.2981, 48.26, -2.47487, 48.0833, 4.24264, 44.1942, 4.94975, 44.0174, 11.6673, 41.189, 11.3137, 41.189, 14.4957, 37.1231, 14.8492, 36.9463, 18.208, 33.7644, 18.0312, 33.7644, 20.8597, 29.8753, 21.7435, 29.6985, 24.572, 24.2184, 25.2791, 24.0416, 28.6378, 10.0763, 28.6378, 10.0763, 32, 0.530331, 32, 0.353554, 34.1179, -16.4402, 35.0018, -16.4402, 37.8302, -38.007, 38.5373, -37.8302, 41.3657, -57.806, 42.2496, -57.9828, 46.1387, -65.2306, 45.9619, -65.5842, 47.9065, -68.9429, 47.9065, -69.2965, 46.1387, -71.9481, 45.6084, -71.7713, 15.2028, -69.1197, 15.026, -68.9429, 8.3085, -65.0538, 7.95495, -65.0538, 1.23744, -62.2254, 0.707106, -62.0486, -6.18718, -58.3363, -6.36396, -58.1595, -11.844, -55.5079, -11.844, -54.8008, -16.2635, -51.2652, -16.2635, -51.442, -19.0919, -48.4368, -19.4454, -48.6136, -22.0971, -44.7245, -22.2739, -44.5477, -25.9862, -41.189, -25.9862, -41.0122, -29.5217, -38.007, -29.5217, -38.5373, -32.8805)
+1:0/0 = 0
+1:0/0/physics_layer_0/linear_velocity = Vector2(0, 0)
+1:0/0/physics_layer_0/angular_velocity = 0.0
+
 [sub_resource type="TileSet" id="TileSet_8r06m"]
 tile_size = Vector2i(64, 64)
 physics_layer_0/collision_layer = 2
 physics_layer_0/physics_material = SubResource("PhysicsMaterial_wyeo7")
 sources/1 = SubResource("TileSetAtlasSource_ufcqu")
+sources/2 = SubResource("TileSetAtlasSource_qybcp")
+
+[sub_resource type="Curve2D" id="Curve2D_mw6x1"]
+_data = {
+"points": PackedVector2Array(0, 0, 0, 0, 99, -38, 0, 0, 0, 0, 99, -356)
+}
+point_count = 2
 
 [node name="main" type="Node2D"]
+
+[node name="Player" parent="." instance=ExtResource("1_rvx31")]
+position = Vector2(107, 513)
+JUMP_HEIGHT = 326.976
+JUMP_TIME_TO_PEAK = 0.51
+JUMP_TIME_TO_DESCENT = 0.41
+
+[node name="Camera2D" type="Camera2D" parent="Player"]
 
 [node name="TileMap" type="TileMap" parent="."]
 tile_set = SubResource("TileSet_8r06m")
 format = 2
-layer_0/tile_data = PackedInt32Array(589824, 1, 0, 589825, 1, 0, 589826, 1, 0, 589827, 1, 0, 589828, 1, 0, 589829, 1, 0, 589830, 1, 0, 589831, 1, 0, 589832, 1, 0, 589833, 1, 0, 589834, 1, 0, 589835, 1, 0, 589836, 1, 0, 589837, 1, 0, 589838, 1, 0, 589839, 1, 0, 589840, 1, 0, 589841, 1, 0, 655359, 1, 0, 589842, 1, 0, 720895, 196609, 0, 655360, 196609, 0, 655361, 196609, 0, 655362, 196609, 0, 655363, 196609, 0, 655364, 196609, 0, 655365, 196609, 0, 655366, 196609, 0, 655367, 196609, 0, 655368, 196609, 0, 655369, 196609, 0, 655370, 196609, 0, 655371, 196609, 0, 655372, 196609, 0, 655373, 196609, 0, 655374, 196609, 0, 655375, 196609, 0, 655376, 196609, 0, 655377, 196609, 0, 655378, 196609, 0, 458765, 1, 0, 458766, 1, 0, 327695, 196609, 0, 327696, 786433, 2, 196610, 1, 0, 196611, 1, 0, 458752, 1, 0, 458753, 1, 0, 327681, 1, 0, 327682, 1, 0, 589843, 1, 0, 589844, 1, 0, 589845, 1, 0, 589846, 1, 0, 589847, 1, 0, 655358, 1, 0, 655357, 1, 0, 655356, 1, 0, 655355, 1, 0, 655354, 1, 0, 393231, 196609, 0, 524300, 1, 0, 524301, 196609, 0, 524302, 196609, 0, 524303, 196609, 0, 524304, 196609, 0, 458768, 1, 0, 458767, 196609, 0, 393232, 786433, 2, 393233, 786433, 2, 327697, 786433, 2, 458769, 786433, 2, 524305, 786433, 2, 262161, 786433, 2, 262159, 196609, 0, 196623, 196609, 0, 131087, 196609, 0, 65551, 1, 0)
+layer_0/tile_data = PackedInt32Array(589824, 1, 0, 589825, 196609, 1, 589826, 1, 0, 589827, 196609, 1, 589828, 1, 0, 589829, 196609, 1, 589830, 1, 0, 589831, 196609, 1, 589832, 1, 0, 589833, 851969, 3, 589834, 1, 0, 589835, 1, 0, 589836, 1, 0, 589837, 1, 0, 589838, 1, 0, 589839, 1, 0, 589840, 1, 0, 589841, 1, 0, 655359, 196609, 1, 589842, 1, 0, 720895, 196609, 0, 655360, 196609, 0, 655361, 196609, 0, 655362, 196609, 0, 655363, 196609, 0, 655364, 196609, 0, 655365, 196609, 0, 655366, 196609, 0, 655367, 196609, 0, 655368, 196609, 0, 655369, 851969, 3, 655370, 196609, 0, 655371, 196609, 0, 655372, 196609, 0, 655373, 196609, 0, 655374, 196609, 0, 655375, 196609, 0, 655376, 196609, 0, 655377, 196609, 0, 655378, 196609, 0, 458765, 1, 0, 458766, 1, 0, 327695, 196609, 0, 327696, 786433, 2, 196610, 851969, 2, 196611, 851969, 2, 458752, 1, 0, 458753, 851969, 2, 327681, 851969, 2, 327682, 851969, 2, 589843, 1, 0, 589844, 1, 0, 589845, 1, 0, 589846, 1, 0, 589847, 1, 0, 655358, 1, 0, 655357, 196609, 1, 655356, 1, 0, 655355, 196609, 1, 655354, 1, 0, 393231, 196609, 0, 524300, 1, 0, 524301, 196609, 0, 524302, 196609, 0, 524303, 196609, 0, 524304, 196609, 0, 458768, 1, 0, 458767, 196609, 0, 393232, 786433, 2, 393233, 786433, 2, 327697, 786433, 2, 458769, 786433, 2, 524305, 786433, 2, 262161, 786433, 2, 262159, 196609, 0, 196623, 196609, 0, 131087, 196609, 0, 65551, 1, 0, 524293, 851969, 2, 524290, 786433, 3, 524291, 786433, 3, 524292, 786433, 3, 327680, 1, 0, 196608, 1, 0, 65536, 1, 0, 524288, 196609, 1, 393216, 196609, 1, 262144, 196609, 1, 131072, 196609, 1, 393229, 786433, 5)
 
-[node name="Player" parent="." instance=ExtResource("2_fsqt4")]
-position = Vector2(258, 433)
-scale = Vector2(0.09, 0.09)
+[node name="PlayerRespawner" parent="." instance=ExtResource("3_ep1mn")]
+position = Vector2(175, 461)
+
+[node name="DeathZone" parent="." instance=ExtResource("4_thcun")]
+position = Vector2(609, 779)
+scale = Vector2(5, 5)
+
+[node name="bounce_shroom" parent="." instance=ExtResource("5_wf2ux")]
+position = Vector2(864, 427)
+
+[node name="MovingPlattform" parent="." instance=ExtResource("6_ogoal")]
+position = Vector2(510, 622)
+scale = Vector2(1.182, 1)
+curve = SubResource("Curve2D_mw6x1")
+speed = 0.4
+float_duration = 2.0
+
+[connection signal="body_entered" from="DeathZone" to="PlayerRespawner" method="_on_death_zone_body_entered"]
+[connection signal="body_exited" from="DeathZone" to="PlayerRespawner" method="_on_death_zone_body_exited"]
+[connection signal="body_entered" from="bounce_shroom" to="bounce_shroom" method="_on_body_entered"]

@@ -1,9 +1,11 @@
 extends Base_State
 
+class_name Dash_State
+
 @export var dash_timer: Timer
 
-@onready var dash_speed_modifier = parent.DASH_SPEED * parent.MOVE_SPEED
-@onready var dash_timer_length = parent.DASH_DISTANCE / parent.DASH_SPEED
+@onready var dash_speed_modifier: float = parent.DASH_SPEED * parent.MOVE_SPEED
+@onready var dash_timer_length: float = parent.DASH_DISTANCE / parent.DASH_SPEED
 
 var dash_direction: Vector2
 var up: int = -1
@@ -60,7 +62,7 @@ func process_input(event: InputEvent) -> Base_State:
 	return null
 
 
-func _process_physics(delta: float) -> Base_State:
+func _process_physics(_delta: float) -> Base_State:
 	# Handle physics logic during the dash (if needed)
 	parent.velocity = dash_direction * parent.DASH_SPEED
 	print("state dashing: physics: dash_direction: ", dash_direction)
@@ -79,12 +81,10 @@ func process_frame(delta: float) -> Base_State:
 		if !parent.is_on_floor() :
 			return fall_state
 		return idle_state
-	if parent.is_on_wall() and Input.is_action_pressed("hold"):
-		return wall_hold_state
 	return null
 
 
-func _on_dash_timer_timeout():
+func _on_dash_timer_timeout() -> void:
 	var jump_velocity = (-1.0) * ((-2.0 * parent.JUMP_HEIGHT) / (parent.JUMP_TIME_TO_PEAK * parent.JUMP_TIME_TO_PEAK))
 	var fall_gravity = (-1) * ((-2 * parent.JUMP_HEIGHT) / (parent.JUMP_TIME_TO_DESCENT * parent.JUMP_TIME_TO_DESCENT))
 	# Reset the velocity when dash timer timed out
