@@ -17,13 +17,14 @@ func enter() -> void:
 	parent.velocity.y = JUMP_VELOCITY
 	coyote_timer.stop()
 
-
 func process_input(_event: InputEvent) -> Base_State: 
 	# If the jump button is released, transition to falling state
 	if !Input.is_action_pressed("jump"):
 		return fall_state
 	if !parent.has_dashed and Input.is_action_pressed("dash"):
 		return dash_state
+	if parent.is_on_wall() and Input.is_action_pressed("jump"):
+		return jump_state
 	#if parent.is_on_wall() and Input.is_action_pressed("hold"):
 		#return wall_hold_state
 	return null
