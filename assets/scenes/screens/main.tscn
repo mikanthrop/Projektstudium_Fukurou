@@ -501,9 +501,12 @@ point_count = 2
 
 [node name="Player" parent="." instance=ExtResource("1_rvx31")]
 position = Vector2(107, 513)
-JUMP_HEIGHT = 326.976
-JUMP_TIME_TO_PEAK = 0.51
-JUMP_TIME_TO_DESCENT = 0.41
+MOVE_SPEED = 200.0
+JUMP_HEIGHT = 85.0
+JUMP_TIME_TO_PEAK = 0.3
+JUMP_TIME_TO_DESCENT = 0.15
+DASH_DISTANCE = 75.0
+DASH_SPEED = 500.0
 
 [node name="Camera2D" type="Camera2D" parent="Player"]
 zoom = Vector2(2, 2)
