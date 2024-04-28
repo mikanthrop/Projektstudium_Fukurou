@@ -23,9 +23,9 @@ func exit() -> void:
 
 
 func process_input(_event: InputEvent) -> Base_State:
-	if parent.is_on_floor() and Input.is_action_pressed("jump"):
+	if parent.is_on_floor() and Input.is_action_just_pressed("jump"):
 		return jump_state
-	if parent.is_on_wall() and Input.is_action_pressed("jump"):
+	if parent.is_on_wall() and Input.is_action_just_pressed("jump"):
 		return jump_state
 	if Input.is_action_pressed("move_left") or Input.is_action_pressed("move_right"):
 			return walk_state
@@ -37,6 +37,7 @@ func process_input(_event: InputEvent) -> Base_State:
 
 
 func _process_physics(_delta: float) -> Base_State:
+	parent.move_and_slide()
 	# returns fall state if parent isn't on the floor anymore (breakable platforms)
 	if !parent.is_on_floor():
 		self.exit()
