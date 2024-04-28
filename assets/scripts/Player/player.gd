@@ -29,6 +29,7 @@ var has_dashed: bool = false
 
 # Get the gravity from the project settings to be synced with RigidBody nodes.
 var gravity = ProjectSettings.get_setting("physics/2d/default_gravity")
+var can_wall_hold = "can_wall_hold"
 
 
 # initialize state_machine on boot
@@ -50,6 +51,19 @@ func _physics_process(delta: float) -> void:
 # give other processing to state machine
 func _process(delta: float) -> void: 
 	state_machine.process_frame(delta)
+
+
+# returns custom data from collided tile
+func is_wall_holdable() -> bool:
+	var collision: KinematicCollision2D = get_last_slide_collision()
+	if collision: 
+		var collider: Object = collision.get_collider()
+		if collider.is_class("TileMap"):
+			var tile_pos: Vector2i = collider.local_to_map(collision.get_position())
+			var tile_data: TileData = collider.get_cell_tile_data(0, tile_pos)
+			if tile_data.get_custom_data(can_wall_hold):
+				return true
+	return false
 
 
 # Function to change the facing direction
