@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dptwxi1t88rq7"
-path="res://.godot/imported/bat_green_svg.svg-5716e77c6c6d8c44ca53423d5038cc33.ctex"
+uid="uid://dt48l3ngg5o4f"
+path="res://.godot/imported/moth_png.png-e291c023a48b99a370db4566e8154064.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/scripts/NPCs/bats/green/bat_green_svg.svg"
-dest_files=["res://.godot/imported/bat_green_svg.svg-5716e77c6c6d8c44ca53423d5038cc33.ctex"]
+source_file="res://assets/sprites/NPCs/moth/moth_png.png"
+dest_files=["res://.godot/imported/moth_png.png-e291c023a48b99a370db4566e8154064.ctex"]
 
 [params]
 
@@ -32,6 +32,3 @@ process/hdr_as_srgb=false
 process/hdr_clamp_exposure=false
 process/size_limit=0
 detect_3d/compress_to=1
-svg/scale=1.0
-editor/scale_with_editor_scale=false
-editor/convert_colors_with_editor_theme=false

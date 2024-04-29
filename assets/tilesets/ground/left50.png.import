@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://m87ia50ppk00"
-path="res://.godot/imported/bat_green.png-ae5420a74a1ad596e8f47053f25ab3dc.ctex"
+uid="uid://d1otuh66cin7w"
+path="res://.godot/imported/left50.png-0e5b58fd002ce7fde9e2014153089cf8.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/scripts/NPCs/bats/green/bat_green.png"
-dest_files=["res://.godot/imported/bat_green.png-ae5420a74a1ad596e8f47053f25ab3dc.ctex"]
+source_file="res://assets/tilesets/ground/left50.png"
+dest_files=["res://.godot/imported/left50.png-0e5b58fd002ce7fde9e2014153089cf8.ctex"]
 
 [params]
 

@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://e3xkrnphkrx2"
-path="res://.godot/imported/bat_blue_svg.svg-37b435d5065533f50b1c493ee6b6d7f0.ctex"
+uid="uid://bnwolafl7ekun"
+path="res://.godot/imported/topleft50.png-c7a3bb5646816f9983f1e072a30db13d.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/scripts/NPCs/bats/blue/bat_blue_svg.svg"
-dest_files=["res://.godot/imported/bat_blue_svg.svg-37b435d5065533f50b1c493ee6b6d7f0.ctex"]
+source_file="res://assets/tilesets/ground/topleft50.png"
+dest_files=["res://.godot/imported/topleft50.png-c7a3bb5646816f9983f1e072a30db13d.ctex"]
 
 [params]
 
@@ -32,6 +32,3 @@ process/hdr_as_srgb=false
 process/hdr_clamp_exposure=false
 process/size_limit=0
 detect_3d/compress_to=1
-svg/scale=1.0
-editor/scale_with_editor_scale=false
-editor/convert_colors_with_editor_theme=false

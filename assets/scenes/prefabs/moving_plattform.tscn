@@ -1,6 +1,6 @@
 [gd_scene load_steps=6 format=3 uid="uid://bdpksvvhgfls5"]
 
-[ext_resource type="Script" path="res://assets/scenes/prefabs/moving_platform.gd" id="1_71ae0"]
+[ext_resource type="Script" path="res://assets/scripts/GameLogic/moving_platform.gd" id="1_uy7js"]
 [ext_resource type="Texture2D" uid="uid://dqkvhqpb2e1ov" path="res://assets/sprites/leaf.png" id="2_01arx"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ufsva"]
@@ -15,7 +15,7 @@ _data = {
 }
 
 [node name="MovingPlattform" type="Path2D"]
-script = ExtResource("1_71ae0")
+script = ExtResource("1_uy7js")
 metadata/_edit_group_ = true
 
 [node name="PathFollow2D" type="PathFollow2D" parent="."]

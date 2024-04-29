@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dt48l3ngg5o4f"
-path="res://.godot/imported/moth_png.png-f2770d856395778c028e905b128b0d01.ctex"
+uid="uid://cgp1yilqd4ofd"
+path="res://.godot/imported/slimright50.png-f3d89349181ada284a93722a469c2a98.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/scripts/NPCs/moth/moth_png.png"
-dest_files=["res://.godot/imported/moth_png.png-f2770d856395778c028e905b128b0d01.ctex"]
+source_file="res://assets/tilesets/ground/slimright50.png"
+dest_files=["res://.godot/imported/slimright50.png-f3d89349181ada284a93722a469c2a98.ctex"]
 
 [params]
 

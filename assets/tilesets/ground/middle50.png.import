@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://0j0retlbmeec"
-path="res://.godot/imported/bat_red_svg.svg-63d9f9ea3872f06291027227d93b5e8d.ctex"
+uid="uid://cx0ku4swpqp8g"
+path="res://.godot/imported/middle50.png-aef502cb3f58fd7bc4224563281a38c7.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/scripts/NPCs/bats/red/bat_red_svg.svg"
-dest_files=["res://.godot/imported/bat_red_svg.svg-63d9f9ea3872f06291027227d93b5e8d.ctex"]
+source_file="res://assets/tilesets/ground/middle50.png"
+dest_files=["res://.godot/imported/middle50.png-aef502cb3f58fd7bc4224563281a38c7.ctex"]
 
 [params]
 
@@ -32,6 +32,3 @@ process/hdr_as_srgb=false
 process/hdr_clamp_exposure=false
 process/size_limit=0
 detect_3d/compress_to=1
-svg/scale=1.0
-editor/scale_with_editor_scale=false
-editor/convert_colors_with_editor_theme=false

@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://m7p1b8uhhyox"
-path="res://.godot/imported/bottom50.png-3ac097ddead730c91dbad0e840437a9b.ctex"
+uid="uid://bjds8aqupynxy"
+path="res://.godot/imported/solo50.png-58b3c16346498db7ef0268dc0bad2bac.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/tilesets/bottom50.png"
-dest_files=["res://.godot/imported/bottom50.png-3ac097ddead730c91dbad0e840437a9b.ctex"]
+source_file="res://assets/tilesets/ground/solo50.png"
+dest_files=["res://.godot/imported/solo50.png-58b3c16346498db7ef0268dc0bad2bac.ctex"]
 
 [params]
 

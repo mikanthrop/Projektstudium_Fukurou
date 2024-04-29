@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://chk0pnp1qic50"
-path="res://.godot/imported/slimmid50.png-41ad159c0db067e1843596c783bbbfe9.ctex"
+uid="uid://beucjro7tolju"
+path="res://.godot/imported/bat_red.png-ae2302ec069a32dee9c493c9256af0cb.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/tilesets/slimmid50.png"
-dest_files=["res://.godot/imported/slimmid50.png-41ad159c0db067e1843596c783bbbfe9.ctex"]
+source_file="res://assets/sprites/NPCs/bats/red/bat_red.png"
+dest_files=["res://.godot/imported/bat_red.png-ae2302ec069a32dee9c493c9256af0cb.ctex"]
 
 [params]
 

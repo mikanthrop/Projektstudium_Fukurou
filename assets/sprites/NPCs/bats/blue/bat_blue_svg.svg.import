@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://t5gxdvxd8xpg"
-path="res://.godot/imported/bat_purple_svg.svg-13d1cc6ca6acebf1763371d3ab504188.ctex"
+uid="uid://e3xkrnphkrx2"
+path="res://.godot/imported/bat_blue_svg.svg-5697b8a59a3757fafbe5d24fc722d8e3.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/scripts/NPCs/bats/purple/bat_purple_svg.svg"
-dest_files=["res://.godot/imported/bat_purple_svg.svg-13d1cc6ca6acebf1763371d3ab504188.ctex"]
+source_file="res://assets/sprites/NPCs/bats/blue/bat_blue_svg.svg"
+dest_files=["res://.godot/imported/bat_blue_svg.svg-5697b8a59a3757fafbe5d24fc722d8e3.ctex"]
 
 [params]
 
