@@ -6,7 +6,7 @@ class_name Fall_State
 
 @onready var FALL_GRAVITY: float =  (-1) * ((-2 * parent.JUMP_HEIGHT) / (parent.JUMP_TIME_TO_DESCENT * parent.JUMP_TIME_TO_DESCENT))
 
-func enter() -> void: 
+func enter() -> void:
 	super()
 	print("changed state to falling")
 	print("state falling: enter: parent has dashed: ", parent.has_dashed)

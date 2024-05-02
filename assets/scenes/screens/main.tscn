@@ -597,8 +597,8 @@ float_duration = 2.0
 
 [node name="Player" parent="." instance=ExtResource("1_rvx31")]
 position = Vector2(107, 513)
-MOVE_SPEED = 200.0
-JUMP_HEIGHT = 85.0
+MOVE_SPEED = 225.0
+JUMP_HEIGHT = 75.0
 JUMP_TIME_TO_PEAK = 0.3
 JUMP_TIME_TO_DESCENT = 0.15
 DASH_DISTANCE = 75.0
@@ -614,7 +614,7 @@ position_smoothing_enabled = true
 position_smoothing_speed = 3.0
 
 [node name="TransitionArea" parent="." instance=ExtResource("11_5nwjq")]
-position = Vector2(25, 600)
+position = Vector2(49, 249)
 scene_to_transition_to = ExtResource("12_5x2th")
 
 [node name="TransitionArea2" parent="." instance=ExtResource("11_5nwjq")]
