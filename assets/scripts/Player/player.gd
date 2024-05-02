@@ -21,6 +21,8 @@ extends CharacterBody2D
 
 # state machine
 @export var state_machine: Node
+@export var animation_player: AnimationPlayer
+@export var wall_hold_ray_cast: RayCast2D
 
 #flags
 var facing_direction: int = 1  # Default direction is right 1, left would be -1
@@ -29,7 +31,10 @@ var has_dashed: bool = false
 
 # Get the gravity from the project settings to be synced with RigidBody nodes.
 var gravity = ProjectSettings.get_setting("physics/2d/default_gravity")
+
+# raycasts for wall holding
 var can_wall_hold = "can_wall_hold"
+var raycast_length: int = 13
 
 
 # initialize state_machine on boot
@@ -45,25 +50,13 @@ func _unhandled_input(event: InputEvent) -> void:
 
 # give physicy handling to state machine
 func _physics_process(delta: float) -> void:
+	wall_hold_ray_cast.target_position.x = facing_direction*raycast_length
 	state_machine._process_physics(delta)
 
 
 # give other processing to state machine
 func _process(delta: float) -> void: 
 	state_machine.process_frame(delta)
-
-
-# returns custom data from collided tile
-func is_wall_holdable() -> bool:
-	var collision: KinematicCollision2D = get_last_slide_collision()
-	if collision: 
-		var collider: Object = collision.get_collider()
-		if collider.is_class("TileMap"):
-			var tile_pos: Vector2i = collider.local_to_map(collision.get_position())
-			var tile_data: TileData = collider.get_cell_tile_data(0, tile_pos)
-			if tile_data.get_custom_data(can_wall_hold):
-				return true
-	return false
 
 
 # Function to change the facing direction
@@ -76,3 +69,27 @@ func set_facing_direction(direction: int) -> void:
 		facing_direction = direction
 	else: 
 		push_warning("facing direction mustn't be zero!")
+
+
+# returns custom data from collided tile
+func is_wall_holdable() -> bool:
+	if wall_hold_ray_cast.is_colliding():
+		var collider: Object = wall_hold_ray_cast.get_collider()
+		if collider.is_class("TileMap"):
+			var collision_pos: Vector2i = wall_hold_ray_cast.get_collision_point()
+			var tile_pos : Vector2 = collider.local_to_map(collision_pos)
+			var tile_data: TileData = collider.get_cell_tile_data(0, tile_pos, true)
+			if tile_data == null:
+				print("wall isn't holdable")
+				return false
+			elif tile_data.get_custom_data(can_wall_hold):
+				print("wall is holdable")
+				return true 
+	print("wall isn't holdable")
+	return false
+
+
+func snap_to_wall() -> void:
+	while (!is_on_wall()):
+		velocity.x = 5*facing_direction
+		move_and_slide()

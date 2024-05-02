@@ -25,7 +25,8 @@ func process_input(_event: InputEvent) -> Base_State:
 	if Input.is_action_just_pressed("jump") and parent.is_on_floor():
 		exit()
 		return jump_state
-	if parent.is_on_wall() and Input.is_action_pressed("hold"):
+	if Input.is_action_pressed("hold") and parent.is_wall_holdable():
+		parent.snap_to_wall()
 		return wall_hold_state
 	if Input.is_action_just_pressed("dash"):
 		return dash_state
@@ -50,10 +51,9 @@ func _process_physics(delta: float) -> Base_State:
 		parent.velocity.x = direction * parent.MOVE_SPEED
 	else:
 		parent.velocity.x = move_toward(parent.velocity.x, 0, parent.MOVE_SPEED)
-	
 	parent.move_and_slide()
 	
-	if direction == 0: 
+	if parent.velocity.x == 0: 
 		return idle_state
 	else: 
 		parent.set_facing_direction(direction)

@@ -20,7 +20,8 @@ func process_input(_event: InputEvent) -> Base_State:
 			return jump_state
 	if !parent.has_dashed and Input.is_action_just_pressed("dash"): 
 		return dash_state
-	if parent.is_on_wall() and Input.is_action_pressed("hold"):
+	if Input.is_action_pressed("hold") and parent.is_wall_holdable():
+		parent.snap_to_wall()
 		return wall_hold_state
 	return null
 

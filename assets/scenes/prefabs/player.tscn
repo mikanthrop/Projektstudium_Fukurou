@@ -1,7 +1,7 @@
-[gd_scene load_steps=11 format=3 uid="uid://dj1j6ywsgiml0"]
+[gd_scene load_steps=14 format=3 uid="uid://dj1j6ywsgiml0"]
 
 [ext_resource type="Script" path="res://assets/scripts/Player/player.gd" id="1_wr5ff"]
-[ext_resource type="Texture2D" uid="uid://cieljqgtbe7am" path="res://assets/sprites/Fuku_png.png" id="2_k26bn"]
+[ext_resource type="Texture2D" uid="uid://2fxfrsqbmwb4" path="res://assets/sprites/Fuku_growing_beak.png" id="2_keg3q"]
 [ext_resource type="Script" path="res://assets/scripts/Player/movement/state_machine.gd" id="3_o2ahg"]
 [ext_resource type="Script" path="res://assets/scripts/Player/movement/idling.gd" id="4_fc6ut"]
 [ext_resource type="Script" path="res://assets/scripts/Player/movement/walking.gd" id="5_r8n51"]
@@ -14,7 +14,45 @@
 radius = 9.0
 height = 32.0
 
-[node name="Player" type="CharacterBody2D" node_paths=PackedStringArray("state_machine")]
+[sub_resource type="Animation" id="Animation_a5f1q"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("PlayerSprite:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [0]
+}
+
+[sub_resource type="Animation" id="Animation_axbbe"]
+resource_name = "beak_growing"
+loop_mode = 1
+step = 0.2
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("PlayerSprite:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.2, 0.4, 0.8),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 1,
+"values": [0, 1, 2, 3]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_aymea"]
+_data = {
+"RESET": SubResource("Animation_a5f1q"),
+"beak_growing": SubResource("Animation_axbbe")
+}
+
+[node name="Player" type="CharacterBody2D" node_paths=PackedStringArray("state_machine", "animation_player", "wall_hold_ray_cast")]
 collision_mask = 2
 platform_floor_layers = 2
 platform_wall_layers = 4
@@ -26,10 +64,14 @@ JUMP_TIME_TO_DESCENT = 0.15
 DASH_DISTANCE = 75.0
 DASH_SPEED = 1000.0
 state_machine = NodePath("state_machine")
+animation_player = NodePath("FukuAnimation")
+wall_hold_ray_cast = NodePath("RayCast2D")
 metadata/_edit_group_ = true
 
 [node name="PlayerSprite" type="Sprite2D" parent="."]
-texture = ExtResource("2_k26bn")
+texture_filter = 1
+texture = ExtResource("2_keg3q")
+hframes = 4
 
 [node name="CollisionShape" type="CollisionShape2D" parent="."]
 shape = SubResource("CapsuleShape2D_fitw2")
@@ -113,5 +155,21 @@ one_shot = true
 [node name="DashTimer" type="Timer" parent="."]
 wait_time = 0.5
 one_shot = true
+
+[node name="Camera2D" type="Camera2D" parent="."]
+zoom = Vector2(2.2, 2.2)
+limit_left = 0
+position_smoothing_enabled = true
+position_smoothing_speed = 3.0
+
+[node name="FukuAnimation" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_aymea")
+}
+
+[node name="RayCast2D" type="RayCast2D" parent="."]
+target_position = Vector2(12, 0)
+collision_mask = 6
+collide_with_areas = true
 
 [connection signal="timeout" from="DashTimer" to="state_machine/dashing" method="_on_dash_timer_timeout"]

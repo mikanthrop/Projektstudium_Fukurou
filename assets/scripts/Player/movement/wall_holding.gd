@@ -9,7 +9,7 @@ func enter() -> void:
 	super()
 	print("changed state to wall_holding")
 	pos = parent.get_position_delta()
-	print(pos)
+	print("all holding at position: ", pos)
 
 
 func exit() -> void:

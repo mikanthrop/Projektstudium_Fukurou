@@ -41,14 +41,10 @@ func _physics_process(delta: float) -> void:
 			timer.start()
 			timer_started = true
 			movement_paused = true
-			print("moving platform: float timer started")
-			print("progress ratio: ", path.get_progress_ratio())
 		elif (path.get_progress_ratio() < approximate_beginning):
 			timer.start()
 			timer_started = true
 			movement_paused = true
-			print("moving platform: float timer started")
-			print("progress ratio: ", path.get_progress_ratio())
 	if (not movement_paused):
 		if (upward_movement):  # Move upwards
 			path.set_progress_ratio(path.get_progress_ratio() + speed * delta)

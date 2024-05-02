@@ -597,14 +597,9 @@ float_duration = 2.0
 
 [node name="Player" parent="." instance=ExtResource("1_rvx31")]
 position = Vector2(107, 513)
-MOVE_SPEED = 225.0
-JUMP_HEIGHT = 75.0
-JUMP_TIME_TO_PEAK = 0.3
-JUMP_TIME_TO_DESCENT = 0.15
-DASH_DISTANCE = 75.0
 DASH_SPEED = 500.0
 
-[node name="Camera2D" type="Camera2D" parent="Player"]
+[node name="Camera2D2" type="Camera2D" parent="Player"]
 zoom = Vector2(2.2, 2.2)
 limit_left = 0
 limit_top = 0

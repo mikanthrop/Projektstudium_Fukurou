@@ -71,7 +71,7 @@ func _process_physics(_delta: float) -> Base_State:
 	return null
 
 
-func process_frame(delta: float) -> Base_State:
+func process_frame(_delta: float) -> Base_State:
 	# transitions to next state
 	if parent.is_on_floor() and Input.is_action_pressed("jump"):
 		dash_timer.stop()
@@ -82,6 +82,9 @@ func process_frame(delta: float) -> Base_State:
 	if dash_timer.is_stopped(): 
 		if Input.is_action_pressed("move_left") or Input.is_action_pressed("move_right"):
 			return walk_state
+		if Input.is_action_pressed("hold") and parent.is_wall_holdable():
+			parent.snap_to_wall()
+			return wall_hold_state
 		if !parent.is_on_floor() :
 			return fall_state
 		return idle_state
