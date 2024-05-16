@@ -597,6 +597,7 @@ float_duration = 2.0
 
 [node name="Player" parent="." instance=ExtResource("1_rvx31")]
 position = Vector2(107, 513)
+JUMP_TIME_TO_DESCENT = 0.17
 DASH_SPEED = 500.0
 
 [node name="Camera2D2" type="Camera2D" parent="Player"]
