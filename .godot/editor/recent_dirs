@@ -1,6 +1,6 @@
-res://assets/tilesets
-res://assets/scenes/prefabs
 res://assets/scenes/screens
+res://assets/scenes/prefabs
+res://assets/tilesets
 res://assets/scenes
 res://assets/scripts/Player
 res://assets/scripts/Player/movement
