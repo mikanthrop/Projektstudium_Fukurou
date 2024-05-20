@@ -3,7 +3,7 @@
 [ext_resource type="TileSet" uid="uid://dy7gudh215rfa" path="res://assets/tilesets/tile_atlas.tres" id="1_boyhk"]
 [ext_resource type="PackedScene" uid="uid://c5fothc6h3nlb" path="res://assets/scenes/prefabs/player_respawner.tscn" id="2_lda1t"]
 [ext_resource type="PackedScene" uid="uid://bvkltedpg1iws" path="res://assets/scenes/prefabs/transition_area.tscn" id="3_ln5wl"]
-[ext_resource type="PackedScene" uid="uid://ctmoc2o110xp4" path="res://assets/scenes/screens/Scene4.tscn" id="4_k3jtn"]
+[ext_resource type="PackedScene" uid="uid://ctmoc2o110xp4" path="res://assets/scenes/screens/Screen4.tscn" id="4_k3jtn"]
 
 [node name="Screen3" type="Node2D"]
 

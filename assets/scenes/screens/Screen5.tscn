@@ -5,7 +5,7 @@
 [ext_resource type="PackedScene" uid="uid://bdpksvvhgfls5" path="res://assets/scenes/prefabs/moving_plattform.tscn" id="4_qb5et"]
 [ext_resource type="Curve2D" uid="uid://dllb0uxhih5ky" path="res://assets/scenes/prefabs/leaf_in_wind.tres" id="5_k2qly"]
 [ext_resource type="PackedScene" uid="uid://bvkltedpg1iws" path="res://assets/scenes/prefabs/transition_area.tscn" id="5_qs1mn"]
-[ext_resource type="PackedScene" uid="uid://q0qeie6i1jrs" path="res://assets/scenes/screens/Scene 6.tscn" id="6_pl20b"]
+[ext_resource type="PackedScene" uid="uid://q0qeie6i1jrs" path="res://assets/scenes/screens/Screen6.tscn" id="6_pl20b"]
 [ext_resource type="PackedScene" uid="uid://cfvxij5pedplm" path="res://assets/scenes/prefabs/death_zone.tscn" id="6_px55f"]
 
 [node name="Scene5" type="Node2D"]
@@ -23,6 +23,7 @@ position = Vector2(194, 265)
 position = Vector2(369, 134)
 scale = Vector2(0.411003, 0.411003)
 curve = ExtResource("5_k2qly")
+speed = 0.5
 
 [node name="TransitionArea" parent="." instance=ExtResource("5_qs1mn")]
 position = Vector2(616, 336)
