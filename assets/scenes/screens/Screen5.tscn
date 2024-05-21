@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=3 uid="uid://beti07pdcl6uu"]
+[gd_scene load_steps=9 format=3 uid="uid://beti07pdcl6uu"]
 
 [ext_resource type="TileSet" uid="uid://dy7gudh215rfa" path="res://assets/tilesets/tile_atlas.tres" id="1_we3yt"]
 [ext_resource type="PackedScene" uid="uid://c5fothc6h3nlb" path="res://assets/scenes/prefabs/player_respawner.tscn" id="2_6yiet"]
@@ -7,6 +7,7 @@
 [ext_resource type="PackedScene" uid="uid://bvkltedpg1iws" path="res://assets/scenes/prefabs/transition_area.tscn" id="5_qs1mn"]
 [ext_resource type="PackedScene" uid="uid://q0qeie6i1jrs" path="res://assets/scenes/screens/Screen6.tscn" id="6_pl20b"]
 [ext_resource type="PackedScene" uid="uid://cfvxij5pedplm" path="res://assets/scenes/prefabs/death_zone.tscn" id="6_px55f"]
+[ext_resource type="PackedScene" uid="uid://di6xxbgxcv8wm" path="res://assets/scenes/prefabs/bounce_shroom.tscn" id="8_pbnh2"]
 
 [node name="Scene5" type="Node2D"]
 
@@ -33,3 +34,6 @@ scene_to_transition_to = ExtResource("6_pl20b")
 [node name="DeathZone" parent="." instance=ExtResource("6_px55f")]
 position = Vector2(390, 388)
 scale = Vector2(17.32, 2)
+
+[node name="bounce_shroom" parent="." instance=ExtResource("8_pbnh2")]
+position = Vector2(119, 186)

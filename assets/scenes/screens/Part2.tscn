@@ -1,0 +1,15 @@
+[gd_scene load_steps=4 format=3 uid="uid://b6igcblpn6cqb"]
+
+[ext_resource type="PackedScene" uid="uid://dov84uidcbr4q" path="res://assets/scenes/screens/Screen11(2).tscn" id="1_jkjgq"]
+[ext_resource type="PackedScene" uid="uid://cm2ydmqhp0d3n" path="res://assets/scenes/screens/Screen12.tscn" id="2_3nw4g"]
+[ext_resource type="PackedScene" uid="uid://dnl6bn2fqo60m" path="res://assets/scenes/screens/Screen13.tscn" id="3_dptrj"]
+
+[node name="Part2" type="Node2D"]
+
+[node name="Screen11(2)" parent="." instance=ExtResource("1_jkjgq")]
+
+[node name="Screen12" parent="." instance=ExtResource("2_3nw4g")]
+position = Vector2(954, -80)
+
+[node name="Screen13" parent="." instance=ExtResource("3_dptrj")]
+position = Vector2(299, -393)

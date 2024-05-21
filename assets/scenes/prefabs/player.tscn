@@ -12,7 +12,6 @@
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_fitw2"]
 radius = 9.0
-height = 32.0
 
 [sub_resource type="Animation" id="Animation_a5f1q"]
 length = 0.001
@@ -74,6 +73,7 @@ texture = ExtResource("2_keg3q")
 hframes = 4
 
 [node name="CollisionShape" type="CollisionShape2D" parent="."]
+position = Vector2(0, 1)
 shape = SubResource("CapsuleShape2D_fitw2")
 
 [node name="state_machine" type="Node" parent="." node_paths=PackedStringArray("starting_state")]

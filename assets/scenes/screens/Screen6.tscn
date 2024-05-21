@@ -1,11 +1,10 @@
-[gd_scene load_steps=7 format=3 uid="uid://q0qeie6i1jrs"]
+[gd_scene load_steps=6 format=3 uid="uid://q0qeie6i1jrs"]
 
 [ext_resource type="TileSet" uid="uid://dy7gudh215rfa" path="res://assets/tilesets/tile_atlas.tres" id="1_gi2mo"]
 [ext_resource type="PackedScene" uid="uid://c5fothc6h3nlb" path="res://assets/scenes/prefabs/player_respawner.tscn" id="2_qsxxg"]
 [ext_resource type="PackedScene" uid="uid://cfvxij5pedplm" path="res://assets/scenes/prefabs/death_zone.tscn" id="3_l2vev"]
 [ext_resource type="PackedScene" uid="uid://bvkltedpg1iws" path="res://assets/scenes/prefabs/transition_area.tscn" id="4_effoo"]
 [ext_resource type="PackedScene" uid="uid://bdpksvvhgfls5" path="res://assets/scenes/prefabs/moving_plattform.tscn" id="5_wy0t7"]
-[ext_resource type="PackedScene" uid="uid://di6xxbgxcv8wm" path="res://assets/scenes/prefabs/bounce_shroom.tscn" id="6_q08y2"]
 
 [node name="Scene6" type="Node2D"]
 
@@ -33,6 +32,3 @@ scale = Vector2(0.411853, 0.411853)
 [node name="MovingPlattform" parent="." instance=ExtResource("5_wy0t7")]
 position = Vector2(212, 326)
 scale = Vector2(0.556912, 0.556912)
-
-[node name="bounce_shroom" parent="." instance=ExtResource("6_q08y2")]
-position = Vector2(407, 238)
