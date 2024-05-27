@@ -15,7 +15,7 @@ func enter() -> void:
 
 
 func exit() -> void:
-	parent.was_on_floor = false
+	parent.has_jumped = false
 	parent.has_dashed = false
 	coyote_timer.start()
 

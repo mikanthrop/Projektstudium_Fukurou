@@ -13,15 +13,15 @@ func enter() -> void:
 
 
 func process_input(_event: InputEvent) -> Base_State: 
+	if Input.is_action_pressed("hold") and parent.is_wall_holdable():
+		print("state falling: is holding")
+		parent.snap_to_wall()
+		return wall_hold_state 
 	if Input.is_action_just_pressed("jump"):
 		if !coyote_timer.is_stopped(): 
 			print("remaining coyote time ",coyote_timer.time_left)
 			coyote_timer.stop()
 			return jump_state
-	if Input.is_action_pressed("hold") and parent.is_wall_holdable():
-		print("state falling: is holding")
-		parent.snap_to_wall()
-		return wall_hold_state 
 	if !parent.has_dashed and Input.is_action_just_pressed("dash"): 
 		return dash_state
 	return null

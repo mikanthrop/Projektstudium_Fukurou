@@ -26,7 +26,7 @@ extends CharacterBody2D
 
 #flags
 var facing_direction: int = 1  # Default direction is right 1, left would be -1
-var was_on_floor: bool = true
+var has_jumped: bool = true
 var has_dashed: bool = false
 
 # Get the gravity from the project settings to be synced with RigidBody nodes.

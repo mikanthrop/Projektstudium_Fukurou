@@ -53,6 +53,7 @@ func enter() -> void:
 	else: 
 		dash_direction = Vector2(parent.facing_direction, 0)
 
+
 func exit() -> void:
 	pass
 
@@ -90,9 +91,9 @@ func process_frame(_delta: float) -> Base_State:
 			return walk_state
 		if parent.is_on_floor() and !Input.is_action_pressed("move_left") or parent.is_on_floor() and !Input.is_action_pressed("move_right"):
 			return idle_state
-		#if Input.is_action_pressed("hold") and parent.is_wall_holdable():
-			#parent.snap_to_wall()
-			#return wall_hold_state
+		if Input.is_action_pressed("hold") and parent.is_wall_holdable():
+			parent.snap_to_wall()
+			return wall_hold_state
 		if !parent.is_on_floor() :
 			return fall_state
 		return idle_state

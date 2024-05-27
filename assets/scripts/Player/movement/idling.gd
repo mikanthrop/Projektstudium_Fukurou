@@ -11,7 +11,7 @@ func enter() -> void:
 	print("changed state to idling")
 	
 	# set jump and dash flags to false 
-	parent.was_on_floor = false
+	parent.has_jumped = false
 	parent.has_dashed = false
 	
 	# set parent velocity to zero

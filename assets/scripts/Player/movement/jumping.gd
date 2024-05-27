@@ -17,6 +17,9 @@ func enter() -> void:
 	parent.velocity.y = JUMP_VELOCITY
 	coyote_timer.stop()
 
+func exit() -> void: 
+	parent.has_jumped = true
+
 func process_input(_event: InputEvent) -> Base_State: 
 	# If the jump button is released, transition to falling state
 	if !Input.is_action_pressed("jump"):
@@ -25,9 +28,9 @@ func process_input(_event: InputEvent) -> Base_State:
 		return dash_state
 	if parent.is_on_wall() and Input.is_action_just_pressed("jump") and parent.is_wall_holdable():
 		return jump_state
-	#if Input.is_action_pressed("hold") and parent.is_wall_holdable():
-		#parent.snap_to_wall()
-		#return wall_hold_state
+	if Input.is_action_pressed("hold") and parent.is_wall_holdable():
+		parent.snap_to_wall()
+		return wall_hold_state
 	return null
 
 func _process_physics(delta: float) -> Base_State:
