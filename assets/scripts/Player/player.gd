@@ -12,6 +12,8 @@ extends CharacterBody2D
 @export var JUMP_TIME_TO_PEAK: float
 ## How long it takes the player to reach the ground after reaching the peak of the jump in seconds.
 @export var JUMP_TIME_TO_DESCENT: float
+## This will change how much of their horizontal momentum the player takes with them into the jumping state. 
+@export_range(0.0, 1.0) var MOMENTUM_MODIFIER: float 
 
 # dash variables
 ## How far the player dashes in pixels.
@@ -20,20 +22,28 @@ extends CharacterBody2D
 @export var DASH_SPEED: float
 
 # state machine
+## This holds the state_machine node that coordinates all states and the player's movement. [br]
+## It should be a child of the player node. 
 @export var state_machine: Node
+## This is the path to the AnimationPlayer Node that performs all animations of the player.
 @export var animation_player: AnimationPlayer
+## The path to a [RayCast2D] node that is used for the wall_hold ability. 
 @export var wall_hold_ray_cast: RayCast2D
 
 #flags
-var facing_direction: int = 1  # Default direction is right 1, left would be -1
+## The direction the player is currently facing.
+## Default direction is right 1, left would be -1
+var facing_direction: int = 1  
+## Is used to determine if the player can jump. 
 var has_jumped: bool = true
+## Is used to determine if the player can dash.
 var has_dashed: bool = false
 
-# Get the gravity from the project settings to be synced with RigidBody nodes.
+# Get the gravity from the project settings.
 var gravity = ProjectSettings.get_setting("physics/2d/default_gravity")
 
-# raycasts for wall holding
-var can_wall_hold = "can_wall_hold"
+# Variables for the wall_holding
+var can_wall_hold: String = "can_wall_hold"
 var raycast_length: int = 13
 
 
@@ -59,7 +69,7 @@ func _process(delta: float) -> void:
 	state_machine.process_frame(delta)
 
 
-# Function to change the facing direction
+## Function to change the player's facing direction
 func set_facing_direction(direction: int) -> void:
 	if direction < 0:
 		direction = -1
@@ -71,7 +81,7 @@ func set_facing_direction(direction: int) -> void:
 		push_warning("facing direction mustn't be zero!")
 
 
-# returns custom data from collided tile
+##Function that returns custom data from collided tile to determine if the player can wall hold on the tile.
 func is_wall_holdable() -> bool:
 	if wall_hold_ray_cast.is_colliding():
 		var collider: Object = wall_hold_ray_cast.get_collider()
@@ -88,7 +98,7 @@ func is_wall_holdable() -> bool:
 	print("wall isn't holdable")
 	return false
 
-
+## Function that moves the player towards the wall they are facing.
 func snap_to_wall() -> void:
 	while (!is_on_wall()):
 		velocity.x = 5*facing_direction
