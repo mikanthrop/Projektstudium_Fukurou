@@ -53,7 +53,6 @@ func _physics_process(delta: float) -> void:
 
 
 func _on_float_timer_timeout() -> void:
-	print("moving platform float timer timed out")
 	timer_started = false
 	movement_paused = false
 	if (path.get_progress_ratio() <= approximate_beginning):

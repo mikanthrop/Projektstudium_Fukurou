@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://brnqkdo1dmy27"
-path="res://.godot/imported/Tileset_Dornen.png-791d8fcc8dae353a081f9c14bc903919.ctex"
+path="res://.godot/imported/Tileset_Dornen.png-b2df912f899a327c49ed11da0e17ae08.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/scripts/Player/Tileset_Dornen.png"
-dest_files=["res://.godot/imported/Tileset_Dornen.png-791d8fcc8dae353a081f9c14bc903919.ctex"]
+source_file="res://assets/tilesets/Tileset_Dornen.png"
+dest_files=["res://.godot/imported/Tileset_Dornen.png-b2df912f899a327c49ed11da0e17ae08.ctex"]
 
 [params]
 
