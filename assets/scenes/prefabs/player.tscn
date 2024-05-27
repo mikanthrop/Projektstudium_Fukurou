@@ -1,4 +1,4 @@
-[gd_scene load_steps=14 format=3 uid="uid://dj1j6ywsgiml0"]
+[gd_scene load_steps=17 format=3 uid="uid://dj1j6ywsgiml0"]
 
 [ext_resource type="Script" path="res://assets/scripts/Player/player.gd" id="1_wr5ff"]
 [ext_resource type="Texture2D" uid="uid://2fxfrsqbmwb4" path="res://assets/sprites/Fuku_growing_beak.png" id="2_keg3q"]
@@ -9,6 +9,8 @@
 [ext_resource type="Script" path="res://assets/scripts/Player/movement/falling.gd" id="7_hs6ll"]
 [ext_resource type="Script" path="res://assets/scripts/Player/movement/dashing.gd" id="8_ecfh4"]
 [ext_resource type="Script" path="res://assets/scripts/Player/movement/wall_holding.gd" id="9_5g8pa"]
+[ext_resource type="Script" path="res://addons/phantom_camera/scripts/phantom_camera/phantom_camera_2d.gd" id="10_xyqtj"]
+[ext_resource type="Script" path="res://addons/phantom_camera/scripts/resources/tween_resource.gd" id="11_uqnrn"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_fitw2"]
 radius = 9.0
@@ -50,6 +52,12 @@ _data = {
 "RESET": SubResource("Animation_a5f1q"),
 "beak_growing": SubResource("Animation_axbbe")
 }
+
+[sub_resource type="Resource" id="Resource_scgcu"]
+script = ExtResource("11_uqnrn")
+duration = 1.0
+transition = 0
+ease = 2
 
 [node name="Player" type="CharacterBody2D" node_paths=PackedStringArray("state_machine", "animation_player", "wall_hold_ray_cast")]
 collision_mask = 2
@@ -156,12 +164,6 @@ one_shot = true
 wait_time = 0.5
 one_shot = true
 
-[node name="Camera2D" type="Camera2D" parent="."]
-zoom = Vector2(2.2, 2.2)
-limit_left = 0
-position_smoothing_enabled = true
-position_smoothing_speed = 3.0
-
 [node name="FukuAnimation" type="AnimationPlayer" parent="."]
 libraries = {
 "": SubResource("AnimationLibrary_aymea")
@@ -171,5 +173,19 @@ libraries = {
 target_position = Vector2(12, 0)
 collision_mask = 6
 collide_with_areas = true
+
+[node name="PhantomCamera2D" type="Node2D" parent="."]
+script = ExtResource("10_xyqtj")
+follow_mode = 5
+zoom = Vector2(2.2, 2.2)
+snap_to_pixel = true
+tween_resource = SubResource("Resource_scgcu")
+inactive_update_mode = 1
+follow_damping = true
+follow_damping_value = Vector2(0.01, 0.01)
+dead_zone_width = 0.066
+dead_zone_height = 0.328
+show_viewfinder_in_play = true
+draw_limits = true
 
 [connection signal="timeout" from="DashTimer" to="state_machine/dashing" method="_on_dash_timer_timeout"]

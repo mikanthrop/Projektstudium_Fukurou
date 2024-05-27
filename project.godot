@@ -15,9 +15,18 @@ run/main_scene="res://assets/scenes/screens/Part1.tscn"
 config/features=PackedStringArray("4.2", "Forward Plus")
 config/icon="res://icon.svg"
 
+[display]
+
+window/size/viewport_width=1200
+window/size/viewport_height=680
+
 [dotnet]
 
 project/assembly_name="Temp"
+
+[editor_plugins]
+
+enabled=PackedStringArray("res://addons/phantom_camera/plugin.cfg")
 
 [input]
 
