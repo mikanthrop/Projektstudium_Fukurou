@@ -1,13 +1,12 @@
-[gd_scene load_steps=21 format=3 uid="uid://dcmj68qtvrdqr"]
+[gd_scene load_steps=20 format=3 uid="uid://dcmj68qtvrdqr"]
 
 [ext_resource type="TileSet" uid="uid://dy7gudh215rfa" path="res://assets/tilesets/tile_atlas.tres" id="1_43hvp"]
 [ext_resource type="PackedScene" uid="uid://c5fothc6h3nlb" path="res://assets/scenes/prefabs/player_respawner.tscn" id="2_ixqbm"]
-[ext_resource type="PackedScene" uid="uid://cfvxij5pedplm" path="res://assets/scenes/prefabs/death_zone.tscn" id="3_tby7j"]
-[ext_resource type="PackedScene" uid="uid://di6xxbgxcv8wm" path="res://assets/scenes/prefabs/bounce_shroom.tscn" id="4_aomoq"]
+[ext_resource type="PackedScene" uid="uid://cfvxij5pedplm" path="res://assets/scenes/prefabs/Obstacles/death_zone.tscn" id="3_tby7j"]
+[ext_resource type="PackedScene" uid="uid://di6xxbgxcv8wm" path="res://assets/scenes/prefabs/Obstacles/bounce_shroom.tscn" id="4_aomoq"]
 [ext_resource type="PackedScene" uid="uid://bdpksvvhgfls5" path="res://assets/scenes/prefabs/moving_plattform.tscn" id="5_hwfug"]
 [ext_resource type="PackedScene" uid="uid://dj1j6ywsgiml0" path="res://assets/scenes/prefabs/player.tscn" id="6_58yuh"]
 [ext_resource type="PackedScene" uid="uid://bvkltedpg1iws" path="res://assets/scenes/prefabs/transition_area.tscn" id="7_ws4ar"]
-[ext_resource type="PackedScene" uid="uid://bxxptgw3h3655" path="res://assets/scenes/screens/test_screen.tscn" id="8_j4gqo"]
 [ext_resource type="PackedScene" uid="uid://dmsg1nbras84a" path="res://assets/scenes/screens/Screen1.tscn" id="9_nu1rj"]
 [ext_resource type="PackedScene" uid="uid://b6xnnmuctxihc" path="res://assets/scenes/screens/Screen2.tscn" id="10_hypel"]
 [ext_resource type="PackedScene" uid="uid://bartigubj3hru" path="res://assets/scenes/screens/Screen3.tscn" id="11_ov1f8"]
@@ -78,11 +77,9 @@ position_smoothing_speed = 3.0
 
 [node name="TransitionArea" parent="." instance=ExtResource("7_ws4ar")]
 position = Vector2(49, 249)
-scene_to_transition_to = ExtResource("8_j4gqo")
 
 [node name="TransitionArea2" parent="." instance=ExtResource("7_ws4ar")]
 position = Vector2(1126, 598)
-scene_to_transition_to = ExtResource("9_nu1rj")
 
 [node name="Screen1" parent="." instance=ExtResource("9_nu1rj")]
 position = Vector2(1277, 314)
