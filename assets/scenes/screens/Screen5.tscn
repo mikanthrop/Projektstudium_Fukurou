@@ -8,7 +8,6 @@
 [ext_resource type="PackedScene" uid="uid://q0qeie6i1jrs" path="res://assets/scenes/screens/Screen6.tscn" id="6_pl20b"]
 [ext_resource type="PackedScene" uid="uid://cfvxij5pedplm" path="res://assets/scenes/prefabs/death_zone.tscn" id="6_px55f"]
 [ext_resource type="PackedScene" uid="uid://di6xxbgxcv8wm" path="res://assets/scenes/prefabs/bounce_shroom.tscn" id="8_pbnh2"]
-parent of 5df6cbc (Asset: Variants of Thorns)
 
 [node name="Scene5" type="Node2D"]
 

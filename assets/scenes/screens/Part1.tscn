@@ -46,7 +46,6 @@ scale = Vector2(100, 5)
 
 [node name="bounce_shroom" parent="." instance=ExtResource("4_aomoq")]
 position = Vector2(850, 607)
-parent of 5df6cbc (Asset: Variants of Thorns)
 
 [node name="MovingPlattform" parent="." instance=ExtResource("5_hwfug")]
 position = Vector2(586, 643)
@@ -64,7 +63,6 @@ float_duration = 2.0
 
 [node name="Player" parent="." instance=ExtResource("6_58yuh")]
 position = Vector2(4296, 815)
-parent of 5df6cbc (Asset: Variants of Thorns)
 disable_mode = 2
 MOVE_SPEED = 200.0
 

@@ -4,7 +4,6 @@
 [ext_resource type="PackedScene" uid="uid://di6xxbgxcv8wm" path="res://assets/scenes/prefabs/bounce_shroom.tscn" id="2_xvp3n"]
 [ext_resource type="PackedScene" uid="uid://bdpksvvhgfls5" path="res://assets/scenes/prefabs/moving_plattform.tscn" id="3_n4dda"]
 [ext_resource type="Curve2D" uid="uid://dllb0uxhih5ky" path="res://assets/scenes/prefabs/leaf_in_wind.tres" id="4_5dy2h"]
-parent of 5df6cbc (Asset: Variants of Thorns)
 
 [node name="Screen12" type="Node2D"]
 
@@ -21,7 +20,6 @@ position = Vector2(344, 298)
 position = Vector2(169, 159)
 scale = Vector2(0.413492, 0.425503)
 curve = ExtResource("4_5dy2h")
-parent of 5df6cbc (Asset: Variants of Thorns)
 float_duration = 2.0
 
 [connection signal="body_entered" from="bounce_shroom" to="bounce_shroom" method="_on_body_entered"]
