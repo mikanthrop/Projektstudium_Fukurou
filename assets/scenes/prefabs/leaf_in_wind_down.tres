@@ -3,6 +3,6 @@
 [resource]
 bake_interval = 0.01
 _data = {
-"points": PackedVector2Array(0, 0, 0, 0, 7.29926, 9.7323, 0, 0, 0, 0, 7.29926, 399.024)
+"points": PackedVector2Array(0, 0, 0, 0, 4.83685, 0, 0, 0, 0, 0, 7.29926, 399.024)
 }
 point_count = 2

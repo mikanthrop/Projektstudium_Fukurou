@@ -111,13 +111,13 @@ position = Vector2(4638, 554)
 position = Vector2(5289, 428)
 
 [node name="Screen11" parent="." instance=ExtResource("17_ao5w6")]
-position = Vector2(7290, 656)
+position = Vector2(7456, 658)
 
 [node name="Screen9" parent="." instance=ExtResource("18_5nsm7")]
 position = Vector2(5956, 657)
 
 [node name="Screen10" parent="." instance=ExtResource("19_fnlwd")]
-position = Vector2(6622, 654)
+position = Vector2(6788, 656)
 
 [connection signal="body_entered" from="DeathZone" to="PlayerRespawner" method="_on_death_zone_body_entered"]
 [connection signal="body_exited" from="DeathZone" to="PlayerRespawner" method="_on_death_zone_body_exited"]
