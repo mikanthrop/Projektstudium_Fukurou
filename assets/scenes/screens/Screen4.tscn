@@ -3,8 +3,8 @@
 [ext_resource type="TileSet" uid="uid://dy7gudh215rfa" path="res://assets/tilesets/tile_atlas.tres" id="1_e7a2f"]
 [ext_resource type="PackedScene" uid="uid://c5fothc6h3nlb" path="res://assets/scenes/prefabs/player_respawner.tscn" id="2_gbssi"]
 [ext_resource type="PackedScene" uid="uid://bvkltedpg1iws" path="res://assets/scenes/prefabs/transition_area.tscn" id="3_i35ws"]
-[ext_resource type="PackedScene" uid="uid://beti07pdcl6uu" path="res://assets/scenes/screens/Screen5.tscn" id="4_0b6r1"]
-[ext_resource type="PackedScene" uid="uid://cfvxij5pedplm" path="res://assets/scenes/prefabs/death_zone.tscn" id="5_424y8"]
+[ext_resource type="PackedScene" uid="uid://cfvxij5pedplm" path="res://assets/scenes/prefabs/Obstacles/death_zone.tscn" id="5_424y8"]
+[ext_resource type="PackedScene" uid="uid://dj1j6ywsgiml0" path="res://assets/scenes/prefabs/player.tscn" id="5_d36mu"]
 
 [node name="Scene4" type="Node2D"]
 
@@ -20,8 +20,12 @@ position = Vector2(30, 153)
 [node name="TransitionArea" parent="." instance=ExtResource("3_i35ws")]
 position = Vector2(592, 1)
 scale = Vector2(3.28, 0.84)
-scene_to_transition_to = ExtResource("4_0b6r1")
 
 [node name="DeathZone" parent="." instance=ExtResource("5_424y8")]
 position = Vector2(440, 384)
 scale = Vector2(3.68, 1.56)
+
+[node name="Player" parent="." instance=ExtResource("5_d36mu")]
+position = Vector2(46, 156)
+
+[connection signal="body_entered" from="DeathZone" to="PlayerRespawner" method="_on_death_zone_body_entered"]
