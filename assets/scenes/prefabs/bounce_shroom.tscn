@@ -1,4 +1,4 @@
-[gd_scene load_steps=3 format=3 uid="uid://di6xxbgxcv8wm"]
+[gd_scene load_steps=3 format=3 uid="uid://eegfudxdjgfp"]
 
 [ext_resource type="Script" path="res://assets/scripts/GameLogic/bounce_shroom.gd" id="1_u5hrt"]
 
@@ -9,5 +9,3 @@ script = ExtResource("1_u5hrt")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("CircleShape2D_it6lx")
-
-[connection signal="body_entered" from="." to="." method="_on_body_entered"]

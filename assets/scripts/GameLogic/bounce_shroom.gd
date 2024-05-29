@@ -29,7 +29,7 @@ func calculate_jump_velocity(player: Player) -> float:
 	## upwards bounce
 	var jump_velocity: float;
 	if jump_direction == Vector2.UP:
-		jump_velocity = ((2.0 * player.JUMP_HEIGHT) / player.JUMP_TIME_TO_PEAK)
+		jump_velocity = ((2.0 * (player.JUMP_HEIGHT / player.JUMP_TIME_TO_PEAK)))
 		print("bounce shroom: ", jump_velocity)
 	
 	## downwards bounce
