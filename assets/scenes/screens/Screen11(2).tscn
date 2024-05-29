@@ -1,9 +1,11 @@
-[gd_scene load_steps=5 format=3 uid="uid://dov84uidcbr4q"]
+[gd_scene load_steps=7 format=3 uid="uid://dov84uidcbr4q"]
 
 [ext_resource type="TileSet" uid="uid://dy7gudh215rfa" path="res://assets/tilesets/tile_atlas.tres" id="1_2yisw"]
 [ext_resource type="Texture2D" uid="uid://dt48l3ngg5o4f" path="res://assets/sprites/NPCs/moth/moth_png.png" id="2_a8g5u"]
-[ext_resource type="PackedScene" uid="uid://cfvxij5pedplm" path="res://assets/scenes/prefabs/Obstacles/death_zone.tscn" id="3_l70m6"]
+[ext_resource type="PackedScene" uid="uid://cfvxij5pedplm" path="res://assets/scenes/prefabs/death_zone.tscn" id="3_l70m6"]
 [ext_resource type="PackedScene" uid="uid://bvkltedpg1iws" path="res://assets/scenes/prefabs/transition_area.tscn" id="4_awe10"]
+[ext_resource type="PackedScene" uid="uid://dnl6bn2fqo60m" path="res://assets/scenes/screens/Screen13.tscn" id="5_j7g5k"]
+[ext_resource type="PackedScene" uid="uid://cm2ydmqhp0d3n" path="res://assets/scenes/screens/Screen12.tscn" id="6_p2v3i"]
 
 [node name="Screen11(2)" type="Node2D"]
 
@@ -27,7 +29,9 @@ scale = Vector2(3.11936, 1)
 [node name="TransitionArea" parent="." instance=ExtResource("4_awe10")]
 position = Vector2(168, -6)
 scale = Vector2(5.8, 1)
+scene_to_transition_to = ExtResource("5_j7g5k")
 
 [node name="TransitionArea2" parent="." instance=ExtResource("4_awe10")]
 position = Vector2(803, 208)
 scale = Vector2(0.680723, 4.933)
+scene_to_transition_to = ExtResource("6_p2v3i")
