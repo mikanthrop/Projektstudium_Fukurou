@@ -1,20 +1,14 @@
-<<<<<<< Updated upstream
-[gd_scene load_steps=8 format=3 uid="uid://beti07pdcl6uu"]
-=======
 [gd_scene load_steps=9 format=3 uid="uid://dns55rupmkx8o"]
->>>>>>> Stashed changes
 
 [ext_resource type="TileSet" uid="uid://dy7gudh215rfa" path="res://assets/tilesets/tile_atlas.tres" id="1_we3yt"]
 [ext_resource type="PackedScene" uid="uid://c5fothc6h3nlb" path="res://assets/scenes/prefabs/player_respawner.tscn" id="2_6yiet"]
-[ext_resource type="Curve2D" uid="uid://c2lsugfusqx85" path="res://assets/scenes/prefabs/leaf_in_wind_down.tres" id="4_cebsc"]
 [ext_resource type="PackedScene" uid="uid://bdpksvvhgfls5" path="res://assets/scenes/prefabs/moving_plattform.tscn" id="4_qb5et"]
+[ext_resource type="Curve2D" uid="uid://dllb0uxhih5ky" path="res://assets/scenes/prefabs/leaf_in_wind.tres" id="5_k2qly"]
 [ext_resource type="PackedScene" uid="uid://bvkltedpg1iws" path="res://assets/scenes/prefabs/transition_area.tscn" id="5_qs1mn"]
-[ext_resource type="PackedScene" uid="uid://cfvxij5pedplm" path="res://assets/scenes/prefabs/Obstacles/death_zone.tscn" id="6_px55f"]
-<<<<<<< Updated upstream
-=======
+[ext_resource type="PackedScene" uid="uid://q0qeie6i1jrs" path="res://assets/scenes/screens/Screen6.tscn" id="6_pl20b"]
+[ext_resource type="PackedScene" uid="uid://cfvxij5pedplm" path="res://assets/scenes/prefabs/death_zone.tscn" id="6_px55f"]
+[ext_resource type="PackedScene" uid="uid://di6xxbgxcv8wm" path="res://assets/scenes/prefabs/bounce_shroom.tscn" id="8_pbnh2"]
 [ext_resource type="PackedScene" uid="uid://dj1j6ywsgiml0" path="res://assets/scenes/prefabs/player.tscn" id="8_cog7f"]
->>>>>>> Stashed changes
-[ext_resource type="PackedScene" uid="uid://di6xxbgxcv8wm" path="res://assets/scenes/prefabs/Obstacles/bounce_shroom.tscn" id="8_pbnh2"]
 
 [node name="Scene5" type="Node2D"]
 
@@ -28,14 +22,15 @@ layer_0/tile_data = PackedInt32Array(0, 65543, 1, 65536, 393223, 1, 131072, 6554
 position = Vector2(194, 265)
 
 [node name="MovingPlattform" parent="." instance=ExtResource("4_qb5et")]
-position = Vector2(368, 144)
+position = Vector2(369, 134)
 scale = Vector2(0.411003, 0.411003)
-curve = ExtResource("4_cebsc")
+curve = ExtResource("5_k2qly")
 speed = 0.5
 
 [node name="TransitionArea" parent="." instance=ExtResource("5_qs1mn")]
 position = Vector2(616, 336)
 scale = Vector2(-2.50306, 3.11879)
+scene_to_transition_to = ExtResource("6_pl20b")
 
 [node name="DeathZone" parent="." instance=ExtResource("6_px55f")]
 position = Vector2(390, 388)
