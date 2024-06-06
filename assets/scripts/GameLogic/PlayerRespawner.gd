@@ -9,7 +9,3 @@ func _on_death_zone_body_entered(body) -> void:
 		if player:
 			# Reset Player's transform
 			player.global_position = self.global_position
-
-
-func _on_bounce_shroom_body_entered(body):
-	pass # Replace with function body.
