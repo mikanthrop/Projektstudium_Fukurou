@@ -22,3 +22,4 @@ mono_crash.*.json
 .godot/editor/recent_dirs
 .godot/uid_cache.bin
 .godot/global_script_class_cache.cfg
+/.godot/editor

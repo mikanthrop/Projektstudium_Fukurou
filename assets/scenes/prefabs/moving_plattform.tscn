@@ -1,7 +1,9 @@
-[gd_scene load_steps=6 format=3 uid="uid://bdpksvvhgfls5"]
+[gd_scene load_steps=7 format=3 uid="uid://bdpksvvhgfls5"]
 
 [ext_resource type="Script" path="res://assets/scripts/GameLogic/moving_platform.gd" id="1_uy7js"]
-[ext_resource type="Texture2D" uid="uid://dqkvhqpb2e1ov" path="res://assets/sprites/leaf.png" id="2_01arx"]
+[ext_resource type="Texture2D" uid="uid://dqkvhqpb2e1ov" path="res://assets/sprites/leaf.png" id="2_oetdc"]
+
+[sub_resource type="PhysicsMaterial" id="PhysicsMaterial_0anxl"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ufsva"]
 size = Vector2(120.995, 10.95)
@@ -30,11 +32,13 @@ update_scale = false
 rotation = -1.5708
 collision_layer = 2
 collision_mask = 3
+physics_material_override = SubResource("PhysicsMaterial_0anxl")
 metadata/_edit_group_ = true
 
 [node name="Sprite2D" type="Sprite2D" parent="AnimatableBody2D"]
+texture_filter = 1
 rotation = 1.5708
-texture = ExtResource("2_01arx")
+texture = ExtResource("2_oetdc")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="AnimatableBody2D"]
 position = Vector2(-0.0696564, -9.50888)
@@ -50,5 +54,4 @@ libraries = {
 [node name="FloatTimer" type="Timer" parent="."]
 one_shot = true
 
-[connection signal="property_list_changed" from="." to="." method="_on_property_list_changed"]
 [connection signal="timeout" from="FloatTimer" to="." method="_on_float_timer_timeout"]

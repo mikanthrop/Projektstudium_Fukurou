@@ -1,12 +1,11 @@
-[gd_scene load_steps=8 format=3 uid="uid://beti07pdcl6uu"]
+[gd_scene load_steps=7 format=3 uid="uid://cryhf71r2yhf2"]
 
 [ext_resource type="TileSet" uid="uid://dy7gudh215rfa" path="res://assets/tilesets/tile_atlas.tres" id="1_we3yt"]
 [ext_resource type="PackedScene" uid="uid://c5fothc6h3nlb" path="res://assets/scenes/prefabs/player_respawner.tscn" id="2_6yiet"]
-[ext_resource type="Curve2D" uid="uid://c2lsugfusqx85" path="res://assets/scenes/prefabs/leaf_in_wind_down.tres" id="4_cebsc"]
 [ext_resource type="PackedScene" uid="uid://bdpksvvhgfls5" path="res://assets/scenes/prefabs/moving_plattform.tscn" id="4_qb5et"]
+[ext_resource type="Curve2D" uid="uid://dllb0uxhih5ky" path="res://assets/scenes/prefabs/leaf_in_wind.tres" id="5_k2qly"]
 [ext_resource type="PackedScene" uid="uid://bvkltedpg1iws" path="res://assets/scenes/prefabs/transition_area.tscn" id="5_qs1mn"]
 [ext_resource type="PackedScene" uid="uid://cfvxij5pedplm" path="res://assets/scenes/prefabs/Obstacles/death_zone.tscn" id="6_px55f"]
-[ext_resource type="PackedScene" uid="uid://dj1j6ywsgiml0" path="res://assets/scenes/prefabs/player.tscn" id="7_5rup5"]
 
 [node name="Scene5" type="Node2D"]
 
@@ -23,8 +22,7 @@ position = Vector2(194, 265)
 texture_filter = 1
 position = Vector2(368, 144)
 scale = Vector2(0.411003, 0.411003)
-curve = ExtResource("4_cebsc")
-speed = 0.5
+curve = ExtResource("5_k2qly")
 
 [node name="TransitionArea" parent="." instance=ExtResource("5_qs1mn")]
 position = Vector2(616, 336)
@@ -33,6 +31,3 @@ scale = Vector2(-2.50306, 3.11879)
 [node name="DeathZone" parent="." instance=ExtResource("6_px55f")]
 position = Vector2(390, 388)
 scale = Vector2(17.32, 2)
-
-[node name="Player" parent="." instance=ExtResource("7_5rup5")]
-position = Vector2(120, 176)

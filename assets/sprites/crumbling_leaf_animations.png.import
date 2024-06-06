@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://d2vu44mfuy5yn"
-path="res://.godot/imported/Tileset_Dornen.png-d686a876e6d89f0886f2d850e0706982.ctex"
+uid="uid://b126rpobf8c6"
+path="res://.godot/imported/crumbling_leaf_animations.png-3921cfc9d5413557ca6e51d989319717.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/tilesets/thorns/Tileset_Dornen.png"
-dest_files=["res://.godot/imported/Tileset_Dornen.png-d686a876e6d89f0886f2d850e0706982.ctex"]
+source_file="res://assets/sprites/crumbling_leaf_animations.png"
+dest_files=["res://.godot/imported/crumbling_leaf_animations.png-3921cfc9d5413557ca6e51d989319717.ctex"]
 
 [params]
 
