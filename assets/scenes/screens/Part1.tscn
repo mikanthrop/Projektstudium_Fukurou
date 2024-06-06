@@ -1,4 +1,4 @@
-[gd_scene load_steps=34 format=3 uid="uid://dcmj68qtvrdqr"]
+[gd_scene load_steps=35 format=3 uid="uid://dcmj68qtvrdqr"]
 
 [ext_resource type="TileSet" uid="uid://dy7gudh215rfa" path="res://assets/tilesets/tile_atlas.tres" id="1_43hvp"]
 [ext_resource type="Script" path="res://addons/phantom_camera/scripts/phantom_camera_host/phantom_camera_host.gd" id="1_au5e8"]
@@ -25,6 +25,7 @@
 [ext_resource type="PackedScene" uid="uid://dv3mi7i82687o" path="res://assets/scenes/screens/Screen11(1).tscn" id="17_ao5w6"]
 [ext_resource type="PackedScene" uid="uid://vcnt6jqa8xxt" path="res://assets/scenes/screens/Screen9.tscn" id="18_5nsm7"]
 [ext_resource type="PackedScene" uid="uid://buw2yiwtyq5py" path="res://assets/scenes/screens/Screen10.tscn" id="19_fnlwd"]
+[ext_resource type="PackedScene" uid="uid://dcghcjwvfgl6n" path="res://assets/scenes/prefabs/Obstacles/crumbling_platform.tscn" id="26_c1i3k"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_fitw2"]
 radius = 9.0
@@ -323,6 +324,9 @@ position = Vector2(5956, 657)
 
 [node name="Screen10" parent="." instance=ExtResource("19_fnlwd")]
 position = Vector2(6788, 656)
+
+[node name="CrumblingPlatform" parent="." instance=ExtResource("26_c1i3k")]
+position = Vector2(182, 159)
 
 [connection signal="timeout" from="Player/DashTimer" to="Player/state_machine/dashing" method="_on_dash_timer_timeout"]
 [connection signal="body_entered" from="Screen1/DeathZone" to="Screen1/PlayerRespawner" method="_on_death_zone_body_entered"]
