@@ -66,7 +66,7 @@ speed = 0.6
 float_duration = 2.0
 
 [node name="Player" parent="." instance=ExtResource("6_58yuh")]
-position = Vector2(3620, 385)
+position = Vector2(1029, 617)
 disable_mode = 2
 MOVE_SPEED = 200.0
 

@@ -20,6 +20,7 @@ layer_0/tile_data = PackedInt32Array(0, 65543, 1, 65536, 393223, 1, 131072, 6554
 position = Vector2(194, 265)
 
 [node name="MovingPlattform" parent="." instance=ExtResource("4_qb5et")]
+texture_filter = 1
 position = Vector2(368, 144)
 scale = Vector2(0.411003, 0.411003)
 curve = ExtResource("4_cebsc")
