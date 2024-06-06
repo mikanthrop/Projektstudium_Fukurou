@@ -166,12 +166,11 @@ scale = Vector2(0.88, 0.645)
 [node name="PlayerRespawner" parent="TestScreen" instance=ExtResource("3_5c8e2")]
 position = Vector2(91, 125)
 
-[node name="TransitionArea" parent="TestScreen" node_paths=PackedStringArray("screen_limit") instance=ExtResource("4_7kwha")]
+[node name="TransitionArea" parent="TestScreen" instance=ExtResource("4_7kwha")]
 texture_filter = 1
 position = Vector2(504, 364)
 scale = Vector2(2.48, 1)
 collision_layer = 2
-screen_limit = NodePath("../../Screen2/Screen2Limit/CollisionShape2D")
 
 [node name="Screen1Limit" type="Area2D" parent="TestScreen"]
 

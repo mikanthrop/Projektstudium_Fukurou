@@ -1,9 +1,8 @@
-[gd_scene load_steps=6 format=3 uid="uid://bartigubj3hru"]
+[gd_scene load_steps=5 format=3 uid="uid://bartigubj3hru"]
 
 [ext_resource type="TileSet" uid="uid://dy7gudh215rfa" path="res://assets/tilesets/tile_atlas.tres" id="1_boyhk"]
 [ext_resource type="PackedScene" uid="uid://c5fothc6h3nlb" path="res://assets/scenes/prefabs/player_respawner.tscn" id="2_lda1t"]
 [ext_resource type="PackedScene" uid="uid://bvkltedpg1iws" path="res://assets/scenes/prefabs/transition_area.tscn" id="3_ln5wl"]
-[ext_resource type="PackedScene" uid="uid://dj1j6ywsgiml0" path="res://assets/scenes/prefabs/player.tscn" id="4_52j4w"]
 [ext_resource type="PackedScene" uid="uid://cfvxij5pedplm" path="res://assets/scenes/prefabs/Obstacles/death_zone.tscn" id="5_chyk6"]
 
 [node name="Screen3" type="Node2D"]
@@ -20,9 +19,6 @@ position = Vector2(117, 201)
 [node name="TransitionArea" parent="." instance=ExtResource("3_ln5wl")]
 position = Vector2(641, 64)
 scale = Vector2(0.802668, 3.29865)
-
-[node name="Player" parent="." instance=ExtResource("4_52j4w")]
-position = Vector2(136, 205)
 
 [node name="DeathZone" parent="." instance=ExtResource("5_chyk6")]
 position = Vector2(356, 336)
