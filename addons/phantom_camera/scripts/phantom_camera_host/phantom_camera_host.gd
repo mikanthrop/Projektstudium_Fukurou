@@ -419,3 +419,7 @@ func get_trigger_pcam_tween() -> bool:
 	return _trigger_pcam_tween
 
 #endregion
+
+
+func _on_death_zone_body_entered(body):
+	pass # Replace with function body.
