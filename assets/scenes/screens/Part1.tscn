@@ -274,7 +274,6 @@ position = Vector2(120, 37)
 scale = Vector2(0.865, 0.499999)
 
 [node name="DeathZone2" parent="Screen1/CanvasGroup" instance=ExtResource("3_tby7j")]
-scale = Vector2(1, 1)
 
 [node name="DeathZone3" parent="Screen1/CanvasGroup" instance=ExtResource("3_tby7j")]
 position = Vector2(222.694, 452.926)
@@ -282,7 +281,6 @@ scale = Vector2(4.6927, 4.90836)
 
 [node name="DeathZone5" parent="Screen1/CanvasGroup" instance=ExtResource("3_tby7j")]
 position = Vector2(-55.4913, 64.0002)
-scale = Vector2(1, 1)
 
 [node name="DeathZone" parent="Screen1/CanvasGroup" instance=ExtResource("3_tby7j")]
 position = Vector2(73.9884, 468.001)
@@ -294,43 +292,33 @@ scale = Vector2(2.83514, 1.28)
 
 [node name="DeathZone4" parent="Screen1/CanvasGroup" instance=ExtResource("3_tby7j")]
 position = Vector2(147.977, 3.05176e-05)
-scale = Vector2(1, 1)
 
 [node name="DeathZone6" parent="Screen1/CanvasGroup" instance=ExtResource("3_tby7j")]
 position = Vector2(277.457, 96.0003)
-scale = Vector2(1, 1)
 
 [node name="DeathZone7" parent="Screen1/CanvasGroup" instance=ExtResource("3_tby7j")]
 position = Vector2(295.954, 160)
-scale = Vector2(1, 1)
 
 [node name="DeathZone8" parent="Screen1/CanvasGroup" instance=ExtResource("3_tby7j")]
 position = Vector2(314.451, 64.0002)
-scale = Vector2(1, 1)
 
 [node name="DeathZone9" parent="Screen1/CanvasGroup" instance=ExtResource("3_tby7j")]
 position = Vector2(351.445, 32.0001)
-scale = Vector2(1, 1)
 
 [node name="DeathZone10" parent="Screen1/CanvasGroup" instance=ExtResource("3_tby7j")]
 position = Vector2(332.948, 1.52588e-05)
-scale = Vector2(1, 1)
 
 [node name="DeathZone11" parent="Screen1/CanvasGroup" instance=ExtResource("3_tby7j")]
 position = Vector2(406.936, 64.0002)
-scale = Vector2(1, 1)
 
 [node name="DeathZone12" parent="Screen1/CanvasGroup" instance=ExtResource("3_tby7j")]
 position = Vector2(499.422, 332.001)
-scale = Vector2(1, 1)
 
 [node name="DeathZone13" parent="Screen1/CanvasGroup" instance=ExtResource("3_tby7j")]
 position = Vector2(480.925, 396.001)
-scale = Vector2(1, 1)
 
 [node name="DeathZone14" parent="Screen1/CanvasGroup" instance=ExtResource("3_tby7j")]
 position = Vector2(406.936, 492.001)
-scale = Vector2(1, 1)
 
 [node name="DeathZone15" parent="Screen1/CanvasGroup" instance=ExtResource("3_tby7j")]
 position = Vector2(194.22, -8.73115e-11)
@@ -350,7 +338,6 @@ scale = Vector2(1.92486, 1)
 
 [node name="DeathZone19" parent="Screen1/CanvasGroup" instance=ExtResource("3_tby7j")]
 position = Vector2(517.919, 192.001)
-scale = Vector2(1, 1)
 
 [node name="DeathZone23" parent="Screen1/CanvasGroup" instance=ExtResource("3_tby7j")]
 position = Vector2(240.462, 66.0002)
@@ -639,7 +626,7 @@ position = Vector2(400.5, 184)
 shape = SubResource("RectangleShape2D_k7ein")
 
 [node name="CrumblingPlatform" parent="." instance=ExtResource("26_c1i3k")]
-position = Vector2(182, 159)
+position = Vector2(173, 168)
 
 [connection signal="timeout" from="Player/DashTimer" to="Player/state_machine/dashing" method="_on_dash_timer_timeout"]
 [connection signal="body_entered" from="Screen1/CanvasGroup/DeathZone2" to="Screen1/PlayerRespawner" method="_on_death_zone_body_entered"]

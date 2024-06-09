@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bnrbjeennauoy"
-path="res://.godot/imported/bottomright50.png-450484a2221e5ded44c7b59fda26e9a4.ctex"
+uid="uid://de3714hkmkpw6"
+path="res://.godot/imported/Tileset_ground_leafs.png-50e5df2578eb99d89208314635cd545e.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/tilesets/ground/bottomright50.png"
-dest_files=["res://.godot/imported/bottomright50.png-450484a2221e5ded44c7b59fda26e9a4.ctex"]
+source_file="res://assets/tilesets/ground/Tileset_ground_leafs.png"
+dest_files=["res://.godot/imported/Tileset_ground_leafs.png-50e5df2578eb99d89208314635cd545e.ctex"]
 
 [params]
 
