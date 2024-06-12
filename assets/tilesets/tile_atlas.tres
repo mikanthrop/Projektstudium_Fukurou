@@ -10,9 +10,9 @@
 [ext_resource type="Texture2D" uid="uid://de3714hkmkpw6" path="res://assets/tilesets/ground/Tileset_ground_leafs.png" id="5_tpscg"]
 [ext_resource type="Texture2D" uid="uid://bgs8ybf8e3wfe" path="res://assets/tilesets/layout_tiles/Tileset_Baumstamm.png" id="6_47s50"]
 [ext_resource type="Texture2D" uid="uid://dlvxi7jndlgn" path="res://assets/tilesets/ground/Tileset_grass.png" id="9_k7mhb"]
-[ext_resource type="Texture2D" uid="uid://lq76ic2y5vd8" path="res://assets/tilesets/layout_tiles/Tileset_Stein.png" id="10_oiu1h"]
 [ext_resource type="Texture2D" uid="uid://b5qp6t6c2nmvu" path="res://assets/tilesets/leaves/Tileset_Laub_Test - Kopie.png" id="10_rwccw"]
 [ext_resource type="Texture2D" uid="uid://dsd53wkwak2dd" path="res://assets/tilesets/layout_tiles/Tileset_Wasser.png" id="11_5fh4l"]
+[ext_resource type="Texture2D" uid="uid://woaalp6oj7ui" path="res://assets/tilesets/stone/Tiileset_stone_2.png" id="12_td31w"]
 
 [sub_resource type="TileMapPattern" id="TileMapPattern_8yv73"]
 tile_data = PackedInt32Array(0, 196609, 1, 65536, 1, 0)
@@ -932,7 +932,7 @@ texture = ExtResource("10_rwccw")
 6:2/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_4htjs"]
-texture = ExtResource("10_oiu1h")
+texture = ExtResource("12_td31w")
 0:0/0 = 0
 0:0/0/physics_layer_0/linear_velocity = Vector2(0, 0)
 0:0/0/physics_layer_0/angular_velocity = 0.0
