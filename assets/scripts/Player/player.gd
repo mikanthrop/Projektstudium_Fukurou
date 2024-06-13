@@ -86,16 +86,18 @@ func is_wall_holdable() -> bool:
 	if wall_hold_ray_cast.is_colliding():
 		var collider: Object = wall_hold_ray_cast.get_collider()
 		if collider.is_class("TileMap"):
+			print("wall name: ", collider.name)
 			var collision_pos: Vector2i = wall_hold_ray_cast.get_collision_point()
 			var tile_pos : Vector2 = collider.local_to_map(collision_pos)
 			var tile_data: TileData = collider.get_cell_tile_data(0, tile_pos, true)
+			print("wall holdability: ", tile_pos, tile_data)
 			if tile_data == null:
 				print("wall isn't holdable")
 				return false
 			elif tile_data.get_custom_data(can_wall_hold):
 				print("wall is holdable")
 				return true 
-	print("wall isn't holdable")
+	print("not colliding with wall")
 	return false
 
 ## Function that moves the player towards the wall they are facing.
