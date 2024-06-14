@@ -1,7 +1,7 @@
 [gd_scene load_steps=11 format=3 uid="uid://dcghcjwvfgl6n"]
 
+[ext_resource type="Script" path="res://assets/scripts/GameLogic/crumbling_platform.gd" id="1_f0qy5"]
 [ext_resource type="Texture2D" uid="uid://b126rpobf8c6" path="res://assets/sprites/crumbling_leaf_animations.png" id="1_kytb5"]
-[ext_resource type="Script" path="res://assets/scenes/prefabs/Obstacles/crumbling_platform.gd" id="1_sk0xk"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ptvyu"]
 size = Vector2(24, 8)
@@ -9,7 +9,7 @@ size = Vector2(24, 8)
 [sub_resource type="PhysicsMaterial" id="PhysicsMaterial_ovq2k"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_3wvxy"]
-size = Vector2(32, 5)
+size = Vector2(32, 10)
 
 [sub_resource type="Animation" id="Animation_ppgvt"]
 length = 0.001
@@ -481,7 +481,7 @@ tracks/6/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 0,
-"values": [Vector2(0, -4.5)]
+"values": [Vector2(0, -3)]
 }
 tracks/7/type = "value"
 tracks/7/imported = false
@@ -532,7 +532,7 @@ _data = {
 disable_mode = 2
 collision_layer = 2
 collision_mask = 3
-script = ExtResource("1_sk0xk")
+script = ExtResource("1_f0qy5")
 
 [node name="CrumblingLeaf" type="Sprite2D" parent="."]
 texture_filter = 1
