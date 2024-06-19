@@ -1,7 +1,7 @@
-[gd_scene load_steps=17 format=3 uid="uid://dj1j6ywsgiml0"]
+[gd_scene load_steps=18 format=3 uid="uid://dj1j6ywsgiml0"]
 
 [ext_resource type="Script" path="res://assets/scripts/Player/player.gd" id="1_wr5ff"]
-[ext_resource type="Texture2D" uid="uid://2fxfrsqbmwb4" path="res://assets/sprites/Fuku_growing_beak.png" id="2_keg3q"]
+[ext_resource type="Texture2D" uid="uid://2fxfrsqbmwb4" path="res://assets/sprites/Fuku/Fuku_growing_beak.png" id="2_keg3q"]
 [ext_resource type="Script" path="res://assets/scripts/Player/movement/state_machine.gd" id="3_o2ahg"]
 [ext_resource type="Script" path="res://assets/scripts/Player/movement/idling.gd" id="4_fc6ut"]
 [ext_resource type="Script" path="res://assets/scripts/Player/movement/walking.gd" id="5_r8n51"]
@@ -47,10 +47,14 @@ tracks/0/keys = {
 "values": [0, 1, 2, 3]
 }
 
+[sub_resource type="Animation" id="Animation_pc8un"]
+resource_name = "dash"
+
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_aymea"]
 _data = {
 "RESET": SubResource("Animation_a5f1q"),
-"beak_growing": SubResource("Animation_axbbe")
+"beak_growing": SubResource("Animation_axbbe"),
+"dash": SubResource("Animation_pc8un")
 }
 
 [sub_resource type="Resource" id="Resource_scgcu"]
