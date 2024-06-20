@@ -27,6 +27,8 @@ extends CharacterBody2D
 @export var state_machine: Node
 ## This is the path to the AnimationPlayer Node that performs all animations of the player.
 @export var animation_player: AnimationPlayer
+## This is the path to the PlayerSprite Node and is needed for animations.
+@onready var sprite : Sprite2D = $PlayerSprite
 ## The path to a [RayCast2D] node that is used for the wall_hold ability. 
 @export var wall_hold_ray_cast: RayCast2D
 
@@ -74,9 +76,11 @@ func set_facing_direction(direction: int) -> void:
 	if direction < 0:
 		direction = -1
 		facing_direction = direction
+		sprite.set_flip_h(true)
 	elif direction > 0: 
 		direction = 1
 		facing_direction = direction
+		sprite.set_flip_h(false)
 	else: 
 		push_warning("facing direction mustn't be zero!")
 

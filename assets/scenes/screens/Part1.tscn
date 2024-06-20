@@ -1,21 +1,11 @@
-[gd_scene load_steps=43 format=3 uid="uid://dcmj68qtvrdqr"]
+[gd_scene load_steps=28 format=3 uid="uid://dcmj68qtvrdqr"]
 
 [ext_resource type="TileSet" uid="uid://dy7gudh215rfa" path="res://assets/tilesets/tile_atlas.tres" id="1_43hvp"]
 [ext_resource type="Script" path="res://addons/phantom_camera/scripts/phantom_camera_host/phantom_camera_host.gd" id="1_au5e8"]
-[ext_resource type="Script" path="res://assets/scripts/Player/player.gd" id="2_hgw0s"]
+[ext_resource type="PackedScene" uid="uid://dj1j6ywsgiml0" path="res://assets/scenes/prefabs/player.tscn" id="2_0pgje"]
 [ext_resource type="PackedScene" uid="uid://c5fothc6h3nlb" path="res://assets/scenes/prefabs/player_respawner.tscn" id="2_ixqbm"]
-[ext_resource type="Texture2D" uid="uid://2fxfrsqbmwb4" path="res://assets/sprites/Fuku/Fuku_growing_beak.png" id="3_a7v7b"]
 [ext_resource type="PackedScene" uid="uid://cfvxij5pedplm" path="res://assets/scenes/prefabs/Obstacles/death_zone.tscn" id="3_tby7j"]
-[ext_resource type="Script" path="res://assets/scripts/Player/movement/state_machine.gd" id="4_05bmr"]
-[ext_resource type="Script" path="res://assets/scripts/Player/movement/idling.gd" id="5_bcmck"]
-[ext_resource type="Script" path="res://assets/scripts/Player/movement/walking.gd" id="6_oo0aa"]
-[ext_resource type="Script" path="res://assets/scripts/Player/movement/jumping.gd" id="7_2re3f"]
 [ext_resource type="PackedScene" uid="uid://bvkltedpg1iws" path="res://assets/scenes/prefabs/transition_area.tscn" id="7_ws4ar"]
-[ext_resource type="Script" path="res://assets/scripts/Player/movement/falling.gd" id="8_3axmq"]
-[ext_resource type="Script" path="res://assets/scripts/Player/movement/dashing.gd" id="9_rfr85"]
-[ext_resource type="Script" path="res://assets/scripts/Player/movement/wall_holding.gd" id="10_wvnpy"]
-[ext_resource type="Script" path="res://addons/phantom_camera/scripts/phantom_camera/phantom_camera_2d.gd" id="11_jjjtr"]
-[ext_resource type="Script" path="res://addons/phantom_camera/scripts/resources/tween_resource.gd" id="12_qjdtx"]
 [ext_resource type="PackedScene" uid="uid://bdpksvvhgfls5" path="res://assets/scenes/prefabs/moving_plattform.tscn" id="18_8eqaq"]
 [ext_resource type="Curve2D" uid="uid://dllb0uxhih5ky" path="res://assets/scenes/prefabs/leaf_in_wind.tres" id="19_r7nix"]
 [ext_resource type="Texture2D" uid="uid://dqp38mp7mikxw" path="res://assets/sprites/NPCs/bats/blue/bat_blue.png" id="19_yhdj5"]
@@ -26,53 +16,6 @@
 [ext_resource type="Texture2D" uid="uid://dt48l3ngg5o4f" path="res://assets/sprites/NPCs/moth/moth_png.png" id="25_j1l1n"]
 [ext_resource type="PackedScene" uid="uid://dcghcjwvfgl6n" path="res://assets/scenes/prefabs/Obstacles/crumbling_platform.tscn" id="26_c1i3k"]
 [ext_resource type="PackedScene" uid="uid://kibk15ow5ys4" path="res://assets/scenes/prefabs/Obstacles/oneway_platform.tscn" id="26_davnn"]
-
-[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_fitw2"]
-radius = 9.0
-
-[sub_resource type="Animation" id="Animation_a5f1q"]
-length = 0.001
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("PlayerSprite:frame")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [0]
-}
-
-[sub_resource type="Animation" id="Animation_axbbe"]
-resource_name = "beak_growing"
-loop_mode = 1
-step = 0.2
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("PlayerSprite:frame")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.2, 0.4, 0.8),
-"transitions": PackedFloat32Array(1, 1, 1, 1),
-"update": 1,
-"values": [0, 1, 2, 3]
-}
-
-[sub_resource type="AnimationLibrary" id="AnimationLibrary_aymea"]
-_data = {
-"RESET": SubResource("Animation_a5f1q"),
-"beak_growing": SubResource("Animation_axbbe")
-}
-
-[sub_resource type="Resource" id="Resource_scgcu"]
-script = ExtResource("12_qjdtx")
-duration = 1.0
-transition = 0
-ease = 2
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_tl8ml"]
 size = Vector2(641, 367)
@@ -110,147 +53,14 @@ size = Vector2(801, 368)
 [node name="main" type="Node2D"]
 
 [node name="Camera2D" type="Camera2D" parent="."]
-position = Vector2(103, 124)
+position = Vector2(91, 125)
 zoom = Vector2(2.2, 2.2)
-limit_left = -1
-limit_top = 1
-limit_right = 640
-limit_bottom = 368
 
 [node name="PhantomCameraHost" type="Node" parent="Camera2D"]
 script = ExtResource("1_au5e8")
 
-[node name="Player" type="CharacterBody2D" parent="." node_paths=PackedStringArray("state_machine", "animation_player", "wall_hold_ray_cast")]
-position = Vector2(103, 124)
-disable_mode = 2
-collision_mask = 2
-platform_floor_layers = 2
-platform_wall_layers = 4
-script = ExtResource("2_hgw0s")
-MOVE_SPEED = 200.0
-JUMP_HEIGHT = 75.0
-JUMP_TIME_TO_PEAK = 0.34
-JUMP_TIME_TO_DESCENT = 0.17
-DASH_DISTANCE = 75.0
-DASH_SPEED = 500.0
-state_machine = NodePath("state_machine")
-animation_player = NodePath("FukuAnimation")
-wall_hold_ray_cast = NodePath("RayCast2D")
-metadata/_edit_group_ = true
-
-[node name="PlayerSprite" type="Sprite2D" parent="Player"]
-texture_filter = 1
-texture = ExtResource("3_a7v7b")
-hframes = 4
-
-[node name="CollisionShape" type="CollisionShape2D" parent="Player"]
-position = Vector2(0, 1)
-shape = SubResource("CapsuleShape2D_fitw2")
-
-[node name="state_machine" type="Node" parent="Player" node_paths=PackedStringArray("starting_state")]
-script = ExtResource("4_05bmr")
-starting_state = NodePath("idling")
-
-[node name="idling" type="Node" parent="Player/state_machine" node_paths=PackedStringArray("coyote_timer", "idle_state", "walk_state", "jump_state", "fall_state", "dash_state", "wall_hold_state", "parent")]
-script = ExtResource("5_bcmck")
-coyote_timer = NodePath("../../CoyoteTimer")
-idle_state = NodePath(".")
-walk_state = NodePath("../walking")
-jump_state = NodePath("../jumping")
-fall_state = NodePath("../falling")
-dash_state = NodePath("../dashing")
-wall_hold_state = NodePath("../wall_holding")
-parent = NodePath("../..")
-
-[node name="walking" type="Node" parent="Player/state_machine" node_paths=PackedStringArray("coyote_timer", "idle_state", "walk_state", "jump_state", "fall_state", "dash_state", "wall_hold_state", "parent")]
-script = ExtResource("6_oo0aa")
-coyote_timer = NodePath("../../CoyoteTimer")
-idle_state = NodePath("../idling")
-walk_state = NodePath(".")
-jump_state = NodePath("../jumping")
-fall_state = NodePath("../falling")
-dash_state = NodePath("../dashing")
-wall_hold_state = NodePath("../wall_holding")
-parent = NodePath("../..")
-
-[node name="jumping" type="Node" parent="Player/state_machine" node_paths=PackedStringArray("coyote_timer", "idle_state", "walk_state", "jump_state", "fall_state", "dash_state", "wall_hold_state", "parent")]
-script = ExtResource("7_2re3f")
-coyote_timer = NodePath("../../CoyoteTimer")
-idle_state = NodePath("../idling")
-walk_state = NodePath("../walking")
-jump_state = NodePath(".")
-fall_state = NodePath("../falling")
-dash_state = NodePath("../dashing")
-wall_hold_state = NodePath("../wall_holding")
-parent = NodePath("../..")
-
-[node name="falling" type="Node" parent="Player/state_machine" node_paths=PackedStringArray("coyote_timer", "idle_state", "walk_state", "jump_state", "fall_state", "dash_state", "wall_hold_state", "parent")]
-script = ExtResource("8_3axmq")
-coyote_timer = NodePath("../../CoyoteTimer")
-idle_state = NodePath("../idling")
-walk_state = NodePath("../walking")
-jump_state = NodePath("../jumping")
-fall_state = NodePath(".")
-dash_state = NodePath("../dashing")
-wall_hold_state = NodePath("../wall_holding")
-parent = NodePath("../..")
-
-[node name="dashing" type="Node" parent="Player/state_machine" node_paths=PackedStringArray("dash_timer", "idle_state", "walk_state", "jump_state", "fall_state", "dash_state", "wall_hold_state", "parent")]
-script = ExtResource("9_rfr85")
-dash_timer = NodePath("../../DashTimer")
-idle_state = NodePath("../idling")
-walk_state = NodePath("../walking")
-jump_state = NodePath("../jumping")
-fall_state = NodePath("../falling")
-dash_state = NodePath(".")
-wall_hold_state = NodePath("../wall_holding")
-parent = NodePath("../..")
-
-[node name="wall_holding" type="Node" parent="Player/state_machine" node_paths=PackedStringArray("idle_state", "walk_state", "jump_state", "fall_state", "dash_state", "wall_hold_state", "parent")]
-script = ExtResource("10_wvnpy")
-idle_state = NodePath("../idling")
-walk_state = NodePath("../walking")
-jump_state = NodePath("../jumping")
-fall_state = NodePath("../falling")
-dash_state = NodePath("../dashing")
-wall_hold_state = NodePath(".")
-parent = NodePath("../..")
-
-[node name="CoyoteTimer" type="Timer" parent="Player"]
-editor_description = "Timer that starts when Player transitions to falling state and has not yet jumped since they were last on the ground. For the duration, the Player can jump. 
-Used for smoother platforming as the Player won't fall from platforms unintendedly. "
-process_callback = 0
-wait_time = 0.2
-one_shot = true
-
-[node name="DashTimer" type="Timer" parent="Player"]
-wait_time = 0.5
-one_shot = true
-
-[node name="FukuAnimation" type="AnimationPlayer" parent="Player"]
-libraries = {
-"": SubResource("AnimationLibrary_aymea")
-}
-
-[node name="RayCast2D" type="RayCast2D" parent="Player"]
-target_position = Vector2(12, 0)
-collision_mask = 6
-collide_with_areas = true
-
-[node name="PhantomCamera2D" type="Node2D" parent="Player"]
-script = ExtResource("11_jjjtr")
-follow_mode = 5
-zoom = Vector2(2.2, 2.2)
-snap_to_pixel = true
-tween_resource = SubResource("Resource_scgcu")
-inactive_update_mode = 1
-follow_damping = true
-follow_damping_value = Vector2(0.01, 0.01)
-dead_zone_width = 0.066
-dead_zone_height = 0.328
-show_viewfinder_in_play = true
-draw_limits = true
-limit_target = NodePath("../../Screen1/CameraLimit/CollisionShape2D")
+[node name="Player" parent="." instance=ExtResource("2_0pgje")]
+position = Vector2(91, 125)
 
 [node name="TileMap1" type="TileMap" parent="."]
 texture_filter = 1
@@ -922,7 +732,6 @@ scale = Vector2(1.5873, -0.494176)
 position = Vector2(376, 165)
 scale = Vector2(2.3873, -0.494176)
 
-[connection signal="timeout" from="Player/DashTimer" to="Player/state_machine/dashing" method="_on_dash_timer_timeout"]
 [connection signal="body_entered" from="Screen1/CanvasGroup/DeathZone2" to="Screen1/PlayerRespawner" method="_on_death_zone_body_entered"]
 [connection signal="body_entered" from="Screen1/CanvasGroup/DeathZone3" to="Screen1/PlayerRespawner" method="_on_death_zone_body_entered"]
 [connection signal="body_entered" from="Screen1/CanvasGroup/DeathZone5" to="Screen1/PlayerRespawner" method="_on_death_zone_body_entered"]

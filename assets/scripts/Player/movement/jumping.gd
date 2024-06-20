@@ -64,3 +64,14 @@ func _process_physics(delta: float) -> Base_State:
 	
 	# do NOT return self - Player will launch straight into the air
 	return null
+
+
+func process_frame(_delta: float) -> Base_State:
+	# set animation_name 
+	animation_name = "jump"
+	#play animation
+	if parent.animation_player.has_animation(animation_name):
+		var anim_length : float = parent.animation_player.get_animation(animation_name).get_length()
+		var custom_speed : float = anim_length / parent.JUMP_TIME_TO_PEAK
+		parent.animation_player.play(animation_name, -1, custom_speed, false)
+	return null;

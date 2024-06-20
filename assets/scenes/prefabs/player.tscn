@@ -1,7 +1,7 @@
-[gd_scene load_steps=18 format=3 uid="uid://dj1j6ywsgiml0"]
+[gd_scene load_steps=23 format=3 uid="uid://dj1j6ywsgiml0"]
 
 [ext_resource type="Script" path="res://assets/scripts/Player/player.gd" id="1_wr5ff"]
-[ext_resource type="Texture2D" uid="uid://2fxfrsqbmwb4" path="res://assets/sprites/Fuku/Fuku_growing_beak.png" id="2_keg3q"]
+[ext_resource type="Texture2D" uid="uid://cbl4kcv1rqeco" path="res://assets/sprites/Fuku/Fuku_animation_spritesheet.png" id="2_u01et"]
 [ext_resource type="Script" path="res://assets/scripts/Player/movement/state_machine.gd" id="3_o2ahg"]
 [ext_resource type="Script" path="res://assets/scripts/Player/movement/idling.gd" id="4_fc6ut"]
 [ext_resource type="Script" path="res://assets/scripts/Player/movement/walking.gd" id="5_r8n51"]
@@ -29,6 +29,30 @@ tracks/0/keys = {
 "update": 1,
 "values": [0]
 }
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("PlayerSprite:frame_coords")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [Vector2i(0, 3)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("CollisionShape:position")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(-2.27, 1)]
+}
 
 [sub_resource type="Animation" id="Animation_axbbe"]
 resource_name = "beak_growing"
@@ -49,12 +73,125 @@ tracks/0/keys = {
 
 [sub_resource type="Animation" id="Animation_pc8un"]
 resource_name = "dash"
+length = 0.6
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("PlayerSprite:frame_coords")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.2, 0.4, 0.6),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 1,
+"values": [Vector2i(2, 3), Vector2i(5, 3), Vector2i(7, 3), Vector2i(8, 3)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("CollisionShape:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 1.2, 2),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector2(-2.27, 1), Vector2(1.015, 1), Vector2(-2.145, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_klkg4"]
+resource_name = "idle"
+length = 2.6
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("PlayerSprite:frame_coords")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.2, 0.4, 0.6, 0.8, 1, 1.2, 1.4, 1.6, 1.8, 2, 2.2, 2.4),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [Vector2i(0, 0), Vector2i(1, 0), Vector2i(2, 0), Vector2i(3, 0), Vector2i(4, 0), Vector2i(5, 0), Vector2i(6, 0), Vector2i(7, 0), Vector2i(8, 0), Vector2i(9, 0), Vector2i(10, 0), Vector2i(11, 0), Vector2i(12, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_krhr4"]
+resource_name = "walk"
+length = 0.6
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("PlayerSprite:frame_coords")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.2, 0.4),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 1,
+"values": [Vector2i(0, 1), Vector2i(1, 1), Vector2i(2, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_7nxy3"]
+resource_name = "jump"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("PlayerSprite:frame_coords")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.2, 0.4, 0.6),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 1,
+"values": [Vector2i(3, 2), Vector2i(7, 2), Vector2i(10, 2), Vector2i(11, 2)]
+}
+
+[sub_resource type="Animation" id="Animation_f1fw6"]
+resource_name = "fall"
+length = 0.8
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("PlayerSprite:frame_coords")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.2, 0.4, 0.6),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 1,
+"values": [Vector2i(11, 2), Vector2i(12, 2), Vector2i(13, 2), Vector2i(12, 2)]
+}
+
+[sub_resource type="Animation" id="Animation_qahvp"]
+resource_name = "wallhold"
+length = 0.8
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("PlayerSprite:frame_coords")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.2, 0.4, 0.6),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 1,
+"values": [Vector2i(0, 4), Vector2i(1, 4), Vector2i(2, 4), Vector2i(3, 4)]
+}
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_aymea"]
 _data = {
 "RESET": SubResource("Animation_a5f1q"),
 "beak_growing": SubResource("Animation_axbbe"),
-"dash": SubResource("Animation_pc8un")
+"dash": SubResource("Animation_pc8un"),
+"fall": SubResource("Animation_f1fw6"),
+"idle": SubResource("Animation_klkg4"),
+"jump": SubResource("Animation_7nxy3"),
+"walk": SubResource("Animation_krhr4"),
+"wallhold": SubResource("Animation_qahvp")
 }
 
 [sub_resource type="Resource" id="Resource_scgcu"]
@@ -81,11 +218,13 @@ metadata/_edit_group_ = true
 
 [node name="PlayerSprite" type="Sprite2D" parent="."]
 texture_filter = 1
-texture = ExtResource("2_keg3q")
-hframes = 4
+texture = ExtResource("2_u01et")
+hframes = 14
+vframes = 5
+frame = 42
 
 [node name="CollisionShape" type="CollisionShape2D" parent="."]
-position = Vector2(0, 1)
+position = Vector2(-2.27, 1)
 shape = SubResource("CapsuleShape2D_fitw2")
 
 [node name="state_machine" type="Node" parent="." node_paths=PackedStringArray("starting_state")]

@@ -13,9 +13,12 @@ var down: int = 1
 var left: int = -1
 var right: int = 1
 
+
+
 func enter() -> void:
 	super()
 	print("changed state to dashing")
+	
 	# set flag
 	parent.has_dashed = true
 	print("Dashflag set")
@@ -74,6 +77,16 @@ func _process_physics(_delta: float) -> Base_State:
 
 
 func process_frame(_delta: float) -> Base_State:
+	# set animation_name 
+	animation_name = "dash"
+	#play animation
+	if parent.animation_player.has_animation(animation_name):
+		var anim_length : float = parent.animation_player.get_animation(animation_name).get_length()
+		var custom_speed : float = anim_length / dash_timer_length
+		parent.animation_player.play(animation_name, -1, custom_speed, false)
+		# currently player can slide while holding dash in last frame of dash animation
+	
+	
 	# transitions to next state
 	if Input.is_action_pressed("jump"):
 		if parent.is_on_floor():
@@ -98,6 +111,8 @@ func process_frame(_delta: float) -> Base_State:
 			return fall_state
 		return idle_state
 	return null
+	
+	
 
 
 func _on_dash_timer_timeout() -> void:

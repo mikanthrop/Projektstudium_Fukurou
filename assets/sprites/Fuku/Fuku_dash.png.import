@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cieljqgtbe7am"
-path="res://.godot/imported/Fuku_png.png-8e456314bc8c7cbe6a90e4219bc6d97b.ctex"
+uid="uid://blqr6jhe3nd2u"
+path="res://.godot/imported/Fuku_dash.png-19feaacb66d416daa8ef64245ce9f38b.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/sprites/Fuku/Fuku_png.png"
-dest_files=["res://.godot/imported/Fuku_png.png-8e456314bc8c7cbe6a90e4219bc6d97b.ctex"]
+source_file="res://assets/sprites/Fuku/Fuku_dash.png"
+dest_files=["res://.godot/imported/Fuku_dash.png-19feaacb66d416daa8ef64245ce9f38b.ctex"]
 
 [params]
 

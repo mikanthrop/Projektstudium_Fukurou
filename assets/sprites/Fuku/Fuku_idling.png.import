@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cieljqgtbe7am"
-path="res://.godot/imported/Fuku_png.png-8e456314bc8c7cbe6a90e4219bc6d97b.ctex"
+uid="uid://c8ayuc6yfd1hk"
+path="res://.godot/imported/Fuku_idling.png-855a1823e52a8b7f45d75778fbba4f84.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/sprites/Fuku/Fuku_png.png"
-dest_files=["res://.godot/imported/Fuku_png.png-8e456314bc8c7cbe6a90e4219bc6d97b.ctex"]
+source_file="res://assets/sprites/Fuku/Fuku_idling.png"
+dest_files=["res://.godot/imported/Fuku_idling.png-855a1823e52a8b7f45d75778fbba4f84.ctex"]
 
 [params]
 

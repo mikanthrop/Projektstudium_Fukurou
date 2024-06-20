@@ -46,3 +46,11 @@ func _process_physics(delta: float) -> Base_State:
 		if parent.velocity.x == 0: 
 			return idle_state
 	return null 
+
+
+func process_frame(_delta: float) -> Base_State:
+	animation_name = "fall"
+	#play animation
+	if parent.animation_player.has_animation(animation_name):
+		parent.animation_player.play(animation_name)
+	return null;
