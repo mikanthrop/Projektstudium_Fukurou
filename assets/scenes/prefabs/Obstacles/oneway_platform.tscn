@@ -1,0 +1,19 @@
+[gd_scene load_steps=4 format=3 uid="uid://kibk15ow5ys4"]
+
+[ext_resource type="Texture2D" uid="uid://nw4ii62k06v8" path="res://assets/tilesets/oneway_platform_placeholder.png" id="1_q38eu"]
+
+[sub_resource type="PhysicsMaterial" id="PhysicsMaterial_03ncw"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_26mqj"]
+size = Vector2(42, 8)
+
+[node name="OnewayPlatform" type="StaticBody2D"]
+physics_material_override = SubResource("PhysicsMaterial_03ncw")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_26mqj")
+one_way_collision = true
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture_filter = 1
+texture = ExtResource("1_q38eu")
