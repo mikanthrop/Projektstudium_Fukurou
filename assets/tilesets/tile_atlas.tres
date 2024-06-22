@@ -889,6 +889,7 @@ texture = ExtResource("4_bl0aw")
 1:0/0/physics_layer_0/linear_velocity = Vector2(0, 0)
 1:0/0/physics_layer_0/angular_velocity = 0.0
 1:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -6.01041, 8, -5.98831, 8, 5.98831, -8, 6.03251)
+1:0/0/custom_data_0 = true
 2:0/0 = 0
 2:0/0/physics_layer_0/linear_velocity = Vector2(0, 0)
 2:0/0/physics_layer_0/angular_velocity = 0.0

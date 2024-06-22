@@ -6,7 +6,7 @@
 [ext_resource type="PackedScene" uid="uid://bvkltedpg1iws" path="res://assets/scenes/prefabs/transition_area.tscn" id="4_7kwha"]
 [ext_resource type="Script" path="res://addons/phantom_camera/scripts/phantom_camera_host/phantom_camera_host.gd" id="5_c6brx"]
 [ext_resource type="Script" path="res://assets/scripts/Player/player.gd" id="6_0w4mn"]
-[ext_resource type="Texture2D" uid="uid://2fxfrsqbmwb4" path="res://assets/sprites/Fuku_growing_beak.png" id="7_7lw4j"]
+[ext_resource type="Texture2D" uid="uid://2fxfrsqbmwb4" path="res://assets/sprites/Fuku/Fuku_growing_beak.png" id="7_7lw4j"]
 [ext_resource type="PackedScene" uid="uid://b6xnnmuctxihc" path="res://assets/scenes/screens/Screen2.tscn" id="7_445lr"]
 [ext_resource type="Script" path="res://assets/scripts/Player/movement/state_machine.gd" id="8_wt6dq"]
 [ext_resource type="Script" path="res://assets/scripts/Player/movement/idling.gd" id="9_22h04"]

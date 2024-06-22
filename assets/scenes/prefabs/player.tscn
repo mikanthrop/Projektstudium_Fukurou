@@ -328,7 +328,6 @@ follow_damping = true
 follow_damping_value = Vector2(0.01, 0.01)
 dead_zone_width = 0.066
 dead_zone_height = 0.328
-show_viewfinder_in_play = true
 draw_limits = true
 
 [connection signal="timeout" from="DashTimer" to="state_machine/dashing" method="_on_dash_timer_timeout"]

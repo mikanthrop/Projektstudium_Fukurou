@@ -2,7 +2,7 @@
 
 [ext_resource type="TileSet" uid="uid://dy7gudh215rfa" path="res://assets/tilesets/tile_atlas.tres" id="1_ytpdx"]
 [ext_resource type="PackedScene" uid="uid://c5fothc6h3nlb" path="res://assets/scenes/prefabs/player_respawner.tscn" id="2_25one"]
-[ext_resource type="PackedScene" uid="uid://cfvxij5pedplm" path="res://assets/scenes/prefabs/death_zone.tscn" id="6_qg3gl"]
+[ext_resource type="PackedScene" uid="uid://cfvxij5pedplm" path="res://assets/scenes/prefabs/Obstacles/death_zone.tscn" id="6_qg3gl"]
 [ext_resource type="Texture2D" uid="uid://dt48l3ngg5o4f" path="res://assets/sprites/NPCs/moth/moth_png.png" id="6_uh01f"]
 
 [node name="Screen11" type="Node2D"]
