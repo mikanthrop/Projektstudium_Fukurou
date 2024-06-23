@@ -6,11 +6,12 @@ class_name Jump_State
 
 @onready var JUMP_VELOCITY: float = (-1.0) * ((2.0 * parent.JUMP_HEIGHT) / parent.JUMP_TIME_TO_PEAK) 
 @onready var JUMP_GRAVITY: float = (-1.0) * ((-2.0 * parent.JUMP_HEIGHT) / (parent.JUMP_TIME_TO_PEAK * parent.JUMP_TIME_TO_PEAK))
-
+@onready var jumpOne =$jumpOne
 var jump_height_timer: float = 0.0
 
 func enter() -> void: 
 	super()
+	jumpOne.play()
 	print("changed state to jumping")
 	print("JUMP_VELOCITY: ", JUMP_VELOCITY, " | JUMP_GRAVITY: ", JUMP_GRAVITY)
 	# set player velocity to calculated jump velocity

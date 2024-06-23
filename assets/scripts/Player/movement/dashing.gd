@@ -6,7 +6,7 @@ class_name Dash_State
 
 @onready var dash_speed_modifier: float = parent.DASH_SPEED * parent.MOVE_SPEED
 @onready var dash_timer_length: float = parent.DASH_DISTANCE / parent.DASH_SPEED
-
+@onready var dashSound= $dashSound
 var dash_direction: Vector2
 var up: int = -1
 var down: int = 1
@@ -15,6 +15,7 @@ var right: int = 1
 
 func enter() -> void:
 	super()
+	dashSound.play()
 	print("changed state to dashing")
 	# set flag
 	parent.has_dashed = true
