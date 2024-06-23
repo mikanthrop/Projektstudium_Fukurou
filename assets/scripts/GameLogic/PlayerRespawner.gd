@@ -1,29 +1,33 @@
 extends Node2D
 
 var player_scene : Resource = preload("res://assets/scenes/prefabs/player.tscn")
-var wait_duration : float = 1.0
+var animation_name : String = "despawn"
 
 func _on_death_zone_body_entered(body) -> void:
+	body.set_process_unhandled_input(false)
+	body.set_physics_process(false)
+	body.set_process(false)
 	
 	if (body.name == "Player"):
+		
 		var player: Player = owner.get_node_or_null(NodePath(body.name))
 		
-		if player:
-			# make player invisible
-			var children : Array[Node] = player.get_children()
-			var sprite : Sprite2D
-			for child in children: 
-				if child.name == "PlayerSprite":
-					sprite = child
-					break
-			sprite.visible = false
-			player.set_process(false)
-			player.set_process_unhandled_input(false)
+		# Disable player movement
+		# search for animation player
+		var children : Array[Node] = player.get_children()
+		var animation_player : AnimationPlayer
+		for child in children: 
+			if child.name == "FukuAnimation":
+				animation_player = child
+				break
+		if animation_player != AnimationPlayer:
+			# player despawn animation
+			print("Animation player playing death animation")
+			animation_player.play(animation_name)
 			# wait for a specific amount of time
-			await get_tree().create_timer(wait_duration).timeout
-			# make player visible again
-			sprite.visible = true
-			player.set_process(true)
-			player.set_process_unhandled_input(true)
-			# Reset Player's transform
+			await animation_player.animation_finished
+			# Reset Player's transform and enable player movement
 			player.global_position = self.global_position
+			body.set_process(true)
+			body.set_physics_process(true)
+			body.set_process_unhandled_input(true)
