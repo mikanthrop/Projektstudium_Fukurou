@@ -7,8 +7,7 @@ class_name Jump_State
 
 @onready var JUMP_VELOCITY: float = (-1.0) * ((2.0 * parent.JUMP_HEIGHT) / parent.JUMP_TIME_TO_PEAK) 
 @onready var JUMP_GRAVITY: float = (-1.0) * ((-2.0 * parent.JUMP_HEIGHT) / (parent.JUMP_TIME_TO_PEAK * parent.JUMP_TIME_TO_PEAK))
-
-## Number that will be added with delta to determine when the player reached the peak of their jump.
+@onready var jumpOne =$jumpOne
 var jump_height_timer: float = 0.0
 ## Number that stores the initial velocity the player had when entering the jumping state. 
 ## Is used to add a portion of the momentum to the jump while in the air. 
@@ -17,6 +16,7 @@ var additional_horizontal_velocity: float = 0.0
 
 func enter() -> void: 
 	super()
+	jumpOne.play()
 	print("changed state to jumping")
 	print("JUMP_VELOCITY: ", JUMP_VELOCITY, " | JUMP_GRAVITY: ", JUMP_GRAVITY)
 	# set player velocity to calculated jump velocity
