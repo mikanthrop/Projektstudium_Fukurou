@@ -60,10 +60,10 @@ func _physics_process(delta: float) -> void:
 	if (not movement_paused and not loop):
 		path.set_progress_ratio(path.get_progress_ratio() + speed * delta)
 	# let player fall off the oneshot platform at the end of its curve 
-	if (movement_paused and not loop and path.get_progress_ratio() > approximate_ending):
-		await timer.timeout
-		collision_shape.set_deferred("disabled", true)
-		collision_shape.set_deferred("disabled", false)
+	#if (movement_paused and not loop and path.get_progress_ratio() > approximate_ending):
+		#await timer.timeout
+		#collision_shape.set_deferred("disabled", true)
+		#collision_shape.set_deferred("disabled", false)
 
 
 func _on_float_timer_timeout() -> void:

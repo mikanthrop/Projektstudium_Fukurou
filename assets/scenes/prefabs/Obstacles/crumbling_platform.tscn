@@ -4,7 +4,7 @@
 [ext_resource type="Texture2D" uid="uid://b126rpobf8c6" path="res://assets/sprites/crumbling_leaf_animations.png" id="1_kytb5"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ptvyu"]
-size = Vector2(24, 8)
+size = Vector2(32, 8)
 
 [sub_resource type="PhysicsMaterial" id="PhysicsMaterial_ovq2k"]
 
@@ -550,8 +550,7 @@ disabled = true
 
 [node name="StaticBody" type="StaticBody2D" parent="."]
 disable_mode = 2
-collision_layer = 3
-collision_mask = 3
+collision_layer = 2
 physics_material_override = SubResource("PhysicsMaterial_ovq2k")
 
 [node name="PlattformCollisionShape" type="CollisionShape2D" parent="StaticBody"]

@@ -2,16 +2,17 @@
 
 [ext_resource type="Texture2D" uid="uid://cu3xoej65g883" path="res://assets/tilesets/oneway_platform.png" id="1_5tmgk"]
 
-[sub_resource type="PhysicsMaterial" id="PhysicsMaterial_03ncw"]
+[sub_resource type="PhysicsMaterial" id="PhysicsMaterial_hcy0h"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_26mqj"]
-size = Vector2(64, 13)
+size = Vector2(64, 17)
 
 [node name="OnewayPlatform" type="StaticBody2D"]
-physics_material_override = SubResource("PhysicsMaterial_03ncw")
+collision_layer = 2
+physics_material_override = SubResource("PhysicsMaterial_hcy0h")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(0, 0.5)
+position = Vector2(0, 5.5)
 shape = SubResource("RectangleShape2D_26mqj")
 one_way_collision = true
 
