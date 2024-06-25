@@ -1,12 +1,12 @@
 [gd_scene load_steps=7 format=3 uid="uid://bdpksvvhgfls5"]
 
 [ext_resource type="Script" path="res://assets/scripts/GameLogic/moving_platform.gd" id="1_uy7js"]
-[ext_resource type="Texture2D" uid="uid://dqkvhqpb2e1ov" path="res://assets/sprites/leaf.png" id="2_oetdc"]
+[ext_resource type="Texture2D" uid="uid://ckbe63cbo00b6" path="res://assets/sprites/leaf_3tiles.png" id="2_3qcey"]
 
 [sub_resource type="PhysicsMaterial" id="PhysicsMaterial_0anxl"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ufsva"]
-size = Vector2(120.995, 10.95)
+size = Vector2(120.995, 19.475)
 
 [sub_resource type="Animation" id="Animation_v8q80"]
 resource_name = "move"
@@ -36,12 +36,15 @@ metadata/_edit_group_ = true
 
 [node name="Sprite2D" type="Sprite2D" parent="AnimatableBody2D"]
 texture_filter = 1
+position = Vector2(1.81899e-12, 0)
 rotation = 1.5708
-texture = ExtResource("2_oetdc")
+scale = Vector2(2.39843, 2.39843)
+texture = ExtResource("2_3qcey")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="AnimatableBody2D"]
-position = Vector2(-0.0696564, -9.50888)
+position = Vector2(-2, -7.23998e-06)
 rotation = 1.5708
+scale = Vector2(1, 1.28)
 shape = SubResource("RectangleShape2D_ufsva")
 one_way_collision = true
 
