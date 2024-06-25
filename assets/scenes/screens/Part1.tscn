@@ -1,4 +1,4 @@
-[gd_scene load_steps=28 format=3 uid="uid://dcmj68qtvrdqr"]
+[gd_scene load_steps=30 format=3 uid="uid://dcmj68qtvrdqr"]
 
 [ext_resource type="TileSet" uid="uid://dy7gudh215rfa" path="res://assets/tilesets/tile_atlas.tres" id="1_43hvp"]
 [ext_resource type="Script" path="res://addons/phantom_camera/scripts/phantom_camera_host/phantom_camera_host.gd" id="1_au5e8"]
@@ -6,7 +6,9 @@
 [ext_resource type="PackedScene" uid="uid://c5fothc6h3nlb" path="res://assets/scenes/prefabs/player_respawner.tscn" id="2_ixqbm"]
 [ext_resource type="PackedScene" uid="uid://cfvxij5pedplm" path="res://assets/scenes/prefabs/Obstacles/death_zone.tscn" id="3_tby7j"]
 [ext_resource type="PackedScene" uid="uid://bvkltedpg1iws" path="res://assets/scenes/prefabs/transition_area.tscn" id="7_ws4ar"]
-[ext_resource type="PackedScene" uid="uid://bdpksvvhgfls5" path="res://assets/scenes/prefabs/moving_plattform.tscn" id="18_8eqaq"]
+[ext_resource type="PackedScene" uid="uid://t7heo3lddek5" path="res://assets/scenes/prefabs/moving_plattform_small.tscn" id="10_iaeux"]
+[ext_resource type="Curve2D" uid="uid://c2lsugfusqx85" path="res://assets/scenes/prefabs/leaf_in_wind_down.tres" id="15_vptje"]
+[ext_resource type="PackedScene" uid="uid://bdpksvvhgfls5" path="res://assets/scenes/prefabs/moving_plattform_big.tscn" id="18_8eqaq"]
 [ext_resource type="Curve2D" uid="uid://dllb0uxhih5ky" path="res://assets/scenes/prefabs/leaf_in_wind.tres" id="19_r7nix"]
 [ext_resource type="Texture2D" uid="uid://dqp38mp7mikxw" path="res://assets/sprites/NPCs/bats/blue/bat_blue.png" id="19_yhdj5"]
 [ext_resource type="Texture2D" uid="uid://m87ia50ppk00" path="res://assets/sprites/NPCs/bats/green/bat_green.png" id="20_a4ykd"]
@@ -53,14 +55,14 @@ size = Vector2(801, 368)
 [node name="main" type="Node2D"]
 
 [node name="Camera2D" type="Camera2D" parent="."]
-position = Vector2(91, 125)
+position = Vector2(4114, 489)
 zoom = Vector2(2.2, 2.2)
 
 [node name="PhantomCameraHost" type="Node" parent="Camera2D"]
 script = ExtResource("1_au5e8")
 
 [node name="Player" parent="." instance=ExtResource("2_0pgje")]
-position = Vector2(91, 125)
+position = Vector2(4114, 489)
 
 [node name="TileMap1" type="TileMap" parent="."]
 texture_filter = 1
@@ -399,7 +401,7 @@ this_screen_limit = NodePath("../CollisionShape2D")
 next_screen_limit = NodePath("../../Screen7/CollisionShape2D")
 
 [node name="MovingPlattform" parent="Screen6" instance=ExtResource("18_8eqaq")]
-position = Vector2(212, 326)
+position = Vector2(210, 326)
 scale = Vector2(0.556912, 0.556912)
 
 [node name="CrumblingPlatform2" parent="Screen6" instance=ExtResource("26_c1i3k")]
@@ -419,6 +421,7 @@ position = Vector2(96, 333)
 scale = Vector2(1.44414, 1.40404)
 
 [node name="CanvasGroup" type="CanvasGroup" parent="Screen6"]
+position = Vector2(-1, 0)
 
 [node name="DeathZone" parent="Screen6/CanvasGroup" instance=ExtResource("3_tby7j")]
 position = Vector2(276, 388)
@@ -560,6 +563,18 @@ scale = Vector2(0.633647, 5.84)
 this_screen_limit = NodePath("../CollisionShape2D")
 next_screen_limit = NodePath("../../Screen9/CollisionShape2D")
 
+[node name="MovingPlattform" parent="Screen8" instance=ExtResource("18_8eqaq")]
+position = Vector2(298, 407)
+scale = Vector2(0.615, 0.615)
+curve = ExtResource("15_vptje")
+speed = 1.9
+float_duration = 2.0
+loop = false
+
+[node name="MovingPlattform2" parent="Screen8" instance=ExtResource("10_iaeux")]
+position = Vector2(431, 206)
+scale = Vector2(0.42655, 0.42655)
+
 [node name="Screen9" type="Node2D" parent="."]
 position = Vector2(4608, 353)
 
@@ -641,6 +656,10 @@ position = Vector2(328, 283)
 rotation = -1.57079
 scale = Vector2(0.512631, 0.827835)
 
+[node name="DeathZone2" parent="Screen10" instance=ExtResource("3_tby7j")]
+position = Vector2(1336, 367)
+scale = Vector2(3.77336, -1.6349)
+
 [node name="Screen11" type="Node2D" parent="."]
 position = Vector2(6064, 286)
 
@@ -665,8 +684,8 @@ scale = Vector2(-1.29311, -1.20127)
 texture = ExtResource("25_j1l1n")
 
 [node name="DeathZone" parent="Screen11" instance=ExtResource("3_tby7j")]
-position = Vector2(696, 383)
-scale = Vector2(3.77336, -1.6349)
+position = Vector2(-315, 448)
+scale = Vector2(24.5734, -1.6349)
 
 [node name="CrumblingPlatform" parent="Screen11" instance=ExtResource("26_c1i3k")]
 position = Vector2(296, 238)
@@ -804,7 +823,8 @@ scale = Vector2(2.3873, -0.494176)
 [connection signal="body_entered" from="Screen10/CanvasGroup/DeathZone4" to="Screen10/PlayerRespawner" method="_on_death_zone_body_entered"]
 [connection signal="body_entered" from="Screen10/CanvasGroup/DeathZone5" to="Screen10/PlayerRespawner" method="_on_death_zone_body_entered"]
 [connection signal="body_entered" from="Screen10/CanvasGroup/DeathZone6" to="Screen10/PlayerRespawner" method="_on_death_zone_body_entered"]
-[connection signal="body_entered" from="Screen11/DeathZone" to="Screen11/PlayerRespawner" method="_on_death_zone_body_entered"]
+[connection signal="body_entered" from="Screen10/DeathZone2" to="Screen11/PlayerRespawner" method="_on_death_zone_body_entered"]
+[connection signal="body_entered" from="Screen11/DeathZone" to="Screen10/PlayerRespawner" method="_on_death_zone_body_entered"]
 [connection signal="body_entered" from="Screen11/CanvasGroup/DeathZone2" to="Screen11/PlayerRespawner" method="_on_death_zone_body_entered"]
 [connection signal="body_entered" from="Screen11/CanvasGroup/DeathZone3" to="Screen11/PlayerRespawner" method="_on_death_zone_body_entered"]
 [connection signal="body_entered" from="Screen11/CanvasGroup/DeathZone4" to="Screen11/PlayerRespawner" method="_on_death_zone_body_entered"]

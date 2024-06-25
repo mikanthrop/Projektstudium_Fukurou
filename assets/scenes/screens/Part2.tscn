@@ -8,7 +8,7 @@
 [ext_resource type="PackedScene" uid="uid://bvkltedpg1iws" path="res://assets/scenes/prefabs/transition_area.tscn" id="4_6c0lt"]
 [ext_resource type="PackedScene" uid="uid://dcghcjwvfgl6n" path="res://assets/scenes/prefabs/Obstacles/crumbling_platform.tscn" id="5_juxqt"]
 [ext_resource type="PackedScene" uid="uid://di6xxbgxcv8wm" path="res://assets/scenes/prefabs/Obstacles/bounce_shroom.tscn" id="5_pfj35"]
-[ext_resource type="PackedScene" uid="uid://bdpksvvhgfls5" path="res://assets/scenes/prefabs/moving_plattform.tscn" id="6_d5yo7"]
+[ext_resource type="PackedScene" uid="uid://bdpksvvhgfls5" path="res://assets/scenes/prefabs/moving_plattform_big.tscn" id="6_d5yo7"]
 [ext_resource type="Curve2D" uid="uid://dllb0uxhih5ky" path="res://assets/scenes/prefabs/leaf_in_wind.tres" id="7_o737c"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_5f1cb"]
