@@ -7,14 +7,18 @@ extends Area2D
 ## please only use vector2 (0,-1) or (0,1). Default ist upwards
 @export var jump_direction: Vector2 = Vector2.UP
 
+@onready var animation_player: AnimationPlayer = $AnimationPlayer
+
+var animation_name: StringName = "bounce"
+
 
 func _on_body_entered(body):
 	## check if body entered is player (via name)
-	if (body.name == "Player"):
+	if body is Player:
 		var player: Player = owner.get_node_or_null(NodePath(body.name))
 		
-	
 		if player: 
+			animation_player.play(animation_name)
 			## instantiate y coordinate of jump_velocity
 			var jump_velocity: float = calculate_jump_velocity(player)
 			
