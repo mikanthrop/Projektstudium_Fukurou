@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bay8heeswdm11"
-path="res://.godot/imported/leaf_2tiles.png-5d6cd7d80861b7c0bf1accc315e70730.ctex"
+uid="uid://dqkvhqpb2e1ov"
+path="res://.godot/imported/leaf.png-d8d53b56762fa8b0dec9089011516eba.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/sprites/leaf_2tiles.png"
-dest_files=["res://.godot/imported/leaf_2tiles.png-5d6cd7d80861b7c0bf1accc315e70730.ctex"]
+source_file="res://assets/sprites/obstacles/leaf.png"
+dest_files=["res://.godot/imported/leaf.png-d8d53b56762fa8b0dec9089011516eba.ctex"]
 
 [params]
 

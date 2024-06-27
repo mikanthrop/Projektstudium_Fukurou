@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://ch7dttdt73lmt"
-path="res://.godot/imported/Player.png-e589e73e3bcf93afdbd52739624fb792.ctex"
+uid="uid://b126rpobf8c6"
+path="res://.godot/imported/crumbling_leaf_animations.png-c0516a25d88d914aad0b76075ef04a33.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/sprites/Player.png"
-dest_files=["res://.godot/imported/Player.png-e589e73e3bcf93afdbd52739624fb792.ctex"]
+source_file="res://assets/sprites/obstacles/crumbling_leaf_animations.png"
+dest_files=["res://.godot/imported/crumbling_leaf_animations.png-c0516a25d88d914aad0b76075ef04a33.ctex"]
 
 [params]
 

@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://ckbe63cbo00b6"
-path="res://.godot/imported/leaf_3tiles.png-035f42c0d9bafe449f550c72afc81d60.ctex"
+uid="uid://d1s7w43cssywk"
+path="res://.godot/imported/Bounceshroom_animation.png-0ad0324c0177a19edeac8ab1e541b82d.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/sprites/leaf_3tiles.png"
-dest_files=["res://.godot/imported/leaf_3tiles.png-035f42c0d9bafe449f550c72afc81d60.ctex"]
+source_file="res://assets/sprites/obstacles/Bounceshroom_animation.png"
+dest_files=["res://.godot/imported/Bounceshroom_animation.png-0ad0324c0177a19edeac8ab1e541b82d.ctex"]
 
 [params]
 
