@@ -15,7 +15,7 @@ func enter() -> void:
 
 
 func exit() -> void:
-	parent.was_on_floor = false
+	parent.has_jumped = false
 	parent.has_dashed = false
 	coyote_timer.start()
 
@@ -61,3 +61,10 @@ func _process_physics(delta: float) -> Base_State:
 	# if player doesn't move change state to idle
 	return null
 
+
+func process_frame(_delta: float) -> Base_State:
+	animation_name = "walk"
+	#play animation
+	if parent.animation_player.has_animation(animation_name):
+		parent.animation_player.play(animation_name)
+	return null;

@@ -11,7 +11,7 @@ func enter() -> void:
 	print("changed state to idling")
 	
 	# set jump and dash flags to false 
-	parent.was_on_floor = false
+	parent.has_jumped = false
 	parent.has_dashed = false
 	
 	# set parent velocity to zero
@@ -47,3 +47,11 @@ func _process_physics(_delta: float) -> Base_State:
 		self.exit()
 		return fall_state
 	return null
+
+
+func process_frame(_delta: float) -> Base_State:
+	animation_name = "idle"
+	#play animation
+	if parent.animation_player.has_animation(animation_name):
+		parent.animation_player.play(animation_name)
+	return null;

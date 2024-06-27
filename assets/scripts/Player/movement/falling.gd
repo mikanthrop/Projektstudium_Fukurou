@@ -6,6 +6,7 @@ class_name Fall_State
 
 @onready var FALL_GRAVITY: float =  (-1) * ((-2 * parent.JUMP_HEIGHT) / (parent.JUMP_TIME_TO_DESCENT * parent.JUMP_TIME_TO_DESCENT))
 
+
 func enter() -> void:
 	super()
 	print("changed state to falling")
@@ -13,6 +14,10 @@ func enter() -> void:
 
 
 func process_input(_event: InputEvent) -> Base_State: 
+	if Input.is_action_pressed("hold") and parent.is_wall_holdable():
+		print("state falling: is holding")
+		parent.snap_to_wall()
+		return wall_hold_state 
 	if Input.is_action_just_pressed("jump"):
 		if !coyote_timer.is_stopped(): 
 			print("remaining coyote time ",coyote_timer.time_left)
@@ -20,9 +25,6 @@ func process_input(_event: InputEvent) -> Base_State:
 			return jump_state
 	if !parent.has_dashed and Input.is_action_just_pressed("dash"): 
 		return dash_state
-	if Input.is_action_pressed("hold") and parent.is_wall_holdable():
-		parent.snap_to_wall()
-		return wall_hold_state
 	return null
 
 
@@ -45,3 +47,11 @@ func _process_physics(delta: float) -> Base_State:
 		if parent.velocity.x == 0: 
 			return idle_state
 	return null 
+
+
+func process_frame(_delta: float) -> Base_State:
+	animation_name = "fall"
+	#play animation
+	if parent.animation_player.has_animation(animation_name):
+		parent.animation_player.play(animation_name)
+	return null;

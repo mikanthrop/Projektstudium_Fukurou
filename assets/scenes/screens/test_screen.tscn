@@ -1,8 +1,0 @@
-[gd_scene format=3 uid="uid://bxxptgw3h3655"]
-
-[node name="TestScreen" type="Node2D"]
-
-[node name="ColorRect" type="ColorRect" parent="."]
-modulate = Color(1, 0.431373, 0.137255, 1)
-offset_right = 1152.0
-offset_bottom = 648.0

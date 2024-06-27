@@ -1,0 +1,59 @@
+[gd_scene load_steps=7 format=3 uid="uid://bdpksvvhgfls5"]
+
+[ext_resource type="Script" path="res://assets/scripts/GameLogic/moving_platform.gd" id="1_uy7js"]
+[ext_resource type="Texture2D" uid="uid://ckbe63cbo00b6" path="res://assets/sprites/leaf_3tiles.png" id="2_3qcey"]
+
+[sub_resource type="PhysicsMaterial" id="PhysicsMaterial_0anxl"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ufsva"]
+size = Vector2(120.995, 19.475)
+
+[sub_resource type="Animation" id="Animation_v8q80"]
+resource_name = "move"
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_tap6h"]
+_data = {
+"move": SubResource("Animation_v8q80")
+}
+
+[node name="MovingPlattform" type="Path2D"]
+script = ExtResource("1_uy7js")
+metadata/_edit_group_ = true
+
+[node name="PathFollow2D" type="PathFollow2D" parent="."]
+rotation = -1.5708
+
+[node name="RemoteTransform2D" type="RemoteTransform2D" parent="PathFollow2D"]
+remote_path = NodePath("../../AnimatableBody2D")
+update_rotation = false
+update_scale = false
+
+[node name="AnimatableBody2D" type="AnimatableBody2D" parent="."]
+rotation = -1.5708
+collision_layer = 2
+physics_material_override = SubResource("PhysicsMaterial_0anxl")
+metadata/_edit_group_ = true
+
+[node name="Sprite2D" type="Sprite2D" parent="AnimatableBody2D"]
+texture_filter = 1
+position = Vector2(1.81899e-12, 0)
+rotation = 1.5708
+scale = Vector2(2.39843, 2.39843)
+texture = ExtResource("2_3qcey")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="AnimatableBody2D"]
+position = Vector2(-2, -7.23998e-06)
+rotation = 1.5708
+scale = Vector2(1, 1.28)
+shape = SubResource("RectangleShape2D_ufsva")
+one_way_collision = true
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_tap6h")
+}
+
+[node name="FloatTimer" type="Timer" parent="."]
+one_shot = true
+
+[connection signal="timeout" from="FloatTimer" to="." method="_on_float_timer_timeout"]
