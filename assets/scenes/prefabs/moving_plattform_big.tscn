@@ -1,7 +1,7 @@
 [gd_scene load_steps=7 format=3 uid="uid://bdpksvvhgfls5"]
 
 [ext_resource type="Script" path="res://assets/scripts/GameLogic/moving_platform.gd" id="1_uy7js"]
-[ext_resource type="Texture2D" uid="uid://ckbe63cbo00b6" path="res://assets/sprites/leaf_3tiles.png" id="2_3qcey"]
+[ext_resource type="Texture2D" uid="uid://ckbe63cbo00b6" path="res://assets/sprites/obstacles/leaf_3tiles.png" id="2_vnn1v"]
 
 [sub_resource type="PhysicsMaterial" id="PhysicsMaterial_0anxl"]
 
@@ -39,7 +39,7 @@ texture_filter = 1
 position = Vector2(1.81899e-12, 0)
 rotation = 1.5708
 scale = Vector2(2.39843, 2.39843)
-texture = ExtResource("2_3qcey")
+texture = ExtResource("2_vnn1v")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="AnimatableBody2D"]
 position = Vector2(-2, -7.23998e-06)

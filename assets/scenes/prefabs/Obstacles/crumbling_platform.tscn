@@ -1,7 +1,7 @@
 [gd_scene load_steps=11 format=3 uid="uid://dcghcjwvfgl6n"]
 
 [ext_resource type="Script" path="res://assets/scripts/GameLogic/crumbling_platform.gd" id="1_f0qy5"]
-[ext_resource type="Texture2D" uid="uid://b126rpobf8c6" path="res://assets/sprites/crumbling_leaf_animations.png" id="1_kytb5"]
+[ext_resource type="Texture2D" uid="uid://b126rpobf8c6" path="res://assets/sprites/obstacles/crumbling_leaf_animations.png" id="1_kytb5"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ptvyu"]
 size = Vector2(32, 8)

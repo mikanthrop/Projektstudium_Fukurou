@@ -1,7 +1,7 @@
 [gd_scene load_steps=3 format=3 uid="uid://c4q8tr0o57rba"]
 
 [ext_resource type="TileSet" uid="uid://dy7gudh215rfa" path="res://assets/tilesets/tile_atlas.tres" id="1_mvjfa"]
-[ext_resource type="Texture2D" uid="uid://dqkvhqpb2e1ov" path="res://assets/sprites/leaf.png" id="2_0c7e4"]
+[ext_resource type="Texture2D" uid="uid://dqkvhqpb2e1ov" path="res://assets/sprites/obstacles/leaf.png" id="2_0c7e4"]
 
 [node name="Screen14" type="Node2D"]
 
