@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://ds4wt44jh5cha"
+path="res://.godot/imported/dying sound.mp3-c619ba3f977f4ce55c2638aaec3281c2.mp3str"
+
+[deps]
+
+source_file="res://assets/Sounds/dying sound.mp3"
+dest_files=["res://.godot/imported/dying sound.mp3-c619ba3f977f4ce55c2638aaec3281c2.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

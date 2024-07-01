@@ -3,7 +3,7 @@ extends Area2D
 @onready var animation_player: AnimationPlayer = $AnimationPlayer
 @onready var tremble_timer: Timer = $TrembleTimer
 @onready var respawn_timer: Timer = $RespawnTimer
-
+@onready var crumbling = $crumbling
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	animation_player.play("idle")
@@ -21,6 +21,7 @@ func _physics_process(delta):
 
 
 func _on_tremble_timer_timeout():
+	crumbling.play()
 	animation_player.play("fall")
 
 

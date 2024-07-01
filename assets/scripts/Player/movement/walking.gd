@@ -2,11 +2,14 @@ extends Base_State
 
 class_name Walk_State
 
-@export var coyote_timer: Timer
 
+@export var coyote_timer: Timer
+@onready var walking = $walking
 
 # called when state is changed to walking
 func enter() -> void: 
+	
+	walking.play()
 	super()
 	print("changed state to walking")
 	
