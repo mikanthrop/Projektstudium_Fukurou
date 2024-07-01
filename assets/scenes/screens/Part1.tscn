@@ -350,7 +350,7 @@ scale = Vector2(0.8, 0.8)
 texture = ExtResource("3_5we58")
 
 [node name="Camera2D" type="Camera2D" parent="."]
-position = Vector2(367, 213)
+position = Vector2(272, 156)
 zoom = Vector2(2.2, 2.2)
 limit_left = -1
 limit_top = 1
@@ -1167,7 +1167,7 @@ position = Vector2(376, 165)
 scale = Vector2(2.3873, -0.494176)
 
 [node name="Player" type="CharacterBody2D" parent="." node_paths=PackedStringArray("state_machine", "animation_player", "wall_hold_ray_cast")]
-position = Vector2(3212, 419)
+position = Vector2(91, 123)
 collision_mask = 2
 platform_floor_layers = 2
 platform_wall_layers = 4
@@ -1305,7 +1305,7 @@ collision_mask = 6
 collide_with_areas = true
 
 [node name="PhantomCamera2D" type="Node2D" parent="Player" node_paths=PackedStringArray("follow_target")]
-position = Vector2(-2844.73, -205.545)
+position = Vector2(180.727, 32.5455)
 script = ExtResource("31_vw3v2")
 follow_mode = 5
 follow_target = NodePath("..")
