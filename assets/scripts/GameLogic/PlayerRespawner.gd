@@ -2,7 +2,7 @@ extends Node2D
 
 var player_scene : Resource = preload("res://assets/scenes/prefabs/player.tscn")
 var animation_name : String = "despawn"
-
+@onready var death = $death
 func _on_death_zone_body_entered(body) -> void:
 	body.set_process_unhandled_input(false)
 	body.set_physics_process(false)
@@ -22,6 +22,7 @@ func _on_death_zone_body_entered(body) -> void:
 				break
 		if animation_player != AnimationPlayer:
 			# player despawn animation
+			death.play()
 			print("Animation player playing death animation")
 			animation_player.play(animation_name)
 			# wait for a specific amount of time

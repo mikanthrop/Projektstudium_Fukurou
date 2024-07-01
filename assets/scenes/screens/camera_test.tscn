@@ -1,10 +1,9 @@
-[gd_scene load_steps=25 format=3 uid="uid://curc8uyanyu1n"]
+[gd_scene load_steps=24 format=3 uid="uid://curc8uyanyu1n"]
 
 [ext_resource type="TileSet" uid="uid://dy7gudh215rfa" path="res://assets/tilesets/tile_atlas.tres" id="1_ivli8"]
 [ext_resource type="PackedScene" uid="uid://cfvxij5pedplm" path="res://assets/scenes/prefabs/Obstacles/death_zone.tscn" id="2_h201e"]
 [ext_resource type="PackedScene" uid="uid://c5fothc6h3nlb" path="res://assets/scenes/prefabs/player_respawner.tscn" id="3_5c8e2"]
 [ext_resource type="PackedScene" uid="uid://bvkltedpg1iws" path="res://assets/scenes/prefabs/transition_area.tscn" id="4_7kwha"]
-[ext_resource type="Script" path="res://addons/phantom_camera/scripts/phantom_camera_host/phantom_camera_host.gd" id="5_c6brx"]
 [ext_resource type="Script" path="res://assets/scripts/Player/player.gd" id="6_0w4mn"]
 [ext_resource type="Texture2D" uid="uid://2fxfrsqbmwb4" path="res://assets/sprites/Fuku/Fuku_growing_beak.png" id="7_7lw4j"]
 [ext_resource type="PackedScene" uid="uid://b6xnnmuctxihc" path="res://assets/scenes/screens/Screen2.tscn" id="7_445lr"]
@@ -185,9 +184,6 @@ limit_left = 0
 limit_top = 0
 limit_right = 640
 limit_bottom = 368
-
-[node name="PhantomCameraHost" type="Node" parent="Camera2D"]
-script = ExtResource("5_c6brx")
 
 [node name="Player" type="CharacterBody2D" parent="." node_paths=PackedStringArray("state_machine", "animation_player", "wall_hold_ray_cast")]
 position = Vector2(91, 125)

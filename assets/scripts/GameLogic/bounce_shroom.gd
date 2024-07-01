@@ -3,6 +3,7 @@ extends Area2D
 ## multiplier for the movement speed of the player. 
 ## influences jump_height. Default ist 1.5
 @export var movement_multiplier: float = 1.5;
+@onready var boing = $boing
 ## jump_direction dictates the direction of the bounce shroom by using a vector2.
 ## please only use vector2 (0,-1) or (0,1). Default ist upwards
 @export var jump_direction: Vector2 = Vector2.UP
@@ -15,6 +16,7 @@ var animation_name: StringName = "bounce"
 func _on_body_entered(body):
 	## check if body entered is player (via name)
 	if body is Player:
+		boing.play()
 		var player: Player = owner.get_node_or_null(NodePath(body.name))
 		
 		if player: 
