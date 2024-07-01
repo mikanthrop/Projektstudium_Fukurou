@@ -674,7 +674,7 @@ pitch_scale = 2.19
 texture_filter = 1
 position = Vector2(438.475, 38.08)
 scale = Vector2(0.411003, 0.411003)
-curve = ExtResource("19_r7nix")
+curve = ExtResource("13_cisma")
 speed = 1.0
 float_duration = 2.0
 
