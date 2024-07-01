@@ -1,5 +1,7 @@
 extends Base_State
 
+class_name Wall_Hold_State
+
 var pos: Vector2
 
 
@@ -7,8 +9,7 @@ func enter() -> void:
 	super()
 	print("changed state to wall_holding")
 	pos = parent.get_position_delta()
-	print(pos)
-	
+	print("all holding at position: ", pos)
 
 
 func exit() -> void:
@@ -25,6 +26,9 @@ func process_input(_event: InputEvent) -> Base_State:
 	return fall_state
 
 
-func pro_process_physics(delta: float) -> Base_State:
-	parent.position = pos
-	return null
+func process_frame(_delta: float) -> Base_State:
+	animation_name = "wallhold"
+	#play animation
+	if parent.animation_player.has_animation(animation_name):
+		parent.animation_player.play(animation_name)
+	return null;

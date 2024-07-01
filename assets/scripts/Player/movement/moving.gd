@@ -1,2 +1,2 @@
 class_name MoveState
-extends State
+extends Base_State

@@ -1,21 +1,28 @@
 extends Base_State
 
+class_name Dash_State
+
 @export var dash_timer: Timer
 
-@onready var dash_speed_modifier = parent.DASH_SPEED * parent.MOVE_SPEED
-@onready var dash_timer_length = parent.DASH_DISTANCE / parent.DASH_SPEED
-
+@onready var dash_speed_modifier: float = parent.DASH_SPEED * parent.MOVE_SPEED
+@onready var dash_timer_length: float = parent.DASH_DISTANCE / parent.DASH_SPEED
+@onready var dashSound= $dashSound
 var dash_direction: Vector2
 var up: int = -1
 var down: int = 1
 var left: int = -1
 var right: int = 1
 
+
+
 func enter() -> void:
 	super()
+	dashSound.play()
 	print("changed state to dashing")
+	
 	# set flag
 	parent.has_dashed = true
+	print("Dashflag set")
 	# Start the dash timer
 	dash_timer.wait_time = dash_timer_length
 	dash_timer.one_shot = true
@@ -50,6 +57,7 @@ func enter() -> void:
 	else: 
 		dash_direction = Vector2(parent.facing_direction, 0)
 
+
 func exit() -> void:
 	pass
 
@@ -60,7 +68,7 @@ func process_input(event: InputEvent) -> Base_State:
 	return null
 
 
-func _process_physics(delta: float) -> Base_State:
+func _process_physics(_delta: float) -> Base_State:
 	# Handle physics logic during the dash (if needed)
 	parent.velocity = dash_direction * parent.DASH_SPEED
 	print("state dashing: physics: dash_direction: ", dash_direction)
@@ -69,22 +77,46 @@ func _process_physics(delta: float) -> Base_State:
 	return null
 
 
-func process_frame(delta: float) -> Base_State:
+func process_frame(_delta: float) -> Base_State:
+	# set animation_name 
+	animation_name = "dash"
+	#play animation
+	if parent.animation_player.has_animation(animation_name):
+		var anim_length : float = parent.animation_player.get_animation(animation_name).get_length()
+		var custom_speed : float = anim_length / dash_timer_length
+		parent.animation_player.play(animation_name, -1, custom_speed, false)
+		# currently player can slide while holding dash in last frame of dash animation
+	
+	
 	# transitions to next state
-	if dash_timer.is_stopped(): 
-		if parent.is_on_floor() and Input.is_action_pressed("jump"):
+	if Input.is_action_pressed("jump"):
+		if parent.is_on_floor():
+			dash_timer.stop()
+			parent.has_dashed = true
 			return jump_state
-		if Input.is_action_pressed("move_left") or Input.is_action_pressed("move_right"):
+		if parent.is_on_wall():
+			dash_timer.stop()
+			parent.has_dashed = true
+			return jump_state
+		if !parent.is_on_wall() and !parent.is_on_floor():
+			parent.has_dashed = true
+	if dash_timer.is_stopped():
+		if parent.is_on_floor() and Input.is_action_pressed("move_left") or parent.is_on_floor() and Input.is_action_pressed("move_right"):
 			return walk_state
+		if parent.is_on_floor() and !Input.is_action_pressed("move_left") or parent.is_on_floor() and !Input.is_action_pressed("move_right"):
+			return idle_state
+		if Input.is_action_pressed("hold") and parent.is_wall_holdable():
+			parent.snap_to_wall()
+			return wall_hold_state
 		if !parent.is_on_floor() :
 			return fall_state
 		return idle_state
-	if parent.is_on_wall() and Input.is_action_pressed("hold"):
-		return wall_hold_state
 	return null
+	
+	
 
 
-func _on_dash_timer_timeout():
+func _on_dash_timer_timeout() -> void:
 	var jump_velocity = (-1.0) * ((-2.0 * parent.JUMP_HEIGHT) / (parent.JUMP_TIME_TO_PEAK * parent.JUMP_TIME_TO_PEAK))
 	var fall_gravity = (-1) * ((-2 * parent.JUMP_HEIGHT) / (parent.JUMP_TIME_TO_DESCENT * parent.JUMP_TIME_TO_DESCENT))
 	# Reset the velocity when dash timer timed out
