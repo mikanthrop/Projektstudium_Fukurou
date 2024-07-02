@@ -1,8 +1,29 @@
-[gd_scene load_steps=2 format=3 uid="uid://iua5ynb467ff"]
+[gd_scene load_steps=3 format=3 uid="uid://iua5ynb467ff"]
 
-[ext_resource type="Script" path="res://assets/dialogue/ChoiceButton.gd" id="1_4g6qs"]
+[ext_resource type="Script" path="res://assets/dialogue/ChoiceButton.gd" id="1_i8w4j"]
+[ext_resource type="Shortcut" uid="uid://bj10u0cbmmqsk" path="res://assets/dialogue/click_dialogue_button.tres" id="1_ytfeo"]
 
 [node name="ChoiceButton" type="Button"]
-script = ExtResource("1_4g6qs")
+layout_direction = 2
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -4.0
+offset_top = -8.0
+offset_right = 4.0
+grow_horizontal = 2
+grow_vertical = 0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+shortcut = ExtResource("1_ytfeo")
+script = ExtResource("1_i8w4j")
+
+[node name="Label" type="Label" parent="."]
+texture_filter = 3
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 23.0
 
 [connection signal="pressed" from="." to="." method="_on_pressed"]

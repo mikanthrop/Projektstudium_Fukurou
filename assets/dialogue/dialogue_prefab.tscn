@@ -1,0 +1,50 @@
+[gd_scene load_steps=7 format=3 uid="uid://blbecmdcnemkw"]
+
+[ext_resource type="Script" path="res://assets/dialogue/DialogueHandler.gd" id="1_suikx"]
+[ext_resource type="Script" path="res://assets/dialogue/DialogueBox.gd" id="2_0udq8"]
+[ext_resource type="LabelSettings" uid="uid://c6lvpn4jscrc1" path="res://assets/dialogue/bat_boys_label_setting.tres" id="3_7vlni"]
+[ext_resource type="Theme" uid="uid://btwb5xdfxwk35" path="res://assets/themes/bat_boy_theme.tres" id="3_daywc"]
+[ext_resource type="Script" path="res://addons/ez_dialogue/ez_dialogue_node.gd" id="4_edso6"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_754yc"]
+
+[node name="DialogueHandler" type="Node2D"]
+script = ExtResource("1_suikx")
+
+[node name="DialogueBox" type="Node2D" parent="."]
+script = ExtResource("2_0udq8")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="DialogueBox"]
+custom_minimum_size = Vector2(100, 20)
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -50.0
+offset_top = -20.0
+offset_right = 50.0
+grow_horizontal = 2
+grow_vertical = 0
+size_flags_horizontal = 3
+theme = ExtResource("3_daywc")
+
+[node name="Text" type="Label" parent="DialogueBox/VBoxContainer"]
+texture_filter = 1
+layout_mode = 2
+theme = ExtResource("3_daywc")
+label_settings = ExtResource("3_7vlni")
+
+[node name="EzDialogue" type="Node" parent="."]
+script = ExtResource("4_edso6")
+
+[node name="Area2D" type="Area2D" parent="."]
+position = Vector2(0, -100)
+scale = Vector2(15, 5)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+shape = SubResource("RectangleShape2D_754yc")
+
+[connection signal="dialogue_generated" from="EzDialogue" to="." method="_on_ez_dialogue_dialogue_generated"]
+[connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]
+[connection signal="body_exited" from="Area2D" to="." method="_on_area_2d_body_exited"]

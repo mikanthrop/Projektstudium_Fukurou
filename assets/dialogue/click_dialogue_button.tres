@@ -1,0 +1,6 @@
+[gd_resource type="Shortcut" load_steps=2 format=3 uid="uid://bj10u0cbmmqsk"]
+
+[ext_resource type="InputEventJoypadButton" uid="uid://8222uo8ptx5x" path="res://assets/dialogue/InputEvent_click_through_dialogue.tres" id="1_rm8v8"]
+
+[resource]
+events = [ExtResource("1_rm8v8")]
