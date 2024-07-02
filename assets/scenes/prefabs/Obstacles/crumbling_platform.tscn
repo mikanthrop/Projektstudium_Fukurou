@@ -1,7 +1,8 @@
-[gd_scene load_steps=11 format=3 uid="uid://dcghcjwvfgl6n"]
+[gd_scene load_steps=12 format=3 uid="uid://dcghcjwvfgl6n"]
 
 [ext_resource type="Script" path="res://assets/scripts/GameLogic/crumbling_platform.gd" id="1_f0qy5"]
 [ext_resource type="Texture2D" uid="uid://b126rpobf8c6" path="res://assets/sprites/obstacles/crumbling_leaf_animations.png" id="1_kytb5"]
+[ext_resource type="AudioStream" uid="uid://bngmu6d30v6s5" path="res://assets/Sounds/Crumbling leaf_02.mp3" id="3_gwyrn"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ptvyu"]
 size = Vector2(32, 8)
@@ -569,6 +570,11 @@ one_shot = true
 
 [node name="RespawnTimer" type="Timer" parent="."]
 one_shot = true
+
+[node name="crumbling" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("3_gwyrn")
+volume_db = -18.627
+pitch_scale = 2.09
 
 [connection signal="animation_finished" from="AnimationPlayer" to="." method="_on_animation_player_animation_finished_fall"]
 [connection signal="timeout" from="TrembleTimer" to="." method="_on_tremble_timer_timeout"]

@@ -1,6 +1,12 @@
-[gd_scene load_steps=2 format=3 uid="uid://c5fothc6h3nlb"]
+[gd_scene load_steps=3 format=3 uid="uid://c5fothc6h3nlb"]
 
 [ext_resource type="Script" path="res://assets/scripts/GameLogic/PlayerRespawner.gd" id="1_gtye6"]
+[ext_resource type="AudioStream" uid="uid://ds4wt44jh5cha" path="res://assets/Sounds/dying sound.mp3" id="2_dfla8"]
 
 [node name="PlayerRespawner" type="Node2D"]
 script = ExtResource("1_gtye6")
+
+[node name="death" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("2_dfla8")
+volume_db = -15.522
+pitch_scale = 2.19
