@@ -1,19 +1,41 @@
 [gd_scene load_steps=12 format=3 uid="uid://b05gv2ya0a7sr"]
 
 [ext_resource type="TileSet" uid="uid://dy7gudh215rfa" path="res://assets/tilesets/tile_atlas.tres" id="1_rhnc4"]
-[ext_resource type="Script" path="res://assets/scenes/screens/Main.gd" id="1_trjcv"]
 [ext_resource type="Texture2D" uid="uid://dqp38mp7mikxw" path="res://assets/sprites/NPCs/bats/blue/bat_blue.png" id="2_310vb"]
-[ext_resource type="JSON" path="res://try.json" id="2_m4ngb"]
+[ext_resource type="JSON" path="res://assets/dialogue/try.json" id="2_m4ngb"]
 [ext_resource type="Texture2D" uid="uid://m87ia50ppk00" path="res://assets/sprites/NPCs/bats/green/bat_green.png" id="3_vp70m"]
 [ext_resource type="Texture2D" uid="uid://bvr4paxk156rk" path="res://assets/sprites/NPCs/bats/purple/bat_purple.png" id="4_8ttqt"]
 [ext_resource type="Texture2D" uid="uid://beucjro7tolju" path="res://assets/sprites/NPCs/bats/red/bat_red.png" id="5_yn2jw"]
-[ext_resource type="PackedScene" uid="uid://c5fothc6h3nlb" path="res://assets/scenes/prefabs/player_respawner.tscn" id="6_xfsfm"]
-[ext_resource type="PackedScene" uid="uid://bvkltedpg1iws" path="res://assets/scenes/prefabs/transition_area.tscn" id="7_4f8f2"]
-[ext_resource type="Script" path="res://assets/scenes/screens/DialogueBox.gd" id="10_8uf7m"]
+[ext_resource type="PackedScene" uid="uid://c5fothc6h3nlb" path="res://assets/prefabs/player_respawner.tscn" id="6_xfsfm"]
+[ext_resource type="PackedScene" uid="uid://bvkltedpg1iws" path="res://assets/prefabs/transition_area.tscn" id="7_4f8f2"]
+[ext_resource type="Script" path="res://assets/screens/DialogueBox.gd" id="10_8uf7m"]
 [ext_resource type="Script" path="res://addons/ez_dialogue/ez_dialogue_node.gd" id="11_t0qf2"]
 
+[sub_resource type="GDScript" id="GDScript_w7vag"]
+script/source = "extends Node2D
+
+@export var try_json :JSON
+@onready var state = {}
+# Called when the node enters the scene tree for the first time.
+func _ready():
+	($EzDialogue as EzDialogue).start_dialogue(try_json, state)
+	pass # Replace with function body.
+
+
+# Called every frame. 'delta' is the elapsed time since the previous frame.
+func _process(delta):
+	pass
+
+
+func _on_ez_dialogue_dialogue_generated(response):
+	$DialogueBox.add_text(response.text)
+	
+	for choice in response.choices:
+		$DialogueBox.add_choice(choice)
+"
+
 [node name="Screen7" type="Node2D"]
-script = ExtResource("1_trjcv")
+script = SubResource("GDScript_w7vag")
 try_json = ExtResource("2_m4ngb")
 
 [node name="TileMap" type="TileMap" parent="."]
@@ -59,6 +81,7 @@ script = ExtResource("10_8uf7m")
 [node name="VBoxContainer" type="VBoxContainer" parent="DialogBox"]
 offset_right = 40.0
 offset_bottom = 40.0
+metadata/_edit_use_anchors_ = true
 
 [node name="EzDialogue" type="Node" parent="."]
 script = ExtResource("11_t0qf2")

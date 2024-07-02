@@ -1,15 +1,15 @@
 [gd_scene load_steps=15 format=3 uid="uid://b6igcblpn6cqb"]
 
 [ext_resource type="TileSet" uid="uid://dy7gudh215rfa" path="res://assets/tilesets/tile_atlas.tres" id="1_0drl6"]
-[ext_resource type="PackedScene" uid="uid://c5fothc6h3nlb" path="res://assets/scenes/prefabs/player_respawner.tscn" id="1_l6wbb"]
+[ext_resource type="PackedScene" uid="uid://c5fothc6h3nlb" path="res://assets/prefabs/player_respawner.tscn" id="1_l6wbb"]
 [ext_resource type="Texture2D" uid="uid://dt48l3ngg5o4f" path="res://assets/sprites/NPCs/moth/moth_png.png" id="2_hi10g"]
-[ext_resource type="PackedScene" uid="uid://dnl6bn2fqo60m" path="res://assets/scenes/screens/Screen13.tscn" id="3_dptrj"]
-[ext_resource type="PackedScene" uid="uid://cfvxij5pedplm" path="res://assets/scenes/prefabs/Obstacles/death_zone.tscn" id="3_kf46s"]
-[ext_resource type="PackedScene" uid="uid://bvkltedpg1iws" path="res://assets/scenes/prefabs/transition_area.tscn" id="4_6c0lt"]
-[ext_resource type="PackedScene" uid="uid://dcghcjwvfgl6n" path="res://assets/scenes/prefabs/Obstacles/crumbling_platform.tscn" id="5_juxqt"]
-[ext_resource type="PackedScene" uid="uid://di6xxbgxcv8wm" path="res://assets/scenes/prefabs/Obstacles/bounce_shroom.tscn" id="5_pfj35"]
-[ext_resource type="PackedScene" uid="uid://bdpksvvhgfls5" path="res://assets/scenes/prefabs/moving_plattform_big.tscn" id="6_d5yo7"]
-[ext_resource type="Curve2D" uid="uid://dllb0uxhih5ky" path="res://assets/scenes/prefabs/leaf_in_wind_Screen5.tres" id="7_o737c"]
+[ext_resource type="PackedScene" uid="uid://dnl6bn2fqo60m" path="res://assets/screens/Screen13.tscn" id="3_dptrj"]
+[ext_resource type="PackedScene" uid="uid://cfvxij5pedplm" path="res://assets/prefabs/Obstacles/death_zone.tscn" id="3_kf46s"]
+[ext_resource type="PackedScene" uid="uid://bvkltedpg1iws" path="res://assets/prefabs/transition_area.tscn" id="4_6c0lt"]
+[ext_resource type="PackedScene" uid="uid://dcghcjwvfgl6n" path="res://assets/prefabs/Obstacles/crumbling_platform.tscn" id="5_juxqt"]
+[ext_resource type="PackedScene" uid="uid://di6xxbgxcv8wm" path="res://assets/prefabs/Obstacles/bounce_shroom.tscn" id="5_pfj35"]
+[ext_resource type="PackedScene" uid="uid://bdpksvvhgfls5" path="res://assets/prefabs/moving_plattform_big.tscn" id="6_d5yo7"]
+[ext_resource type="Curve2D" uid="uid://dllb0uxhih5ky" path="res://assets/prefabs/leaf_in_wind_Screen5.tres" id="7_o737c"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_5f1cb"]
 size = Vector2(801, 368)

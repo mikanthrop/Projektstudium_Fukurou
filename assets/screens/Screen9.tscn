@@ -1,8 +1,8 @@
 [gd_scene load_steps=4 format=3 uid="uid://vcnt6jqa8xxt"]
 
 [ext_resource type="TileSet" uid="uid://dy7gudh215rfa" path="res://assets/tilesets/tile_atlas.tres" id="1_5faww"]
-[ext_resource type="PackedScene" uid="uid://di6xxbgxcv8wm" path="res://assets/scenes/prefabs/Obstacles/bounce_shroom.tscn" id="2_cnu0r"]
-[ext_resource type="PackedScene" uid="uid://bvkltedpg1iws" path="res://assets/scenes/prefabs/transition_area.tscn" id="3_wybey"]
+[ext_resource type="PackedScene" uid="uid://di6xxbgxcv8wm" path="res://assets/prefabs/Obstacles/bounce_shroom.tscn" id="2_cnu0r"]
+[ext_resource type="PackedScene" uid="uid://bvkltedpg1iws" path="res://assets/prefabs/transition_area.tscn" id="3_wybey"]
 
 [node name="Screen9" type="Node2D"]
 

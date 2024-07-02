@@ -1,11 +1,11 @@
 [gd_scene load_steps=8 format=3 uid="uid://b7r87p6fht4v0"]
 
 [ext_resource type="TileSet" uid="uid://dy7gudh215rfa" path="res://assets/tilesets/tile_atlas.tres" id="1_lwgv7"]
-[ext_resource type="PackedScene" uid="uid://c5fothc6h3nlb" path="res://assets/scenes/prefabs/player_respawner.tscn" id="2_xjey2"]
-[ext_resource type="PackedScene" uid="uid://cfvxij5pedplm" path="res://assets/scenes/prefabs/Obstacles/death_zone.tscn" id="3_u8cmf"]
-[ext_resource type="PackedScene" uid="uid://di6xxbgxcv8wm" path="res://assets/scenes/prefabs/Obstacles/bounce_shroom.tscn" id="4_jg7kf"]
-[ext_resource type="PackedScene" uid="uid://bdpksvvhgfls5" path="res://assets/scenes/prefabs/moving_plattform_big.tscn" id="5_spu0i"]
-[ext_resource type="PackedScene" uid="uid://dj1j6ywsgiml0" path="res://assets/scenes/prefabs/player.tscn" id="6_pmeo5"]
+[ext_resource type="PackedScene" uid="uid://c5fothc6h3nlb" path="res://assets/prefabs/player_respawner.tscn" id="2_xjey2"]
+[ext_resource type="PackedScene" uid="uid://cfvxij5pedplm" path="res://assets/prefabs/Obstacles/death_zone.tscn" id="3_u8cmf"]
+[ext_resource type="PackedScene" uid="uid://di6xxbgxcv8wm" path="res://assets/prefabs/Obstacles/bounce_shroom.tscn" id="4_jg7kf"]
+[ext_resource type="PackedScene" uid="uid://bdpksvvhgfls5" path="res://assets/prefabs/moving_plattform_big.tscn" id="5_spu0i"]
+[ext_resource type="PackedScene" uid="uid://dj1j6ywsgiml0" path="res://assets/prefabs/player.tscn" id="6_pmeo5"]
 
 [sub_resource type="Curve2D" id="Curve2D_0k2pf"]
 _data = {
