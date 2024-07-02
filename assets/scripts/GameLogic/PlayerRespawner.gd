@@ -2,7 +2,7 @@ extends Node2D
 
 @onready var death = $death
 
-var player_scene : Resource = preload("res://assets/scenes/prefabs/player.tscn")
+var player_scene : Resource = preload("res://assets/prefabs/player.tscn")
 var animation_name : String = "despawn"
 
 func _on_death_zone_body_entered(body) -> void:
