@@ -1,3 +1,4 @@
+res://
 res://assets/scenes/screens
 res://assets/scenes/prefabs/Obstacles
 res://assets/scenes/prefabs
@@ -9,4 +10,3 @@ res://assets/tilesets/layout_tiles
 res://assets/scenes
 res://assets/scripts/Player
 res://assets/scripts/Player/movement
-res://

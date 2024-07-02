@@ -1,15 +1,20 @@
-[gd_scene load_steps=9 format=3 uid="uid://b05gv2ya0a7sr"]
+[gd_scene load_steps=12 format=3 uid="uid://b05gv2ya0a7sr"]
 
 [ext_resource type="TileSet" uid="uid://dy7gudh215rfa" path="res://assets/tilesets/tile_atlas.tres" id="1_rhnc4"]
+[ext_resource type="Script" path="res://assets/scenes/screens/Main.gd" id="1_trjcv"]
 [ext_resource type="Texture2D" uid="uid://dqp38mp7mikxw" path="res://assets/sprites/NPCs/bats/blue/bat_blue.png" id="2_310vb"]
+[ext_resource type="JSON" path="res://try.json" id="2_m4ngb"]
 [ext_resource type="Texture2D" uid="uid://m87ia50ppk00" path="res://assets/sprites/NPCs/bats/green/bat_green.png" id="3_vp70m"]
 [ext_resource type="Texture2D" uid="uid://bvr4paxk156rk" path="res://assets/sprites/NPCs/bats/purple/bat_purple.png" id="4_8ttqt"]
 [ext_resource type="Texture2D" uid="uid://beucjro7tolju" path="res://assets/sprites/NPCs/bats/red/bat_red.png" id="5_yn2jw"]
 [ext_resource type="PackedScene" uid="uid://c5fothc6h3nlb" path="res://assets/scenes/prefabs/player_respawner.tscn" id="6_xfsfm"]
 [ext_resource type="PackedScene" uid="uid://bvkltedpg1iws" path="res://assets/scenes/prefabs/transition_area.tscn" id="7_4f8f2"]
-[ext_resource type="PackedScene" uid="uid://cpirmq6r6ucfg" path="res://assets/scenes/screens/Screen8.tscn" id="8_7u1xa"]
+[ext_resource type="Script" path="res://assets/scenes/screens/DialogueBox.gd" id="10_8uf7m"]
+[ext_resource type="Script" path="res://addons/ez_dialogue/ez_dialogue_node.gd" id="11_t0qf2"]
 
 [node name="Screen7" type="Node2D"]
+script = ExtResource("1_trjcv")
+try_json = ExtResource("2_m4ngb")
 
 [node name="TileMap" type="TileMap" parent="."]
 texture_filter = 1
@@ -47,4 +52,15 @@ position = Vector2(24, 203)
 [node name="TransitionArea" parent="." instance=ExtResource("7_4f8f2")]
 position = Vector2(640, 250)
 scale = Vector2(0.645233, 3.86803)
-scene_to_transition_to = ExtResource("8_7u1xa")
+
+[node name="DialogBox" type="Node2D" parent="."]
+script = ExtResource("10_8uf7m")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="DialogBox"]
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="EzDialogue" type="Node" parent="."]
+script = ExtResource("11_t0qf2")
+
+[connection signal="dialogue_generated" from="EzDialogue" to="." method="_on_ez_dialogue_dialogue_generated"]
