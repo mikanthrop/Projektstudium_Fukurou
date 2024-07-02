@@ -1,4 +1,4 @@
-[gd_scene load_steps=67 format=3 uid="uid://dcmj68qtvrdqr"]
+[gd_scene load_steps=70 format=3 uid="uid://dcmj68qtvrdqr"]
 
 [ext_resource type="TileSet" uid="uid://dy7gudh215rfa" path="res://assets/tilesets/tile_atlas.tres" id="1_43hvp"]
 [ext_resource type="Script" path="res://addons/phantom_camera/scripts/phantom_camera_host/phantom_camera_host.gd" id="1_au5e8"]
@@ -903,7 +903,7 @@ stream = ExtResource("8_luysb")
 volume_db = -15.522
 pitch_scale = 2.19
 
-[node name="TransitionArea" parent="Screen7" node_paths=PackedStringArray("this_screen_limit", "next_screen_limit") instance=ExtResource("7_ws4ar")]
+[node name="TransitionArea" parent="Screen7" node_paths=PackedStringArray("this_screen_limit") instance=ExtResource("7_ws4ar")]
 position = Vector2(642.19, 250)
 scale = Vector2(0.3, 3.868)
 this_screen_limit = NodePath("../CollisionShape2D")
@@ -976,7 +976,7 @@ stream = ExtResource("8_luysb")
 volume_db = -15.522
 pitch_scale = 2.19
 
-[node name="TransitionArea" parent="Screen8" node_paths=PackedStringArray("this_screen_limit", "next_screen_limit") instance=ExtResource("7_ws4ar")]
+[node name="TransitionArea" parent="Screen8" node_paths=PackedStringArray("next_screen_limit") instance=ExtResource("7_ws4ar")]
 position = Vector2(640, 456)
 scale = Vector2(0.3, 5.84)
 next_screen_limit = NodePath("../../Screen9/CollisionShape2D")
