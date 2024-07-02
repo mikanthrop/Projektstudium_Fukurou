@@ -1,4 +1,4 @@
-[gd_scene load_steps=68 format=3 uid="uid://dcmj68qtvrdqr"]
+[gd_scene load_steps=66 format=3 uid="uid://dcmj68qtvrdqr"]
 
 [ext_resource type="TileSet" uid="uid://dy7gudh215rfa" path="res://assets/tilesets/tile_atlas.tres" id="1_43hvp"]
 [ext_resource type="Script" path="res://addons/phantom_camera/scripts/phantom_camera_host/phantom_camera_host.gd" id="1_au5e8"]
@@ -21,7 +21,6 @@
 [ext_resource type="Texture2D" uid="uid://bvr4paxk156rk" path="res://assets/sprites/NPCs/bats/purple/bat_purple.png" id="21_fbn68"]
 [ext_resource type="Texture2D" uid="uid://cbl4kcv1rqeco" path="res://assets/sprites/Fuku/Fuku_animation_spritesheet.png" id="22_38bdy"]
 [ext_resource type="Texture2D" uid="uid://7uetrkljkody" path="res://assets/sprites/collectables/piu_post_brief.png" id="22_n5grp"]
-[ext_resource type="Curve2D" uid="uid://df3s430kcq2j1" path="res://assets/scenes/prefabs/leaf_in_wind_Screen8_big.tres" id="22_nia0u"]
 [ext_resource type="Texture2D" uid="uid://beucjro7tolju" path="res://assets/sprites/NPCs/bats/red/bat_red.png" id="22_palk0"]
 [ext_resource type="Curve2D" uid="uid://da5k00e537ly5" path="res://assets/scenes/prefabs/leaf_in_wind_Screen8_small.tres" id="23_ga3pa"]
 [ext_resource type="Script" path="res://assets/scripts/Player/movement/state_machine.gd" id="23_ii2vq"]
@@ -29,7 +28,6 @@
 [ext_resource type="Script" path="res://assets/scripts/Player/movement/idling.gd" id="24_l1vtn"]
 [ext_resource type="Script" path="res://assets/scripts/Player/movement/walking.gd" id="25_h101j"]
 [ext_resource type="Texture2D" uid="uid://dt48l3ngg5o4f" path="res://assets/sprites/NPCs/moth/moth_png.png" id="25_j1l1n"]
-[ext_resource type="Curve2D" uid="uid://b4mmtktcbc54y" path="res://assets/scenes/prefabs/leaf_in_wind_Screen9.tres" id="25_yoih7"]
 [ext_resource type="Script" path="res://assets/scripts/Player/movement/jumping.gd" id="26_3uya6"]
 [ext_resource type="PackedScene" uid="uid://dcghcjwvfgl6n" path="res://assets/scenes/prefabs/Obstacles/crumbling_platform.tscn" id="26_c1i3k"]
 [ext_resource type="PackedScene" uid="uid://kibk15ow5ys4" path="res://assets/scenes/prefabs/Obstacles/oneway_platform.tscn" id="26_davnn"]
@@ -590,7 +588,7 @@ position = Vector2(375.75, 183.5)
 shape = SubResource("RectangleShape2D_gamsj")
 
 [node name="PlayerRespawner" parent="Screen4" instance=ExtResource("2_ixqbm")]
-position = Vector2(30, 153)
+position = Vector2(390, 190)
 
 [node name="TransitionArea" parent="Screen4" node_paths=PackedStringArray("this_screen_limit", "next_screen_limit") instance=ExtResource("7_ws4ar")]
 position = Vector2(592, -2.745)
@@ -643,7 +641,7 @@ speed = 1.0
 float_duration = 2.0
 
 [node name="TransitionArea" parent="Screen5" node_paths=PackedStringArray("this_screen_limit", "next_screen_limit") instance=ExtResource("7_ws4ar")]
-position = Vector2(616, 368)
+position = Vector2(616, 344.555)
 scale = Vector2(-2.503, 0.3)
 this_screen_limit = NodePath("../CollisionShape2D")
 next_screen_limit = NodePath("../../Screen6/CollisionShape2D")
@@ -734,7 +732,7 @@ position = Vector2(248, 158)
 scale = Vector2(1.44414, 1.40404)
 
 [node name="CrumblingPlatform4" parent="Screen6" instance=ExtResource("26_c1i3k")]
-position = Vector2(200, 222)
+position = Vector2(200, 240)
 scale = Vector2(1.44414, 1.40404)
 
 [node name="CrumblingPlatform5" parent="Screen6" instance=ExtResource("26_c1i3k")]
@@ -896,16 +894,8 @@ scale = Vector2(0.3, 5.84)
 this_screen_limit = NodePath("../CollisionShape2D")
 next_screen_limit = NodePath("../../Screen9/CollisionShape2D")
 
-[node name="MovingPlattform" parent="Screen8" instance=ExtResource("18_8eqaq")]
-position = Vector2(320, 248)
-scale = Vector2(0.401285, 0.401285)
-curve = ExtResource("22_nia0u")
-speed = 0.4
-float_duration = 1.0
-loop = false
-
 [node name="MovingPlattform2" parent="Screen8" instance=ExtResource("10_iaeux")]
-position = Vector2(440, 281)
+position = Vector2(400, 281)
 scale = Vector2(0.415138, 0.415138)
 curve = ExtResource("23_ga3pa")
 speed = 1.0
@@ -942,7 +932,7 @@ position = Vector2(216, 253)
 scale = Vector2(1.46441, 1.46441)
 
 [node name="CrumblingPlatform2" parent="Screen9" instance=ExtResource("26_c1i3k")]
-position = Vector2(216, 334)
+position = Vector2(580, 240)
 scale = Vector2(1.46441, 1.46441)
 
 [node name="CanvasGroup" type="CanvasGroup" parent="Screen9"]
@@ -990,13 +980,6 @@ texture = ExtResource("14_wodrl")
 [node name="Sprite2D2" type="Sprite2D" parent="Screen9"]
 position = Vector2(445, 96)
 texture = ExtResource("22_n5grp")
-
-[node name="MovingPlattform" parent="Screen9" instance=ExtResource("18_8eqaq")]
-position = Vector2(593, 89)
-scale = Vector2(0.418727, 0.418727)
-curve = ExtResource("25_yoih7")
-speed = 0.25
-float_duration = 1.0
 
 [node name="Screen10" type="Node2D" parent="."]
 position = Vector2(5344, 336)

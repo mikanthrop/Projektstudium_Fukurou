@@ -1,6 +1,6 @@
 [gd_resource type="TileSet" load_steps=60 format=3 uid="uid://dy7gudh215rfa"]
 
-[ext_resource type="Texture2D" uid="uid://cxdam0oomn5wd" path="res://assets/tilesets/ground/alt/tileset_ground.png" id="1_oew8i"]
+[ext_resource type="Texture2D" uid="uid://cxdam0oomn5wd" path="res://assets/tilesets/ground/old/tileset_ground.png" id="1_oew8i"]
 [ext_resource type="Texture2D" uid="uid://34dtkv0g1can" path="res://assets/sprites/platformPack_tilesheet.png" id="2_tumle"]
 [ext_resource type="Texture2D" uid="uid://cvwarkh0e3hws" path="res://assets/tilesets/Tileset_thorns.png" id="4_6y5k0"]
 [ext_resource type="Texture2D" uid="uid://d3sq41amxefdv" path="res://assets/tilesets/flower_bench.png" id="5_gjobx"]
@@ -8,9 +8,9 @@
 [ext_resource type="Texture2D" uid="uid://de3714hkmkpw6" path="res://assets/tilesets/ground/Tileset_ground_leafs.png" id="5_tpscg"]
 [ext_resource type="Texture2D" uid="uid://bgs8ybf8e3wfe" path="res://assets/tilesets/leaves/Tileset_Baumstamm.png" id="6_pw2la"]
 [ext_resource type="Texture2D" uid="uid://dlvxi7jndlgn" path="res://assets/tilesets/ground/Tileset_grass.png" id="9_k7mhb"]
-[ext_resource type="Texture2D" uid="uid://b5qp6t6c2nmvu" path="res://assets/tilesets/leaves/Tileset_Laub_Test - Kopie.png" id="10_rwccw"]
+[ext_resource type="Texture2D" uid="uid://b5qp6t6c2nmvu" path="res://assets/tilesets/leaves/Tileset_Laub.png" id="10_rwccw"]
 [ext_resource type="Texture2D" uid="uid://dsd53wkwak2dd" path="res://assets/tilesets/layout_tiles/Tileset_Wasser.png" id="11_5fh4l"]
-[ext_resource type="Texture2D" uid="uid://woaalp6oj7ui" path="res://assets/tilesets/stone/Tiileset_stone_2.png" id="12_td31w"]
+[ext_resource type="Texture2D" uid="uid://woaalp6oj7ui" path="res://assets/tilesets/stone/Tileset_stone.png" id="12_td31w"]
 
 [sub_resource type="TileMapPattern" id="TileMapPattern_8yv73"]
 tile_data = PackedInt32Array(0, 196609, 1, 65536, 1, 0)

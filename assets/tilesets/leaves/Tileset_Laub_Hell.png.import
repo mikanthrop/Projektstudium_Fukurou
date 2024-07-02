@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://b5qp6t6c2nmvu"
-path="res://.godot/imported/Tileset_Laub_Test - Kopie.png-6e0231b3bd4e04166cfe554f2011c087.ctex"
+uid="uid://cp05meeawb44a"
+path="res://.godot/imported/Tileset_Laub_Hell.png-cba4ae6280a66a07d49867cf495a601b.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/tilesets/leaves/Tileset_Laub_Test - Kopie.png"
-dest_files=["res://.godot/imported/Tileset_Laub_Test - Kopie.png-6e0231b3bd4e04166cfe554f2011c087.ctex"]
+source_file="res://assets/tilesets/leaves/Tileset_Laub_Hell.png"
+dest_files=["res://.godot/imported/Tileset_Laub_Hell.png-cba4ae6280a66a07d49867cf495a601b.ctex"]
 
 [params]
 

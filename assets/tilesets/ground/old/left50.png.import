@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bnwolafl7ekun"
-path="res://.godot/imported/topleft50.png-c8cc91df02d1df918e7829adb88cd7d8.ctex"
+uid="uid://d1otuh66cin7w"
+path="res://.godot/imported/left50.png-72c0bc0db0664ad5c1426acbe5964183.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/tilesets/ground/alt/topleft50.png"
-dest_files=["res://.godot/imported/topleft50.png-c8cc91df02d1df918e7829adb88cd7d8.ctex"]
+source_file="res://assets/tilesets/ground/old/left50.png"
+dest_files=["res://.godot/imported/left50.png-72c0bc0db0664ad5c1426acbe5964183.ctex"]
 
 [params]
 
