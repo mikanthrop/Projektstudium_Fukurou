@@ -822,10 +822,11 @@ texture = ExtResource("22_palk0")
 [node name="PlayerRespawner" parent="Screen7" instance=ExtResource("2_ixqbm")]
 position = Vector2(33, 204)
 
-[node name="TransitionArea" parent="Screen7" node_paths=PackedStringArray("this_screen_limit") instance=ExtResource("7_ws4ar")]
+[node name="TransitionArea" parent="Screen7" node_paths=PackedStringArray("this_screen_limit", "next_screen_limit") instance=ExtResource("7_ws4ar")]
 position = Vector2(642.19, 250)
 scale = Vector2(0.3, 3.868)
 this_screen_limit = NodePath("../CollisionShape2D")
+next_screen_limit = NodePath("../../Screen8/CollisionShape2D")
 
 [node name="CanvasGroup" type="CanvasGroup" parent="Screen7"]
 position = Vector2(200, 165)
@@ -878,6 +879,10 @@ scale = Vector2(2, 2)
 position = Vector2(3968, 96)
 metadata/_edit_group_ = true
 
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Screen8"]
+position = Vector2(320, 312)
+shape = SubResource("RectangleShape2D_pjcj0")
+
 [node name="DeathZone" parent="Screen8" instance=ExtResource("3_tby7j")]
 position = Vector2(392, 599)
 scale = Vector2(17.08, 1)
@@ -885,9 +890,10 @@ scale = Vector2(17.08, 1)
 [node name="PlayerRespawner" parent="Screen8" instance=ExtResource("2_ixqbm")]
 position = Vector2(64, 384)
 
-[node name="TransitionArea" parent="Screen8" node_paths=PackedStringArray("next_screen_limit") instance=ExtResource("7_ws4ar")]
+[node name="TransitionArea" parent="Screen8" node_paths=PackedStringArray("this_screen_limit", "next_screen_limit") instance=ExtResource("7_ws4ar")]
 position = Vector2(640, 456)
 scale = Vector2(0.3, 5.84)
+this_screen_limit = NodePath("../CollisionShape2D")
 next_screen_limit = NodePath("../../Screen9/CollisionShape2D")
 
 [node name="MovingPlattform" parent="Screen8" instance=ExtResource("18_8eqaq")]
@@ -902,10 +908,8 @@ loop = false
 position = Vector2(440, 281)
 scale = Vector2(0.415138, 0.415138)
 curve = ExtResource("23_ga3pa")
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Screen8"]
-position = Vector2(320, 312)
-shape = SubResource("RectangleShape2D_pjcj0")
+speed = 1.0
+float_duration = 1.0
 
 [node name="Screen9" type="Node2D" parent="."]
 position = Vector2(4608, 496)
@@ -1357,6 +1361,7 @@ limit_target = NodePath("../../Screen1/CameraLimit/CollisionShape2D")
 [connection signal="body_entered" from="Screen6/CanvasGroup/DeathZone4" to="Screen6/PlayerRespawner" method="_on_death_zone_body_entered"]
 [connection signal="body_entered" from="Screen6/CanvasGroup/DeathZone5" to="Screen6/PlayerRespawner" method="_on_death_zone_body_entered"]
 [connection signal="body_entered" from="Screen6/CanvasGroup/DeathZone6" to="Screen6/PlayerRespawner" method="_on_death_zone_body_entered"]
+[connection signal="body_entered" from="Screen6/bounce_shroom" to="Screen6/bounce_shroom" method="_on_body_entered"]
 [connection signal="body_entered" from="Screen7/TransitionArea" to="Screen7/TransitionArea" method="_on_body_entered"]
 [connection signal="body_entered" from="Screen7/CanvasGroup/DeathZone" to="Screen7/PlayerRespawner" method="_on_death_zone_body_entered"]
 [connection signal="body_entered" from="Screen7/CanvasGroup/DeathZone2" to="Screen7/PlayerRespawner" method="_on_death_zone_body_entered"]
@@ -1372,6 +1377,7 @@ limit_target = NodePath("../../Screen1/CameraLimit/CollisionShape2D")
 [connection signal="body_entered" from="Screen8/DeathZone" to="Screen8/PlayerRespawner" method="_on_death_zone_body_entered"]
 [connection signal="body_entered" from="Screen8/TransitionArea" to="Screen8/TransitionArea" method="_on_body_entered"]
 [connection signal="body_entered" from="Screen9/bounce_shroom" to="Screen9/bounce_shroom" method="_on_body_entered"]
+[connection signal="body_entered" from="Screen9/TransitionArea" to="Screen9/TransitionArea" method="_on_body_entered"]
 [connection signal="body_entered" from="Screen9/CanvasGroup/DeathZone" to="Screen9/PlayerRespawner" method="_on_death_zone_body_entered"]
 [connection signal="body_entered" from="Screen9/CanvasGroup/DeathZone2" to="Screen9/PlayerRespawner" method="_on_death_zone_body_entered"]
 [connection signal="body_entered" from="Screen9/CanvasGroup/DeathZone3" to="Screen9/PlayerRespawner" method="_on_death_zone_body_entered"]
@@ -1381,6 +1387,9 @@ limit_target = NodePath("../../Screen1/CameraLimit/CollisionShape2D")
 [connection signal="body_entered" from="Screen9/CanvasGroup/DeathZone7" to="Screen9/PlayerRespawner" method="_on_death_zone_body_entered"]
 [connection signal="body_entered" from="Screen9/CanvasGroup/DeathZone8" to="Screen9/PlayerRespawner" method="_on_death_zone_body_entered"]
 [connection signal="body_entered" from="Screen9/CanvasGroup/DeathZone9" to="Screen9/PlayerRespawner" method="_on_death_zone_body_entered"]
+[connection signal="body_entered" from="Screen10/bounce_shroom2" to="Screen10/bounce_shroom2" method="_on_body_entered"]
+[connection signal="body_entered" from="Screen10/bounce_shroom" to="Screen10/bounce_shroom" method="_on_body_entered"]
+[connection signal="body_entered" from="Screen10/TransitionArea" to="Screen10/TransitionArea" method="_on_body_entered"]
 [connection signal="body_entered" from="Screen10/CanvasGroup/DeathZone" to="Screen10/PlayerRespawner" method="_on_death_zone_body_entered"]
 [connection signal="body_entered" from="Screen10/CanvasGroup/DeathZone2" to="Screen10/PlayerRespawner" method="_on_death_zone_body_entered"]
 [connection signal="body_entered" from="Screen10/CanvasGroup/DeathZone3" to="Screen10/PlayerRespawner" method="_on_death_zone_body_entered"]
