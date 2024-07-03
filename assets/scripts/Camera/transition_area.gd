@@ -8,7 +8,7 @@ class_name TransitionArea
 
 ## transition logic
 func _on_body_entered(body):
-	if (body.name == "Player"):
+	if body is Player:
 		print("player entered transition area")
 		var camera: PhantomCamera2D = body.get_node("PhantomCamera2D")
 		
