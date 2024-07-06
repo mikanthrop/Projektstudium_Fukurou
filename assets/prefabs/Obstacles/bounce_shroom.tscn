@@ -65,7 +65,7 @@ libraries = {
 "": SubResource("AnimationLibrary_eigp5")
 }
 
-[node name="boing" type="AudioStreamPlayer" parent="."]
+[node name="boing" type="AudioStreamPlayer2D" parent="."]
 stream = SubResource("AudioStreamMP3_bxduh")
 volume_db = -16.298
 pitch_scale = 1.37

@@ -571,7 +571,7 @@ one_shot = true
 [node name="RespawnTimer" type="Timer" parent="."]
 one_shot = true
 
-[node name="crumbling" type="AudioStreamPlayer" parent="."]
+[node name="crumbling" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource("3_gwyrn")
 volume_db = -18.627
 pitch_scale = 2.09
