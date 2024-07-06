@@ -1,0 +1,56 @@
+[gd_resource type="TileSet" load_steps=5 format=3 uid="uid://dtj4ms23lom7j"]
+
+[ext_resource type="Texture2D" uid="uid://bgs8ybf8e3wfe" path="res://assets/tilesets/leaves/Tileset_Baumstamm.png" id="1_a2slv"]
+[ext_resource type="Texture2D" uid="uid://b5qp6t6c2nmvu" path="res://assets/tilesets/leaves/Tileset_Laub.png" id="2_vflr5"]
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_uge2q"]
+texture = ExtResource("1_a2slv")
+0:0/0 = 0
+1:0/0 = 0
+2:0/0 = 0
+3:0/0 = 0
+4:0/0 = 0
+5:0/0 = 0
+6:0/0 = 0
+0:1/0 = 0
+1:1/0 = 0
+2:1/0 = 0
+3:1/0 = 0
+4:1/0 = 0
+5:1/0 = 0
+6:1/0 = 0
+0:2/0 = 0
+1:2/0 = 0
+2:2/0 = 0
+3:2/0 = 0
+4:2/0 = 0
+5:2/0 = 0
+6:2/0 = 0
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_nh2ju"]
+texture = ExtResource("2_vflr5")
+0:0/0 = 0
+1:0/0 = 0
+2:0/0 = 0
+3:0/0 = 0
+4:0/0 = 0
+5:0/0 = 0
+6:0/0 = 0
+0:1/0 = 0
+1:1/0 = 0
+2:1/0 = 0
+3:1/0 = 0
+4:1/0 = 0
+5:1/0 = 0
+6:1/0 = 0
+0:2/0 = 0
+1:2/0 = 0
+2:2/0 = 0
+3:2/0 = 0
+4:2/0 = 0
+5:2/0 = 0
+6:2/0 = 0
+
+[resource]
+sources/0 = SubResource("TileSetAtlasSource_uge2q")
+sources/1 = SubResource("TileSetAtlasSource_nh2ju")

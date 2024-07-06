@@ -15,6 +15,11 @@ run/main_scene="res://assets/screens/Part1.tscn"
 config/features=PackedStringArray("4.2", "Forward Plus")
 config/icon="res://assets/sprites/Fuku/Fuku_png.png"
 
+[autoload]
+
+TrackingCollectables="*res://assets/scripts/GameLogic/tracking_collectables.gd"
+WriteDictionary="*res://assets/scripts/GameLogic/write_dictionary.gd"
+
 [display]
 
 window/size/viewport_width=1200
