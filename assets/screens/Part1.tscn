@@ -2,9 +2,9 @@
 
 [ext_resource type="Script" path="res://assets/scripts/GameLogic/smoother.gd" id="1_2pjpc"]
 [ext_resource type="Script" path="res://addons/phantom_camera/scripts/phantom_camera_host/phantom_camera_host.gd" id="2_gjprr"]
-[ext_resource type="Texture2D" uid="uid://dgw4jm0cs8bfy" path="res://assets/sprites/background/parallax_layers/background.png" id="3_84cbk"]
-[ext_resource type="Texture2D" uid="uid://duol480cxopb0" path="res://assets/sprites/background/parallax_layers/hintergrund_Layer2.png" id="4_q3raw"]
-[ext_resource type="Texture2D" uid="uid://bkta27ud8j54w" path="res://assets/sprites/background/parallax_layers/hintergrund_Layer1.png" id="5_owxjo"]
+[ext_resource type="Texture2D" uid="uid://im2kemouup06" path="res://assets/sprites/background/parallax_layers/Parallax_sky.png" id="3_7ne14"]
+[ext_resource type="Texture2D" uid="uid://dsr63hrke8puk" path="res://assets/sprites/background/parallax_layers/Parallax_Layer2.png" id="4_ewhag"]
+[ext_resource type="Texture2D" uid="uid://7yg501kl6ol8" path="res://assets/sprites/background/parallax_layers/Parallax_Layer1.png" id="5_u2uvo"]
 [ext_resource type="Texture2D" uid="uid://tnmlrq7auch8" path="res://assets/tilesets/background_tiles/background_cave.png" id="6_570jg"]
 [ext_resource type="TileSet" uid="uid://dy7gudh215rfa" path="res://assets/tilesets/tile_atlas.tres" id="7_kfbud"]
 [ext_resource type="PackedScene" uid="uid://c5fothc6h3nlb" path="res://assets/prefabs/player_respawner.tscn" id="8_m0qb0"]
@@ -347,7 +347,7 @@ motion_mirroring = Vector2(1536, 0)
 [node name="Sprite2D" type="Sprite2D" parent="OutsideParallax/Clouds"]
 texture_filter = 1
 scale = Vector2(0.8, 0.8)
-texture = ExtResource("3_84cbk")
+texture = ExtResource("3_7ne14")
 
 [node name="background_trees" type="ParallaxLayer" parent="OutsideParallax"]
 motion_scale = Vector2(0.1, 0.1)
@@ -355,7 +355,7 @@ motion_mirroring = Vector2(1536, 0)
 
 [node name="Sprite2D" type="Sprite2D" parent="OutsideParallax/background_trees"]
 scale = Vector2(0.8, 0.8)
-texture = ExtResource("4_q3raw")
+texture = ExtResource("4_ewhag")
 
 [node name="ParallaxLayer3" type="ParallaxLayer" parent="OutsideParallax"]
 motion_scale = Vector2(0.2, 0.2)
@@ -363,7 +363,7 @@ motion_mirroring = Vector2(1536, 0)
 
 [node name="Sprite2D" type="Sprite2D" parent="OutsideParallax/ParallaxLayer3"]
 scale = Vector2(0.8, 0.8)
-texture = ExtResource("5_owxjo")
+texture = ExtResource("5_u2uvo")
 
 [node name="CaveBackground" type="TileMap" parent="."]
 tile_set = SubResource("TileSet_5s560")
@@ -568,6 +568,7 @@ position = Vector2(1005, 348)
 metadata/_edit_group_ = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Screen3"]
+visible = false
 position = Vector2(323, 187.5)
 shape = SubResource("RectangleShape2D_1a118")
 
