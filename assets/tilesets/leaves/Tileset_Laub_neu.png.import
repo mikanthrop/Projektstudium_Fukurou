@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://woaalp6oj7ui"
-path="res://.godot/imported/Tileset_stone.png-3bb4388cbee1cc9013a68f536fb3568e.ctex"
+uid="uid://cnteu848cdl3o"
+path="res://.godot/imported/Tileset_Laub_neu.png-f1f4be5b964de4c4615b450c838d46b6.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/tilesets/stone/Tileset_stone.png"
-dest_files=["res://.godot/imported/Tileset_stone.png-3bb4388cbee1cc9013a68f536fb3568e.ctex"]
+source_file="res://assets/tilesets/leaves/Tileset_Laub_neu.png"
+dest_files=["res://.godot/imported/Tileset_Laub_neu.png-f1f4be5b964de4c4615b450c838d46b6.ctex"]
 
 [params]
 
