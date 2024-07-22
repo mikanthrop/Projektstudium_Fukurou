@@ -16,7 +16,6 @@ func enter() -> void:
 	
 	# set parent velocity to zero
 	parent.velocity.x = 0
-	parent.animation_player.play("beak_growing")
 	
 
 

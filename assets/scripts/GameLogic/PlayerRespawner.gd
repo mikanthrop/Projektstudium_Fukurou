@@ -6,29 +6,30 @@ var player_scene : Resource = preload("res://assets/prefabs/player.tscn")
 var animation_name : String = "despawn"
 
 func _on_death_zone_body_entered(body) -> void:
+	# Disable player movement
 	body.set_process_unhandled_input(false)
 	body.set_physics_process(false)
 	body.set_process(false)
 	
-	if (body.name == "Player"):
-		var player: Player = owner.get_node_or_null(NodePath(body.name))
+	if body is Player:
+		var player: Player = body as Player
 		
-		# Disable player movement
 		# search for animation player
-		var children : Array[Node] = player.get_children()
-		var animation_player : AnimationPlayer
-		for child in children: 
-			if child.name == "FukuAnimation":
-				animation_player = child
-				break
-		if animation_player != AnimationPlayer:
-			# player despawn animation
+		var animation_player : AnimationPlayer = player.get_node_or_null("FukuAnimation")
+		if animation_player:
+			# Play death animation
 			death.play()
 			animation_player.play(animation_name)
 			# wait for a specific amount of time
 			await animation_player.animation_finished
 			# Reset Player's transform and enable player movement
 			player.global_position = self.global_position
-			body.set_process(true)
-			body.set_physics_process(true)
-			body.set_process_unhandled_input(true)
+			player.velocity = Vector2(0,0);
+			print("in respawner: reset player's position")
+			await get_tree().create_timer(0.1).timeout
+	
+	# restart player methods
+	body.set_process(true)
+	body.set_physics_process(true)
+	body.set_process_unhandled_input(true)
+		

@@ -7,7 +7,8 @@ class_name Jump_State
 
 @onready var JUMP_VELOCITY: float = (-1.0) * ((2.0 * parent.JUMP_HEIGHT) / parent.JUMP_TIME_TO_PEAK) 
 @onready var JUMP_GRAVITY: float = (-1.0) * ((-2.0 * parent.JUMP_HEIGHT) / (parent.JUMP_TIME_TO_PEAK * parent.JUMP_TIME_TO_PEAK))
-@onready var jumpOne =$jumpOne
+@onready var jumpOne: AudioStreamPlayer = $jumpSound
+
 var jump_height_timer: float = 0.0
 ## Number that stores the initial velocity the player had when entering the jumping state. 
 ## Is used to add a portion of the momentum to the jump while in the air. 

@@ -14,7 +14,7 @@ var animation_name: StringName = "bounce"
 
 
 func _on_body_entered(body):
-	## check if body entered is player (via name)
+	## check if body entered is player 
 	if body is Player:
 		boing.play()
 		var player: Player = owner.get_node_or_null(NodePath(body.name))

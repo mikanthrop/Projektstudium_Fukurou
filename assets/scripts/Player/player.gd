@@ -21,16 +21,21 @@ extends CharacterBody2D
 ## How fast the player dashes in pixels.
 @export var DASH_SPEED: float
 
+## Starting screen limit. Should be a [CollisionShape2D].
+#@export_node_path("TileMap", "CollisionShape2D") var starting_screen_limit: NodePath 
+
 # state machine
 ## This holds the state_machine node that coordinates all states and the player's movement. [br]
 ## It should be a child of the player node. 
-@export var state_machine: Node
+@onready var state_machine: Node = $state_machine
 ## This is the path to the AnimationPlayer Node that performs all animations of the player.
-@export var animation_player: AnimationPlayer
+@onready var animation_player: AnimationPlayer = $FukuAnimation
 ## This is the path to the PlayerSprite Node and is needed for animations.
 @onready var sprite : Sprite2D = $PlayerSprite
 ## The path to a [RayCast2D] node that is used for the wall_hold ability. 
-@export var wall_hold_ray_cast: RayCast2D
+@onready var wall_hold_ray_cast: RayCast2D = $RayCast2D
+## The path to the [PhantomCamera2D] node that is used to handle camera transitions and such.
+#@onready var phantom_camera: PhantomCamera2D = $PhantomCamera2D
 
 #flags
 ## The direction the player is currently facing.
@@ -53,11 +58,13 @@ var raycast_length: int = 13
 func _ready() -> void:
 	print_tree_pretty()
 	state_machine.init(self)
+	#phantom_camera.limit_target = starting_screen_limit
 
 
 # give input to state_machine
 func _unhandled_input(event: InputEvent) -> void:
 	state_machine.process_input(event)
+	
 
 
 # give physicy handling to state machine

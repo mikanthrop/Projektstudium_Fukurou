@@ -2,8 +2,11 @@ extends Base_State
 
 class_name Wall_Hold_State
 
+@onready var holding = $wall_holdSound
+
 var pos: Vector2
-@onready var holding = $holding
+
+
 func enter() -> void: 
 	super()
 	holding.play()
@@ -13,6 +16,7 @@ func enter() -> void:
 
 
 func exit() -> void:
+	holding.stop()
 	parent.velocity.y = 0
 
 

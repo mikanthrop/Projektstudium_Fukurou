@@ -4,7 +4,7 @@ class_name Walk_State
 
 
 @export var coyote_timer: Timer
-@onready var walking = $walking
+@onready var walking = $walkSound
 
 # called when state is changed to walking
 func enter() -> void: 
@@ -18,6 +18,8 @@ func enter() -> void:
 
 
 func exit() -> void:
+	walking.stop()
+	
 	parent.has_jumped = false
 	parent.has_dashed = false
 	coyote_timer.start()
