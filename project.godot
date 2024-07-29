@@ -24,6 +24,8 @@ WriteDictionary="*res://assets/scripts/GameLogic/write_dictionary.gd"
 
 window/size/viewport_width=1200
 window/size/viewport_height=680
+window/stretch/mode="viewport"
+window/stretch/aspect="expand"
 
 [dotnet]
 
