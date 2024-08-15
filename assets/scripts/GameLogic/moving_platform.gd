@@ -1,13 +1,13 @@
 extends Path2D
 
 # variables for the main scene
-## [float] value. Determines how fast the platform is moving in seconds. \b 
-## Speed is dependant on the length of the curves. So 2.0 seconds for long curves is quite fast but 2.0 for short curves is very slow. \b
+## [float] value. Determines how fast the platform is moving in seconds. 
+## Speed is dependant on the length of the [Path2D] node. So 2.0 seconds for long curves is quite fast but 2.0 for short curves is very slow. 
 ## Speed can be a negative value, which results in the platform moving into the opposite direction the curve is using.  
 @export var speed: float = 2.0
-## [[float]] value. Determines how long the platform is standing still on either side of the loop. 
+## [float] value. Determines how long the platform is standing still on either side of the loop. 
 @export var float_duration: float = 3.0
-## [[bool]] value. Determines if platform is looping or not. 
+## [bool] value. Determines if the platform is looping or not. 
 @export var loop: bool = true
 
 # needed nodes
@@ -44,26 +44,24 @@ func _ready() -> void:
 func _physics_process(delta: float) -> void:
 	# 
 	if (not timer_started):
-		if (path.get_progress_ratio() > approximate_ending):
+		if (path.get_progress_ratio() > approximate_ending or path.get_progress_ratio() < approximate_beginning):
 			timer.start()
 			timer_started = true
 			movement_paused = true
-		elif (path.get_progress_ratio() < approximate_beginning):
-			timer.start()
-			timer_started = true
-			movement_paused = true
+	
 	if (not movement_paused and loop):
 		if (upward_movement):  # Move upwards
 			path.set_progress_ratio(path.get_progress_ratio() + speed * delta)
 		else:  # Move downwards
 			path.set_progress_ratio(path.get_progress_ratio() - speed * delta)
+	
 	if (not movement_paused and not loop):
 		path.set_progress_ratio(path.get_progress_ratio() + speed * delta)
-	# let player fall off the oneshot platform at the end of its curve 
-	#if (movement_paused and not loop and path.get_progress_ratio() > approximate_ending):
-		#await timer.timeout
-		#collision_shape.set_deferred("disabled", true)
-		#collision_shape.set_deferred("disabled", false)
+	
+	# If the platform is not looping and has reached the end, disable the collision shape
+	if (not loop and path.get_progress_ratio() > approximate_ending):
+		collision_shape.disabled = true
+		print("Platform reached the end. Collision shape disabled.")
 
 
 func _on_float_timer_timeout() -> void:
@@ -71,7 +69,8 @@ func _on_float_timer_timeout() -> void:
 	movement_paused = false
 	if (path.get_progress_ratio() <= approximate_beginning):
 		upward_movement = true
-		path.set_progress_ratio(approximate_beginning+offset)
+		path.set_progress_ratio(approximate_beginning + offset)
 	elif (path.get_progress_ratio() >= approximate_ending):
 		upward_movement = false
-		path.set_progress_ratio(approximate_ending-offset)
+		path.set_progress_ratio(approximate_ending - offset)
+
