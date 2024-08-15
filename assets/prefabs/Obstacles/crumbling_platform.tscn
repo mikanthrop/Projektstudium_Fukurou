@@ -5,12 +5,12 @@
 [ext_resource type="AudioStream" uid="uid://bngmu6d30v6s5" path="res://assets/Sounds/Crumbling leaf_02.mp3" id="3_gwyrn"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ptvyu"]
-size = Vector2(32, 8)
+size = Vector2(32, 1)
 
 [sub_resource type="PhysicsMaterial" id="PhysicsMaterial_ovq2k"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_3wvxy"]
-size = Vector2(32, 10)
+size = Vector2(32, 6)
 
 [sub_resource type="Animation" id="Animation_ppgvt"]
 length = 0.001
@@ -170,6 +170,18 @@ tracks/12/keys = {
 "update": 1,
 "values": [true]
 }
+tracks/13/type = "value"
+tracks/13/imported = false
+tracks/13/enabled = true
+tracks/13/path = NodePath("CrumblingLeaf:position")
+tracks/13/interp = 1
+tracks/13/loop_wrap = true
+tracks/13/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(0, 2.135)]
+}
 
 [sub_resource type="Animation" id="Animation_v8q80"]
 resource_name = "fall"
@@ -258,6 +270,18 @@ tracks/6/keys = {
 "update": 1,
 "values": [true]
 }
+tracks/7/type = "value"
+tracks/7/imported = false
+tracks/7/enabled = false
+tracks/7/path = NodePath("CrumblingLeaf:position")
+tracks/7/interp = 1
+tracks/7/loop_wrap = true
+tracks/7/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(0, 0)]
+}
 
 [sub_resource type="Animation" id="Animation_ba1xh"]
 resource_name = "idle"
@@ -285,7 +309,7 @@ tracks/1/keys = {
 "times": PackedFloat32Array(0, 0.6),
 "transitions": PackedFloat32Array(1, 1),
 "update": 0,
-"values": [Vector2(1, -6), Vector2(1, -3)]
+"values": [Vector2(0, -8), Vector2(0, -5)]
 }
 tracks/2/type = "value"
 tracks/2/imported = false
@@ -309,7 +333,7 @@ tracks/3/keys = {
 "times": PackedFloat32Array(0, 0.6),
 "transitions": PackedFloat32Array(1, 1),
 "update": 0,
-"values": [Vector2(0, -4.5), Vector2(0, -1.5)]
+"values": [Vector2(0, -4), Vector2(0, -1)]
 }
 tracks/4/type = "value"
 tracks/4/imported = false
@@ -394,6 +418,18 @@ tracks/10/keys = {
 "transitions": PackedFloat32Array(1),
 "update": 1,
 "values": [true]
+}
+tracks/11/type = "value"
+tracks/11/imported = false
+tracks/11/enabled = false
+tracks/11/path = NodePath("CrumblingLeaf:position")
+tracks/11/interp = 1
+tracks/11/loop_wrap = true
+tracks/11/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(0, 0)]
 }
 
 [sub_resource type="Animation" id="Animation_x7r27"]
@@ -482,7 +518,7 @@ tracks/6/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 0,
-"values": [Vector2(0, -3)]
+"values": [Vector2(0, -1)]
 }
 tracks/7/type = "value"
 tracks/7/imported = false
@@ -520,6 +556,18 @@ tracks/9/keys = {
 "update": 1,
 "values": [false]
 }
+tracks/10/type = "value"
+tracks/10/imported = false
+tracks/10/enabled = false
+tracks/10/path = NodePath("CrumblingLeaf:position")
+tracks/10/interp = 1
+tracks/10/loop_wrap = true
+tracks/10/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(0, 2.135)]
+}
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_tap6h"]
 _data = {
@@ -537,6 +585,7 @@ script = ExtResource("1_f0qy5")
 
 [node name="CrumblingLeaf" type="Sprite2D" parent="."]
 texture_filter = 1
+position = Vector2(0, 2.135)
 texture = ExtResource("1_kytb5")
 flip_h = true
 hframes = 9
