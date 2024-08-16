@@ -33,3 +33,23 @@ func _on_death_zone_body_entered(body) -> void:
 	body.set_physics_process(true)
 	body.set_process_unhandled_input(true)
 		
+
+
+func _on_death_zone_6_body_entered(body):
+	pass # Replace with function body.
+
+
+func _on_death_zone_3_body_entered(body):
+	pass # Replace with function body.
+
+
+func _on_death_zone_2_body_entered(body):
+	pass # Replace with function body.
+
+
+func _on_death_zone_4_body_entered(body):
+	pass # Replace with function body.
+
+
+func _on_death_zone_5_body_entered(body):
+	pass # Replace with function body.
