@@ -53,3 +53,15 @@ func _on_death_zone_4_body_entered(body):
 
 func _on_death_zone_5_body_entered(body):
 	pass # Replace with function body.
+
+
+func _on_death_zone_7_body_entered(body):
+	pass # Replace with function body.
+
+
+func _on_death_zone_8_body_entered(body):
+	pass # Replace with function body.
+
+
+func _on_death_zone_9_body_entered(body):
+	pass # Replace with function body.
