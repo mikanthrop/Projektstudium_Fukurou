@@ -45,7 +45,6 @@ func _physics_process(delta: float) -> void:
 	# 
 	if (not timer_started):
 		if (path.get_progress_ratio() > approximate_ending or path.get_progress_ratio() < approximate_beginning):
-			timer.start()
 			timer_started = true
 			movement_paused = true
 	

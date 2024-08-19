@@ -1,7 +1,7 @@
-[gd_scene load_steps=7 format=3 uid="uid://t7heo3lddek5"]
+[gd_scene load_steps=7 format=3 uid="uid://cgk81jkjl5b0r"]
 
-[ext_resource type="Script" path="res://assets/scripts/GameLogic/moving_platform.gd" id="1_in8d3"]
-[ext_resource type="Texture2D" uid="uid://bay8heeswdm11" path="res://assets/sprites/obstacles/leaf_2tiles.png" id="2_8ocy4"]
+[ext_resource type="Script" path="res://assets/scripts/GameLogic/moving_platform.gd" id="1_62nsn"]
+[ext_resource type="Texture2D" uid="uid://bay8heeswdm11" path="res://assets/sprites/obstacles/leaf_2tiles.png" id="2_t5ba8"]
 
 [sub_resource type="PhysicsMaterial" id="PhysicsMaterial_0anxl"]
 
@@ -17,7 +17,7 @@ _data = {
 }
 
 [node name="MovingPlattform" type="Path2D"]
-script = ExtResource("1_in8d3")
+script = ExtResource("1_62nsn")
 metadata/_edit_group_ = true
 
 [node name="PathFollow2D" type="PathFollow2D" parent="."]
@@ -39,7 +39,7 @@ texture_filter = 1
 position = Vector2(-7.23998e-05, 20)
 rotation = 1.5708
 scale = Vector2(2.39843, 2.39843)
-texture = ExtResource("2_8ocy4")
+texture = ExtResource("2_t5ba8")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="AnimatableBody2D"]
 position = Vector2(0.267998, 0.437814)

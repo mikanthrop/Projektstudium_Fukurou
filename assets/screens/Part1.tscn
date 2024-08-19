@@ -1,4 +1,4 @@
-[gd_scene load_steps=74 format=3 uid="uid://dcmj68qtvrdqr"]
+[gd_scene load_steps=73 format=3 uid="uid://dcmj68qtvrdqr"]
 
 [ext_resource type="Script" path="res://assets/scripts/GameLogic/smoother.gd" id="1_2pjpc"]
 [ext_resource type="Script" path="res://assets/scripts/Camera/transitions.gd" id="2_388ln"]
@@ -19,7 +19,7 @@
 [ext_resource type="PackedScene" uid="uid://kibk15ow5ys4" path="res://assets/prefabs/Obstacles/oneway_platform.tscn" id="13_lkpxc"]
 [ext_resource type="PackedScene" uid="uid://bdpksvvhgfls5" path="res://assets/prefabs/moving_plattform_big.tscn" id="14_6lujn"]
 [ext_resource type="Curve2D" uid="uid://dllb0uxhih5ky" path="res://assets/prefabs/leaf_in_wind_Screen5.tres" id="15_6i48u"]
-[ext_resource type="PackedScene" uid="uid://t7heo3lddek5" path="res://assets/prefabs/moving_plattform_small.tscn" id="17_jl7yj"]
+[ext_resource type="PackedScene" uid="uid://t7heo3lddek5" path="res://assets/prefabs/moving_plattform_small_multiple.tscn" id="17_jl7yj"]
 [ext_resource type="Curve2D" uid="uid://c2lsugfusqx85" path="res://assets/prefabs/leaf_in_wind_Screen6.tres" id="18_6kyxg"]
 [ext_resource type="PackedScene" uid="uid://di6xxbgxcv8wm" path="res://assets/prefabs/Obstacles/bounce_shroom.tscn" id="19_87yl2"]
 [ext_resource type="Texture2D" uid="uid://dqp38mp7mikxw" path="res://assets/sprites/NPCs/bats/blue/bat_blue.png" id="20_aw06b"]
@@ -43,7 +43,6 @@
 [ext_resource type="Script" path="res://assets/scripts/Player/movement/wall_holding.gd" id="35_8jnp7"]
 [ext_resource type="Script" path="res://addons/phantom_camera/scripts/phantom_camera/phantom_camera_2d.gd" id="36_ivnci"]
 [ext_resource type="Script" path="res://addons/phantom_camera/scripts/resources/tween_resource.gd" id="37_ndc5g"]
-[ext_resource type="Texture2D" uid="uid://o2r6yijbsjif" path="res://assets/sprites/Screenshot 2024-07-16 230059.png" id="43_glp8d"]
 [ext_resource type="TileSet" uid="uid://dtj4ms23lom7j" path="res://assets/tilesets/non_interactable_tiles.tres" id="44_5iafq"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_e41g3"]
@@ -698,12 +697,6 @@ position = Vector2(1490, -142)
 position = Vector2(318, 182)
 shape = SubResource("RectangleShape2D_lv5ds")
 script = ExtResource("12_8wgew")
-
-[node name="Sprite2D" type="Sprite2D" parent="Screen4,5"]
-visible = false
-position = Vector2(317.504, 178.375)
-scale = Vector2(0.874697, 0.874697)
-texture = ExtResource("43_glp8d")
 
 [node name="MovingPlattform" parent="Screen4,5" instance=ExtResource("14_6lujn")]
 position = Vector2(437, 262)

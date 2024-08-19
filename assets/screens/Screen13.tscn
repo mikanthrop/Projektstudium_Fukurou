@@ -2,7 +2,7 @@
 
 [ext_resource type="TileSet" uid="uid://dy7gudh215rfa" path="res://assets/tilesets/tile_atlas.tres" id="1_1vbfc"]
 [ext_resource type="Texture2D" uid="uid://dhs6we8ws6yu2" path="res://assets/Screenshot 2024-08-16 203607.png" id="1_lpr0p"]
-[ext_resource type="PackedScene" uid="uid://t7heo3lddek5" path="res://assets/prefabs/moving_plattform_small.tscn" id="3_mj1ci"]
+[ext_resource type="PackedScene" uid="uid://t7heo3lddek5" path="res://assets/prefabs/moving_plattform_small_multiple.tscn" id="3_mj1ci"]
 [ext_resource type="Curve2D" uid="uid://qagck51q1wje" path="res://assets/prefabs/leaf_in_wind_Screen13_small.tres" id="4_8v5hv"]
 [ext_resource type="PackedScene" uid="uid://bdpksvvhgfls5" path="res://assets/prefabs/moving_plattform_big.tscn" id="5_yla5v"]
 [ext_resource type="Curve2D" uid="uid://d36enaiitpsvc" path="res://assets/prefabs/leaf_in_wind_Screen13_big2.tres" id="6_xxup7"]
