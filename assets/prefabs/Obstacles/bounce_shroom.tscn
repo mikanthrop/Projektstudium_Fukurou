@@ -69,3 +69,5 @@ libraries = {
 stream = SubResource("AudioStreamMP3_bxduh")
 volume_db = -16.298
 pitch_scale = 1.37
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
