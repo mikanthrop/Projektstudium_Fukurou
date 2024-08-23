@@ -5,7 +5,7 @@
 [ext_resource type="AudioStream" uid="uid://bngmu6d30v6s5" path="res://assets/Sounds/Crumbling leaf_02.mp3" id="3_gwyrn"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ptvyu"]
-size = Vector2(32, 1)
+size = Vector2(32, 1.5)
 
 [sub_resource type="PhysicsMaterial" id="PhysicsMaterial_ovq2k"]
 

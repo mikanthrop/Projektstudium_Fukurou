@@ -1,4 +1,4 @@
-[gd_scene load_steps=73 format=3 uid="uid://dcmj68qtvrdqr"]
+[gd_scene load_steps=75 format=3 uid="uid://dcmj68qtvrdqr"]
 
 [ext_resource type="Script" path="res://assets/scripts/GameLogic/smoother.gd" id="1_2pjpc"]
 [ext_resource type="Script" path="res://assets/scripts/Camera/transitions.gd" id="2_388ln"]
@@ -11,7 +11,6 @@
 [ext_resource type="PackedScene" uid="uid://c5fothc6h3nlb" path="res://assets/prefabs/player_respawner.tscn" id="8_m0qb0"]
 [ext_resource type="PackedScene" uid="uid://dcghcjwvfgl6n" path="res://assets/prefabs/Obstacles/crumbling_platform.tscn" id="9_8r7v8"]
 [ext_resource type="PackedScene" uid="uid://cfvxij5pedplm" path="res://assets/prefabs/Obstacles/death_zone.tscn" id="10_kvjo3"]
-[ext_resource type="PackedScene" uid="uid://bvkltedpg1iws" path="res://assets/prefabs/transition_area.tscn" id="11_q65w2"]
 [ext_resource type="Script" path="res://assets/scripts/Camera/Camera_Limit.gd" id="12_8wgew"]
 [ext_resource type="PackedScene" uid="uid://blbecmdcnemkw" path="res://assets/dialogue/dialogue_prefab.tscn" id="12_j21eq"]
 [ext_resource type="PackedScene" uid="uid://cwt1yxw38xir1" path="res://assets/prefabs/letter_piupost.tscn" id="12_n2w68"]
@@ -19,6 +18,7 @@
 [ext_resource type="PackedScene" uid="uid://kibk15ow5ys4" path="res://assets/prefabs/Obstacles/oneway_platform.tscn" id="13_lkpxc"]
 [ext_resource type="PackedScene" uid="uid://bdpksvvhgfls5" path="res://assets/prefabs/moving_plattform_big.tscn" id="14_6lujn"]
 [ext_resource type="Curve2D" uid="uid://dllb0uxhih5ky" path="res://assets/prefabs/leaf_in_wind_Screen5.tres" id="15_6i48u"]
+[ext_resource type="PackedScene" uid="uid://cgk81jkjl5b0r" path="res://assets/prefabs/moving_plattform_small.tscn" id="15_6pt3h"]
 [ext_resource type="PackedScene" uid="uid://t7heo3lddek5" path="res://assets/prefabs/moving_plattform_small_multiple.tscn" id="17_jl7yj"]
 [ext_resource type="Curve2D" uid="uid://c2lsugfusqx85" path="res://assets/prefabs/leaf_in_wind_Screen6.tres" id="18_6kyxg"]
 [ext_resource type="PackedScene" uid="uid://di6xxbgxcv8wm" path="res://assets/prefabs/Obstacles/bounce_shroom.tscn" id="19_87yl2"]
@@ -32,9 +32,11 @@
 [ext_resource type="Script" path="res://assets/scripts/Player/player.gd" id="26_mm1jr"]
 [ext_resource type="Texture2D" uid="uid://cbl4kcv1rqeco" path="res://assets/sprites/Fuku/Fuku_animation_spritesheet.png" id="27_ysj4e"]
 [ext_resource type="Script" path="res://assets/scripts/Player/movement/state_machine.gd" id="28_5qg3x"]
+[ext_resource type="PackedScene" uid="uid://sugorvrt2u2v" path="res://assets/prefabs/moving_plattform_big_multiple.tscn" id="29_4rp1u"]
 [ext_resource type="Script" path="res://assets/scripts/Player/movement/idling.gd" id="29_6dhl2"]
 [ext_resource type="JSON" path="res://assets/dialogue/json/end_of_demo.json" id="29_61dhd"]
 [ext_resource type="PackedScene" uid="uid://xr47otq3rvrg" path="res://assets/prefabs/letter_krapost.tscn" id="29_dshww"]
+[ext_resource type="Curve2D" uid="uid://df3s430kcq2j1" path="res://assets/prefabs/leaf_in_wind_Screen8_big.tres" id="30_47nv8"]
 [ext_resource type="Script" path="res://assets/scripts/Player/movement/walking.gd" id="30_p8276"]
 [ext_resource type="Script" path="res://assets/scripts/Player/movement/jumping.gd" id="31_ewhy8"]
 [ext_resource type="AudioStream" uid="uid://dswsqo8fo4ge8" path="res://assets/Sounds/JumpSoundFlapOne.mp3" id="32_qurn1"]
@@ -492,7 +494,7 @@ position = Vector2(91, 125)
 position = Vector2(173, 168)
 
 [node name="CrumblingPlatform2" parent="Screen1" instance=ExtResource("9_8r7v8")]
-position = Vector2(504, 302)
+position = Vector2(582, 303)
 scale = Vector2(1.44, 1.32)
 
 [node name="CanvasGroup" type="CanvasGroup" parent="Screen1"]
@@ -698,16 +700,17 @@ position = Vector2(318, 182)
 shape = SubResource("RectangleShape2D_lv5ds")
 script = ExtResource("12_8wgew")
 
+[node name="MovingPlattform3" parent="Screen4,5" instance=ExtResource("15_6pt3h")]
+position = Vector2(480, 142)
+scale = Vector2(0.45164, 0.45164)
+
 [node name="MovingPlattform" parent="Screen4,5" instance=ExtResource("14_6lujn")]
-position = Vector2(437, 262)
+position = Vector2(443, 262)
 scale = Vector2(0.432131, 0.432131)
 
-[node name="MovingPlattform2" parent="Screen4,5" instance=ExtResource("17_jl7yj")]
-position = Vector2(478, 151)
-scale = Vector2(0.425853, 0.425853)
-
 [node name="OnewayPlatform" parent="Screen4,5" instance=ExtResource("13_lkpxc")]
-position = Vector2(414, 188)
+position = Vector2(409, 188)
+scale = Vector2(0.85515, 0.85515)
 
 [node name="PlayerRespawner" parent="Screen4,5" instance=ExtResource("8_m0qb0")]
 position = Vector2(494, 310)
@@ -1019,8 +1022,13 @@ scale = Vector2(17.08, 1)
 [node name="PlayerRespawner" parent="Screen8" instance=ExtResource("8_m0qb0")]
 position = Vector2(64, 384)
 
+[node name="MovingPlattform" parent="Screen8" instance=ExtResource("29_4rp1u")]
+position = Vector2(319, 203)
+scale = Vector2(0.412995, 0.412995)
+curve = ExtResource("30_47nv8")
+
 [node name="MovingPlattform2" parent="Screen8" instance=ExtResource("17_jl7yj")]
-position = Vector2(400, 281)
+position = Vector2(442, 223)
 scale = Vector2(0.415138, 0.415138)
 curve = ExtResource("24_db1h7")
 speed = 1.0
@@ -1043,10 +1051,6 @@ layer_0/tile_data = PackedInt32Array(0, 65543, 1, 65536, 65543, 2, 458752, 65542
 [node name="bounce_shroom" parent="Screen9" instance=ExtResource("19_87yl2")]
 position = Vector2(415, 343)
 scale = Vector2(1.30162, 1.30162)
-
-[node name="TransitionArea" parent="Screen9" instance=ExtResource("11_q65w2")]
-position = Vector2(736, 127)
-scale = Vector2(0.496964, 4.76079)
 
 [node name="PlayerRespawner" parent="Screen9" instance=ExtResource("8_m0qb0")]
 position = Vector2(94, 72)

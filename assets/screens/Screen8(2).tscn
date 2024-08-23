@@ -37,12 +37,12 @@ scale = Vector2(0.45, 0.45)
 curve = ExtResource("9_epm5h")
 speed = 1.5
 float_duration = 0.0
-loop = false
 
 [node name="MovingPlattform2" parent="." instance=ExtResource("7_tuquv")]
 position = Vector2(443, 190)
 scale = Vector2(0.449162, 0.449162)
 curve = ExtResource("8_jlet8")
+loop = false
 
 [node name="MovingPlattform3" parent="." instance=ExtResource("9_ufpku")]
 position = Vector2(247, 160)
