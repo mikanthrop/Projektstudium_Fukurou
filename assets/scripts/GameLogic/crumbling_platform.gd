@@ -27,7 +27,6 @@ func _physics_process(delta):
 
 
 func _on_tremble_timer_timeout():
-	self.set_position(Vector2(self.get_position().x, self.get_position().y - animation_offset))
 	crumbling.play()
 	animation_player.play("fall")
 
