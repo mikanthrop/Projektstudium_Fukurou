@@ -1,4 +1,4 @@
-[gd_scene load_steps=75 format=3 uid="uid://dcmj68qtvrdqr"]
+[gd_scene load_steps=76 format=3 uid="uid://dcmj68qtvrdqr"]
 
 [ext_resource type="Script" path="res://assets/scripts/GameLogic/smoother.gd" id="1_2pjpc"]
 [ext_resource type="Script" path="res://assets/scripts/Camera/transitions.gd" id="2_388ln"]
@@ -111,8 +111,11 @@ size = Vector2(640, 416)
 size = Vector2(800, 368)
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_fitw2"]
-radius = 7.54717
-height = 32.345
+radius = 8.62534
+height = 30.1887
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ttswn"]
+size = Vector2(14.1176, 19.1745)
 
 [sub_resource type="AudioStreamMP3" id="AudioStreamMP3_7m8rt"]
 data = PackedByteArray(73, 68, 51, 3, 0, 0, 0, 0, 0, 22, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 255, 251, 176, 100, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 73, 110, 102, 111, 0, 0, 0, 15, 0, 0, 0, 6, 0, 0, 17, 35, 0, 42, 42, 42, 42, 42, 42, 42, 42, 42, 42, 42, 42, 42, 42, 42, 42, 85, 85, 85, 85, 85, 85, 85, 85, 85, 85, 85, 85, 85, 85, 85, 85, 85, 128, 128, 128, 128, 128, 128, 128, 128, 128, 128, 128, 128, 128, 128, 128, 128, 170, 170, 170, 170, 170, 170, 170, 170, 170, 170, 170, 170, 170, 170, 170, 170, 170, 213, 213, 213, 213, 213, 213, 213, 213, 213, 213, 213, 213, 213, 213, 213, 213, 213, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 0, 0, 0, 57, 76, 65, 77, 69, 51, 46, 49, 48, 48, 1, 186, 0, 0, 0, 0, 0, 0, 0, 0, 52, 192, 36, 5, 64, 77, 0, 0, 192, 0, 0, 17, 35, 32, 2, 104, 252, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 255, 251, 176, 100, 0, 0, 244, 239, 70, 69, 131, 76, 54, 66, 84, 229, 24, 32, 49, 236, 144, 90, 113, 143, 33, 77, 225, 139, 193, 58, 147, 225, 192, 101, 188, 64, 61, 136, 141, 60, 147, 110, 77, 103, 2, 0, 43, 149, 174, 236, 61, 105, 128, 207, 75, 46, 168, 211, 145, 130, 70, 37, 156, 110, 104, 75, 87, 113, 168, 162, 105, 160, 13, 167, 178, 2, 209, 178, 121, 165, 108, 87, 17, 249, 19, 40, 135, 88, 35, 115, 121, 229, 145, 56, 126, 219, 192, 193, 12, 192, 153, 189, 99, 231, 202, 138, 68, 132, 51, 49, 12, 158, 190, 3, 202, 64, 36, 19, 42, 118, 37, 188, 72, 60, 185, 217, 61, 121, 155, 244, 165, 44, 177, 202, 82, 148, 156, 178, 195, 206, 157, 95, 123, 210, 155, 99, 129, 32, 243, 166, 250, 189, 123, 249, 73, 214, 14, 0, 1, 8, 65, 145, 4, 211, 216, 143, 119, 112, 97, 2, 4, 17, 201, 153, 241, 199, 234, 120, 30, 0, 126, 97, 227, 195, 56, 0, 103, 3, 195, 248, 239, 248, 6, 73, 74, 54, 102, 132, 36, 18, 1, 0, 161, 83, 135, 103, 233, 28, 132, 150, 184, 127, 2, 129, 225, 92, 205, 252, 166, 143, 193, 108, 33, 5, 192, 176, 177, 130, 66, 208, 56, 65, 10, 202, 138, 38, 156, 194, 161, 0, 116, 114, 239, 222, 235, 220, 96, 192, 72, 6, 136, 4, 178, 121, 251, 148, 109, 8, 64, 6, 131, 163, 39, 245, 251, 223, 57, 183, 238, 0, 0, 0, 0, 6, 30, 30, 30, 60, 0, 8, 24, 0, 0, 32, 151, 8, 124, 204, 12, 200, 205, 12, 8, 142, 210, 216, 28, 26, 98, 135, 5, 209, 32, 9, 7, 16, 152, 56, 106, 38, 8, 84, 146, 69, 224, 3, 1, 4, 108, 73, 64, 92, 129, 128, 41, 98, 43, 160, 73, 214, 86, 36, 78, 101, 76, 217, 153, 47, 166, 178, 184, 25, 59, 220, 187, 87, 154, 0, 31, 196, 199, 94, 106, 220, 218, 46, 104, 138, 235, 127, 28, 110, 42, 163, 113, 102, 238, 180, 11, 43, 15, 79, 196, 16, 142, 2, 240, 118, 118, 152, 220, 86, 134, 87, 88, 3, 139, 137, 210, 156, 231, 161, 143, 199, 103, 234, 213, 31, 203, 6, 20, 175, 222, 7, 157, 19, 207, 206, 127, 164, 184, 163, 80, 68, 164, 245, 61, 63, 81, 10, 141, 76, 190, 52, 73, 215, 89, 250, 28, 175, 141, 74, 248, 149, 174, 105, 20, 165, 247, 227, 216, 28, 101, 213, 138, 234, 157, 139, 46, 64, 130, 3, 134, 212, 16, 80, 96, 172, 221, 229, 237, 64, 204, 252, 223, 239, 167, 37, 104, 110, 181, 150, 156, 30, 200, 228, 135, 158, 50, 61, 190, 37, 76, 233, 105, 8, 170, 56, 34, 111, 237, 148, 0, 11, 186, 18, 241, 234, 135, 26, 113, 8, 88, 222, 14, 135, 170, 68, 115, 120, 117, 1, 192, 201, 128, 201, 167, 176, 197, 41, 116, 66, 19, 172, 181, 172, 168, 147, 208, 37, 34, 236, 222, 111, 171, 132, 145, 25, 98, 236, 196, 93, 69, 190, 122, 218, 180, 161, 249, 165, 122, 188, 152, 178, 239, 26, 220, 19, 74, 120, 39, 249, 194, 182, 195, 254, 36, 107, 136, 0, 8, 0, 3, 51, 140, 24, 208, 74, 16, 176, 248, 8, 2, 48, 169, 120, 195, 229, 101, 31, 50, 64, 152, 197, 65, 195, 9, 146, 198, 136, 104, 226, 97, 112, 112, 200, 84, 192, 129, 53, 101, 168, 201, 83, 76, 208, 161, 173, 38, 152, 163, 79, 70, 104, 109, 118, 255, 251, 178, 100, 28, 128, 183, 24, 99, 70, 195, 152, 99, 112, 80, 36, 248, 168, 61, 136, 208, 24, 201, 139, 39, 85, 183, 128, 1, 47, 16, 98, 66, 176, 240, 0, 82, 52, 228, 18, 52, 179, 134, 65, 140, 64, 104, 40, 202, 90, 167, 77, 40, 12, 213, 176, 136, 65, 117, 50, 230, 169, 13, 164, 75, 1, 75, 150, 14, 164, 144, 159, 30, 100, 10, 54, 196, 20, 7, 147, 236, 217, 30, 26, 107, 122, 187, 96, 152, 53, 96, 98, 142, 206, 161, 48, 144, 117, 35, 2, 236, 190, 177, 9, 19, 131, 3, 130, 9, 201, 209, 70, 171, 15, 219, 57, 15, 146, 149, 68, 129, 203, 50, 0, 188, 192, 172, 245, 203, 197, 82, 159, 178, 79, 19, 174, 180, 118, 15, 227, 195, 194, 68, 101, 229, 156, 210, 178, 225, 177, 202, 56, 215, 150, 151, 33, 23, 30, 97, 147, 226, 101, 186, 99, 91, 110, 63, 79, 198, 66, 66, 197, 12, 158, 147, 98, 154, 185, 10, 170, 44, 60, 166, 229, 23, 245, 204, 237, 7, 66, 249, 80, 126, 177, 245, 240, 134, 193, 175, 67, 18, 29, 181, 81, 74, 44, 0, 6, 0, 0, 23, 112, 45, 177, 183, 57, 127, 138, 192, 8, 9, 33, 41, 203, 24, 152, 51, 222, 176, 75, 106, 36, 220, 32, 239, 16, 143, 6, 172, 36, 48, 251, 84, 111, 20, 209, 6, 119, 152, 76, 201, 226, 122, 179, 183, 134, 115, 24, 144, 238, 11, 157, 227, 226, 5, 130, 123, 26, 22, 164, 113, 127, 213, 22, 49, 156, 193, 111, 236, 2, 142, 255, 255, 255, 244, 207, 128, 99, 128, 0, 4, 20, 161, 164, 221, 156, 227, 160, 80, 172, 179, 166, 34, 24, 50, 36, 64, 10, 74, 24, 179, 72, 132, 19, 224, 28, 18, 52, 43, 52, 172, 235, 76, 112, 1, 96, 193, 54, 126, 2, 227, 66, 194, 131, 62, 201, 105, 63, 41, 132, 100, 43, 203, 122, 149, 52, 109, 28, 196, 44, 159, 30, 198, 90, 236, 141, 13, 34, 20, 171, 60, 213, 7, 67, 21, 208, 195, 213, 74, 149, 68, 50, 225, 198, 36, 77, 75, 25, 235, 106, 166, 85, 134, 8, 236, 78, 220, 36, 81, 206, 250, 201, 55, 210, 55, 238, 3, 134, 33, 237, 207, 81, 95, 63, 135, 23, 201, 156, 117, 205, 233, 22, 21, 237, 89, 155, 89, 30, 218, 75, 205, 23, 112, 173, 157, 209, 99, 17, 239, 141, 237, 121, 245, 96, 87, 89, 106, 128, 235, 225, 228, 59, 71, 137, 220, 113, 152, 183, 222, 115, 59, 237, 83, 239, 88, 202, 212, 212, 150, 54, 160, 101, 141, 227, 114, 97, 242, 142, 83, 122, 101, 84, 104, 15, 51, 6, 44, 57, 235, 216, 217, 220, 94, 101, 41, 254, 100, 210, 175, 238, 255, 7, 209, 184, 195, 144, 246, 47, 172, 166, 119, 47, 252, 70, 130, 244, 209, 57, 76, 152, 109, 106, 163, 36, 195, 52, 84, 168, 67, 2, 237, 36, 163, 166, 255, 132, 205, 104, 164, 188, 113, 164, 30, 23, 100, 105, 230, 143, 66, 39, 87, 61, 59, 84, 48, 212, 104, 107, 147, 200, 226, 90, 206, 255, 255, 255, 255, 66, 195, 52, 213, 192, 32, 56, 22, 142, 143, 103, 163, 241, 241, 126, 189, 159, 225, 24, 40, 183, 198, 31, 0, 25, 40, 188, 36, 100, 62, 11, 93, 120, 81, 24, 216, 0, 103, 66, 1, 232, 6, 134, 104, 80, 175, 55, 32, 48, 10, 189, 194, 13, 166, 25, 4, 210, 188, 227, 200, 76, 177, 241, 147, 85, 251, 144, 49, 87, 93, 255, 251, 178, 100, 33, 0, 6, 209, 101, 82, 238, 115, 0, 0, 107, 73, 216, 80, 204, 72, 0, 24, 121, 125, 54, 125, 199, 128, 9, 53, 159, 224, 3, 129, 16, 0, 31, 221, 113, 171, 38, 116, 21, 55, 0, 110, 126, 235, 43, 107, 245, 156, 232, 5, 187, 50, 251, 24, 207, 74, 42, 87, 105, 110, 186, 117, 195, 239, 11, 178, 66, 6, 224, 231, 90, 230, 18, 201, 250, 180, 241, 182, 6, 211, 227, 82, 72, 98, 188, 51, 13, 103, 1, 106, 198, 187, 57, 175, 132, 59, 152, 88, 167, 203, 219, 28, 19, 73, 23, 181, 255, 188, 113, 231, 217, 252, 123, 217, 183, 254, 164, 78, 93, 174, 126, 177, 152, 181, 67, 115, 159, 250, 199, 91, 199, 153, 231, 251, 207, 186, 194, 198, 23, 165, 155, 167, 195, 230, 238, 76, 210, 218, 148, 198, 113, 179, 91, 159, 159, 243, 95, 255, 255, 188, 255, 255, 182, 251, 158, 91, 238, 28, 215, 57, 222, 125, 104, 106, 134, 212, 162, 138, 221, 107, 54, 39, 104, 236, 23, 246, 24, 3, 10, 4, 148, 224, 75, 36, 226, 94, 234, 234, 238, 49, 46, 57, 58, 215, 100, 24, 220, 145, 164, 33, 56, 205, 6, 202, 41, 48, 248, 135, 121, 138, 212, 13, 230, 23, 49, 168, 202, 8, 84, 114, 76, 7, 82, 85, 200, 136, 133, 131, 8, 137, 136, 194, 28, 209, 94, 19, 176, 173, 133, 118, 180, 113, 95, 43, 120, 148, 76, 191, 255, 255, 255, 255, 255, 255, 253, 205, 204, 16, 37, 211, 111, 40, 16, 192, 223, 64, 252, 194, 197, 12, 223, 204, 134, 176, 6, 144, 28, 240, 122, 35, 181, 64, 0, 9, 83, 146, 172, 140, 226, 69, 51, 228, 188, 218, 37, 35, 89, 22, 204, 86, 35, 50, 241, 228, 197, 128, 211, 43, 33, 204, 170, 74, 50, 217, 8, 200, 227, 227, 33, 142, 129, 67, 165, 164, 250, 166, 138, 60, 157, 69, 232, 225, 37, 102, 227, 152, 10, 65, 110, 26, 147, 204, 233, 61, 28, 140, 253, 150, 213, 145, 242, 117, 55, 55, 72, 232, 230, 55, 136, 48, 234, 93, 46, 25, 12, 117, 42, 150, 231, 162, 121, 58, 158, 75, 171, 94, 161, 170, 152, 189, 252, 69, 20, 61, 82, 11, 142, 165, 89, 221, 208, 215, 23, 87, 222, 227, 230, 91, 89, 178, 241, 102, 135, 229, 141, 18, 62, 39, 106, 143, 90, 70, 131, 92, 230, 71, 43, 127, 90, 193, 123, 46, 183, 155, 254, 221, 62, 240, 205, 189, 190, 158, 190, 211, 227, 57, 214, 31, 49, 61, 131, 137, 32, 49, 49, 168, 102, 164, 177, 94, 196, 205, 239, 6, 251, 190, 228, 167, 204, 88, 83, 234, 19, 19, 51, 232, 217, 182, 117, 139, 90, 207, 159, 87, 135, 75, 126, 107, 55, 40, 23, 71, 60, 125, 17, 17, 176, 56, 197, 152, 68, 71, 60, 154, 36, 5, 158, 59, 200, 120, 185, 197, 6, 51, 100, 249, 15, 30, 192, 68, 5, 32, 24, 193, 105, 132, 84, 64, 113, 59, 149, 204, 22, 112, 174, 92, 38, 207, 160, 129, 76, 154, 36, 8, 129, 3, 54, 69, 58, 152, 205, 191, 255, 255, 255, 255, 255, 250, 220, 204, 251, 190, 163, 194, 37, 0, 0, 99, 18, 102, 51, 36, 10, 163, 74, 189, 115, 82, 18, 179, 11, 17, 195, 20, 215, 19, 133, 201, 147, 9, 11, 99, 21, 134, 128, 0, 176, 36, 84, 24, 60, 10, 10, 2, 6, 8, 1, 70, 37, 0, 45, 112, 192, 208, 37, 42, 197, 8, 7, 150, 2, 84, 187, 255, 251, 178, 100, 29, 14, 230, 239, 85, 201, 19, 185, 99, 240, 77, 71, 248, 112, 11, 10, 138, 90, 193, 113, 36, 78, 225, 141, 201, 56, 32, 99, 4, 103, 150, 41, 134, 168, 192, 147, 139, 48, 204, 27, 192, 108, 131, 170, 138, 2, 105, 198, 194, 84, 60, 113, 99, 66, 227, 201, 194, 136, 204, 69, 141, 203, 14, 36, 16, 160, 44, 73, 154, 185, 158, 170, 41, 131, 9, 49, 75, 8, 156, 187, 202, 64, 179, 8, 166, 166, 36, 67, 131, 4, 93, 43, 150, 36, 177, 224, 132, 180, 93, 45, 218, 26, 106, 48, 244, 117, 133, 188, 115, 145, 246, 105, 47, 143, 64, 240, 115, 128, 202, 223, 156, 101, 196, 164, 17, 17, 74, 78, 17, 139, 231, 11, 77, 197, 117, 64, 128, 67, 61, 104, 179, 25, 181, 77, 185, 210, 69, 249, 53, 88, 82, 160, 241, 37, 249, 242, 210, 253, 56, 106, 211, 137, 220, 58, 123, 224, 167, 233, 241, 125, 107, 179, 181, 173, 151, 20, 137, 14, 74, 119, 35, 132, 207, 235, 13, 102, 180, 78, 149, 51, 111, 149, 169, 5, 126, 45, 255, 210, 77, 36, 102, 5, 148, 202, 194, 60, 73, 112, 92, 241, 193, 51, 88, 38, 0, 134, 2, 163, 151, 67, 82, 152, 175, 233, 246, 115, 1, 41, 7, 220, 47, 23, 57, 197, 101, 47, 197, 72, 123, 184, 101, 90, 92, 226, 177, 230, 153, 79, 41, 139, 67, 110, 208, 56, 142, 219, 144, 89, 66, 140, 6, 197, 206, 119, 255, 255, 255, 255, 255, 255, 81, 226, 149, 128, 230, 94, 51, 102, 113, 31, 230, 39, 196, 39, 19, 42, 134, 14, 27, 198, 179, 143, 38, 67, 140, 0, 161, 176, 68, 25, 18, 1, 129, 80, 100, 195, 32, 78, 116, 32, 6, 110, 135, 17, 51, 48, 114, 64, 34, 107, 133, 193, 66, 75, 172, 132, 193, 10, 130, 6, 187, 89, 144, 30, 201, 108, 90, 243, 1, 64, 209, 48, 21, 28, 76, 244, 60, 60, 1, 81, 230, 142, 144, 184, 198, 118, 13, 44, 200, 147, 32, 72, 150, 208, 97, 147, 34, 85, 133, 211, 78, 68, 234, 78, 165, 229, 39, 127, 155, 178, 247, 114, 95, 72, 22, 105, 130, 187, 204, 74, 2, 84, 122, 180, 134, 84, 128, 105, 53, 29, 67, 82, 34, 34, 154, 222, 29, 201, 164, 146, 71, 187, 113, 62, 51, 51, 4, 171, 76, 141, 77, 151, 23, 155, 74, 220, 84, 187, 11, 221, 92, 65, 80, 117, 139, 216, 70, 254, 162, 247, 151, 172, 123, 186, 30, 249, 230, 122, 167, 73, 74, 145, 204, 185, 211, 238, 89, 30, 59, 10, 234, 166, 141, 172, 118, 247, 183, 45, 37, 63, 111, 106, 185, 238, 83, 175, 121, 251, 207, 173, 51, 115, 231, 243, 195, 195, 199, 163, 255, 255, 136, 112, 137, 38, 76, 164, 15, 38, 199, 167, 0, 234, 247, 230, 242, 184, 56, 128, 45, 56, 81, 156, 212, 23, 199, 243, 50, 178, 22, 117, 43, 242, 244, 65, 69, 73, 114, 22, 211, 164, 201, 82, 255, 138, 94, 172, 234, 229, 133, 167, 141, 104, 49, 224, 176, 36, 206, 38, 152, 131, 10, 20, 26, 191, 255, 255, 255, 251, 232, 223, 250, 52, 80, 226, 210, 42, 0, 1, 35, 93, 158, 12, 18, 93, 55, 117, 180, 232, 65, 51, 105, 204, 1, 89, 35, 74, 24, 204, 112, 103, 20, 32, 152, 196, 34, 64, 62, 29, 11, 145, 2, 69, 0, 195, 0, 72, 49, 205, 11, 16, 28, 67, 9, 154, 226, 201, 16, 236, 184, 129, 130, 45, 88, 255, 251, 178, 100, 28, 134, 246, 188, 99, 198, 147, 152, 99, 112, 81, 199, 184, 112, 61, 135, 180, 89, 105, 163, 33, 141, 61, 50, 201, 74, 160, 159, 129, 16, 103, 137, 33, 105, 150, 16, 176, 32, 84, 5, 120, 164, 211, 244, 205, 210, 21, 115, 33, 139, 120, 191, 80, 121, 95, 54, 142, 90, 244, 101, 13, 50, 2, 91, 74, 102, 186, 93, 71, 161, 239, 162, 90, 238, 210, 234, 167, 107, 47, 227, 253, 24, 145, 59, 109, 206, 209, 112, 58, 65, 90, 168, 142, 85, 40, 31, 7, 33, 138, 20, 173, 94, 65, 47, 50, 62, 166, 245, 198, 39, 11, 226, 29, 151, 171, 41, 58, 241, 211, 215, 186, 212, 81, 189, 83, 227, 228, 167, 177, 90, 245, 175, 244, 7, 219, 90, 61, 106, 151, 77, 227, 130, 55, 79, 80, 90, 228, 208, 28, 160, 58, 181, 222, 232, 26, 165, 179, 87, 212, 250, 107, 231, 189, 99, 43, 252, 197, 187, 76, 170, 148, 165, 146, 106, 196, 187, 5, 170, 212, 61, 203, 221, 253, 74, 196, 90, 212, 45, 50, 125, 127, 255, 173, 124, 37, 116, 5, 116, 104, 48, 64, 147, 15, 114, 171, 118, 194, 144, 63, 144, 233, 98, 246, 24, 233, 215, 25, 16, 231, 234, 217, 164, 40, 76, 0, 48, 19, 6, 194, 212, 68, 165, 89, 135, 79, 86, 187, 58, 185, 179, 220, 188, 10, 137, 43, 22, 186, 86, 86, 15, 72, 160, 216, 255, 255, 255, 255, 254, 40, 25, 120, 80, 16, 33, 241, 56, 63, 7, 109, 192, 160, 150, 0, 0, 193, 28, 247, 127, 49, 72, 76, 113, 2, 223, 154, 104, 163, 9, 140, 146, 147, 66, 224, 66, 69, 103, 10, 0, 66, 92, 120, 183, 74, 202, 237, 57, 40, 58, 246, 39, 211, 2, 118, 85, 69, 85, 5, 1, 181, 20, 234, 58, 32, 94, 156, 201, 67, 220, 254, 74, 24, 214, 105, 36, 68, 5, 27, 9, 82, 171, 46, 46, 213, 53, 81, 60, 124, 101, 48, 57, 42, 66, 224, 128, 126, 40, 74, 15, 136, 141, 9, 2, 113, 60, 209, 176, 225, 116, 35, 198, 23, 245, 20, 203, 74, 4, 40, 156, 188, 143, 27, 147, 112, 87, 212, 103, 6, 143, 34, 124, 44, 250, 4, 126, 117, 139, 165, 141, 195, 88, 189, 133, 236, 47, 39, 220, 250, 140, 86, 182, 47, 115, 30, 162, 113, 154, 23, 47, 78, 94, 166, 130, 111, 82, 114, 130, 40, 55, 8, 110, 185, 122, 62, 25, 37, 109, 130, 25, 146, 29, 162, 20, 71, 139, 150, 130, 52, 139, 144, 77, 178, 4, 201, 143, 52, 194, 242, 97, 121, 48, 188, 155, 82, 114, 41, 52, 89, 28, 135, 164, 158, 205, 106, 236, 234, 127, 251, 235, 15, 212, 50, 0, 18, 71, 157, 136, 210, 40, 56, 140, 81, 253, 118, 90, 100, 224, 91, 144, 27, 32, 5, 133, 132, 14, 131, 114, 250, 153, 5, 186, 11, 117, 93, 118, 93, 186, 191, 255, 255, 51, 215, 37, 105, 148, 200, 31, 119, 236, 145, 96, 241, 147, 225, 227, 133, 51, 135, 169, 188, 10, 162, 54, 136, 116, 76, 178, 63, 71, 44, 185, 122, 159, 72, 228, 46, 146, 114, 45, 85, 4, 0, 1, 185, 224, 108, 212, 156, 162, 102, 117, 96, 20, 200, 212, 19, 58, 88, 8, 116, 44, 80, 16, 0, 104, 154, 220, 108, 108, 177, 31, 146, 53, 106, 32, 178, 71, 42, 116, 185, 47, 242, 179, 170, 196, 138, 103, 173, 227, 147, 0, 54, 202, 98, 194, 24, 186, 154, 183, 39, 253, 250, 28, 75, 255, 251, 178, 100, 32, 15, 247, 91, 122, 65, 171, 76, 53, 192, 72, 200, 71, 96, 28, 15, 226, 64, 0, 1, 164, 0, 0, 0, 32, 0, 0, 52, 128, 0, 0, 4, 0, 120, 82, 68, 17, 139, 166, 134, 41, 11, 66, 9, 80, 126, 16, 76, 7, 97, 8, 123, 34, 8, 197, 212, 68, 165, 98, 40, 226, 84, 40, 136, 165, 36, 17, 37, 34, 51, 34, 233, 225, 104, 229, 197, 215, 61, 57, 56, 54, 18, 74, 74, 201, 169, 151, 188, 203, 139, 161, 137, 117, 209, 52, 196, 136, 152, 56, 20, 196, 142, 180, 73, 30, 137, 36, 200, 154, 130, 68, 76, 72, 140, 18, 57, 52, 73, 30, 137, 201, 145, 53, 4, 141, 130, 70, 160, 72, 228, 209, 57, 50, 39, 38, 18, 37, 0, 162, 38, 36, 108, 36, 118, 162, 114, 100, 78, 89, 19, 84, 72, 216, 36, 106, 4, 138, 89, 18, 147, 34, 114, 200, 150, 162, 70, 160, 145, 176, 147, 105, 165, 44, 137, 75, 34, 90, 137, 22, 162, 69, 168, 145, 75, 34, 82, 200, 148, 178, 37, 168, 145, 106, 36, 90, 137, 20, 178, 37, 44, 137, 73, 27, 191, 235, 206, 52, 161, 229, 142, 71, 111, 173, 145, 205, 56, 169, 97, 177, 65, 144, 114, 17, 5, 196, 129, 145, 36, 120, 194, 70, 177, 202, 199, 45, 145, 215, 100, 191, 255, 248, 205, 39, 101, 83, 48, 35, 137, 201, 118, 47, 230, 33, 98, 52, 79, 100, 32, 113, 10, 233, 64, 88, 203, 201, 164, 185, 121, 52, 108, 197, 133, 114, 91, 185, 93, 170, 76, 65, 77, 69, 51, 46, 49, 48, 48, 170, 170, 170, 170, 170, 170, 170, 170, 170, 170, 170, 170, 170, 170, 170, 170, 170, 170, 170, 170, 170, 170, 170, 170, 170, 170, 170, 170, 170, 170, 170, 170, 170, 170, 170, 170, 170, 170, 170, 170, 170, 170, 170, 170, 170, 170, 170, 170, 170, 170, 170, 170, 170, 170, 170, 170, 170, 170, 170, 170, 170, 170, 170, 170, 170, 170, 170, 170, 170, 170, 170, 170, 170, 170, 170, 170, 170, 170, 170, 170, 170, 170, 170, 170, 170, 170, 170, 170, 170, 170, 170, 170, 170, 170, 170, 170, 170, 170, 170, 170, 170, 170, 170, 170, 170, 170, 170, 170, 170, 170, 170, 170, 170, 170, 170, 170, 170, 170, 170, 170, 170, 170, 170, 170, 170, 170, 170, 170, 170, 170, 170, 170, 170, 170, 170, 170, 170, 170, 170, 170, 170, 170, 170, 170, 170, 170, 170, 170, 170, 170, 170, 170, 170, 170, 170, 170, 170, 170, 170, 170, 170, 170, 170, 170, 170, 170, 170, 170, 170, 170, 170, 170, 170, 170, 170, 170, 170, 170, 170, 170, 170, 170, 170, 170, 170, 170, 170, 170, 170, 170, 170, 170, 170, 170, 170, 170, 170, 170, 170, 170, 170, 170, 170, 170, 170, 170, 170, 170, 170, 170, 170, 170, 170, 170, 170, 170, 170, 170, 170, 170, 170, 170, 170, 170, 170, 170, 170, 170, 170, 170, 170, 170, 170, 170, 170, 170, 170, 170, 170, 170, 170, 170, 170, 170, 170, 170, 170, 170, 170, 170, 170, 170, 170, 170, 170, 170, 170, 170, 170, 170, 170, 170, 170, 170, 170, 170, 170, 170, 170, 170, 170, 170, 170, 170, 170, 170, 170, 170, 170, 170, 170, 170, 170, 170, 170, 170, 170, 170, 170, 170, 170, 170, 170, 170, 170, 170, 170, 170, 170, 170, 170, 170, 170, 170, 170, 170, 170, 170, 170, 170, 170, 170, 170, 170, 170, 170, 170, 170, 170, 170, 170, 170, 170, 170, 170, 170, 170, 170, 170, 170, 170, 170, 170, 170, 170, 170, 170)
@@ -130,7 +133,7 @@ length = 0.001
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
-tracks/0/path = NodePath("CollisionShape:shape")
+tracks/0/path = NodePath("BodyCollision:shape")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
@@ -138,6 +141,30 @@ tracks/0/keys = {
 "transitions": PackedFloat32Array(1),
 "update": 1,
 "values": [SubResource("CapsuleShape2D_fitw2")]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("FeetCollision:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(0, 15.9675)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("FeetCollision:scale")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(0.425, 0.212)]
 }
 
 [sub_resource type="Animation" id="Animation_pc8un"]
@@ -158,7 +185,7 @@ tracks/0/keys = {
 tracks/1/type = "value"
 tracks/1/imported = false
 tracks/1/enabled = true
-tracks/1/path = NodePath("CollisionShape:disabled")
+tracks/1/path = NodePath("BodyCollision:disabled")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
@@ -170,7 +197,7 @@ tracks/1/keys = {
 tracks/2/type = "value"
 tracks/2/imported = false
 tracks/2/enabled = true
-tracks/2/path = NodePath("CollisionShape:shape")
+tracks/2/path = NodePath("BodyCollision:shape")
 tracks/2/interp = 1
 tracks/2/loop_wrap = true
 tracks/2/keys = {
@@ -178,6 +205,30 @@ tracks/2/keys = {
 "transitions": PackedFloat32Array(1),
 "update": 1,
 "values": [SubResource("CapsuleShape2D_fitw2")]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("FeetCollision:position")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0, 0.2, 0.4, 0.6),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 0,
+"values": [Vector2(-2, 15.9675), Vector2(-3.5, 15.9675), Vector2(-4.5, 15.9675), Vector2(-2.5, 15.9675)]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("FeetCollision:scale")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0, 0.2, 0.4, 0.6),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 0,
+"values": [Vector2(0.425, 0.212), Vector2(0.425, 0.212), Vector2(0.425, 0.212), Vector2(0.425, 0.212)]
 }
 
 [sub_resource type="Animation" id="Animation_8lblm"]
@@ -194,6 +245,30 @@ tracks/0/keys = {
 "transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1),
 "update": 1,
 "values": [Vector2i(1, 5), Vector2i(2, 5), Vector2i(3, 5), Vector2i(4, 5), Vector2i(5, 5), Vector2i(6, 5), Vector2i(7, 5), Vector2i(8, 5)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("FeetCollision:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(0, 15.9675)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("FeetCollision:scale")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(0.425, 0.212)]
 }
 
 [sub_resource type="Animation" id="Animation_f1fw6"]
@@ -215,7 +290,7 @@ tracks/0/keys = {
 tracks/1/type = "value"
 tracks/1/imported = false
 tracks/1/enabled = true
-tracks/1/path = NodePath("CollisionShape:disabled")
+tracks/1/path = NodePath("BodyCollision:disabled")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
@@ -227,7 +302,7 @@ tracks/1/keys = {
 tracks/2/type = "value"
 tracks/2/imported = false
 tracks/2/enabled = true
-tracks/2/path = NodePath("CollisionShape:shape")
+tracks/2/path = NodePath("BodyCollision:shape")
 tracks/2/interp = 1
 tracks/2/loop_wrap = true
 tracks/2/keys = {
@@ -235,6 +310,30 @@ tracks/2/keys = {
 "transitions": PackedFloat32Array(1),
 "update": 1,
 "values": [SubResource("CapsuleShape2D_fitw2")]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("FeetCollision:position")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0, 0.6),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(0, 15.9675), Vector2(0, 15.9675)]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("FeetCollision:scale")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0, 0.6),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(0.425, 0.212), Vector2(0.425, 0.212)]
 }
 
 [sub_resource type="Animation" id="Animation_klkg4"]
@@ -256,7 +355,7 @@ tracks/0/keys = {
 tracks/1/type = "value"
 tracks/1/imported = false
 tracks/1/enabled = true
-tracks/1/path = NodePath("CollisionShape:disabled")
+tracks/1/path = NodePath("BodyCollision:disabled")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
@@ -268,7 +367,7 @@ tracks/1/keys = {
 tracks/2/type = "value"
 tracks/2/imported = false
 tracks/2/enabled = true
-tracks/2/path = NodePath("CollisionShape:shape")
+tracks/2/path = NodePath("BodyCollision:shape")
 tracks/2/interp = 1
 tracks/2/loop_wrap = true
 tracks/2/keys = {
@@ -295,7 +394,7 @@ tracks/0/keys = {
 tracks/1/type = "value"
 tracks/1/imported = false
 tracks/1/enabled = true
-tracks/1/path = NodePath("CollisionShape:disabled")
+tracks/1/path = NodePath("BodyCollision:disabled")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
@@ -307,7 +406,7 @@ tracks/1/keys = {
 tracks/2/type = "value"
 tracks/2/imported = false
 tracks/2/enabled = true
-tracks/2/path = NodePath("CollisionShape:shape")
+tracks/2/path = NodePath("BodyCollision:shape")
 tracks/2/interp = 1
 tracks/2/loop_wrap = true
 tracks/2/keys = {
@@ -336,7 +435,7 @@ tracks/0/keys = {
 tracks/1/type = "value"
 tracks/1/imported = false
 tracks/1/enabled = true
-tracks/1/path = NodePath("CollisionShape:disabled")
+tracks/1/path = NodePath("BodyCollision:disabled")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
@@ -348,7 +447,7 @@ tracks/1/keys = {
 tracks/2/type = "value"
 tracks/2/imported = false
 tracks/2/enabled = true
-tracks/2/path = NodePath("CollisionShape:shape")
+tracks/2/path = NodePath("BodyCollision:shape")
 tracks/2/interp = 1
 tracks/2/loop_wrap = true
 tracks/2/keys = {
@@ -356,6 +455,30 @@ tracks/2/keys = {
 "transitions": PackedFloat32Array(1),
 "update": 1,
 "values": [SubResource("CapsuleShape2D_fitw2")]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("FeetCollision:scale")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(0.425, 0.212)]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("FeetCollision:position")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(0, 15.9675)]
 }
 
 [sub_resource type="Animation" id="Animation_qahvp"]
@@ -377,7 +500,7 @@ tracks/0/keys = {
 tracks/1/type = "value"
 tracks/1/imported = false
 tracks/1/enabled = true
-tracks/1/path = NodePath("CollisionShape:position")
+tracks/1/path = NodePath("BodyCollision:position")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
@@ -389,7 +512,7 @@ tracks/1/keys = {
 tracks/2/type = "value"
 tracks/2/imported = false
 tracks/2/enabled = true
-tracks/2/path = NodePath("CollisionShape:shape")
+tracks/2/path = NodePath("BodyCollision:shape")
 tracks/2/interp = 1
 tracks/2/loop_wrap = true
 tracks/2/keys = {
@@ -397,6 +520,30 @@ tracks/2/keys = {
 "transitions": PackedFloat32Array(1),
 "update": 1,
 "values": [SubResource("CapsuleShape2D_fitw2")]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("FeetCollision:position")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(4.04, 15.967)]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("FeetCollision:scale")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(0.425, 0.212)]
 }
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_aymea"]
@@ -411,7 +558,7 @@ _data = {
 "wallhold": SubResource("Animation_qahvp")
 }
 
-[sub_resource type="Resource" id="Resource_scgcu"]
+[sub_resource type="Resource" id="Resource_27frh"]
 script = ExtResource("37_ndc5g")
 duration = 1.0
 transition = 0
@@ -425,7 +572,7 @@ includes = Array[NodePath]([NodePath("../Camera2D/PhantomCameraHost"), NodePath(
 excludes = Array[NodePath]([NodePath("../Player")])
 
 [node name="Camera2D" type="Camera2D" parent="."]
-position = Vector2(92, 124)
+position = Vector2(91, 125)
 zoom = Vector2(2.2, 2.2)
 limit_left = 0
 limit_top = 0
@@ -1254,7 +1401,7 @@ updatable = true
 position = Vector2(696, 76)
 
 [node name="Player" type="CharacterBody2D" parent="."]
-position = Vector2(92.01, 124.17)
+position = Vector2(91, 125)
 collision_mask = 2
 platform_floor_layers = 3
 platform_wall_layers = 6
@@ -1265,19 +1412,23 @@ JUMP_TIME_TO_PEAK = 0.34
 JUMP_TIME_TO_DESCENT = 0.25
 DASH_DISTANCE = 75.0
 DASH_SPEED = 500.0
-metadata/_edit_group_ = true
 
 [node name="PlayerSprite" type="Sprite2D" parent="Player"]
 texture_filter = 1
 texture = ExtResource("27_ysj4e")
 hframes = 14
 vframes = 6
-frame = 56
+frame = 14
 
-[node name="CollisionShape" type="CollisionShape2D" parent="Player"]
+[node name="BodyCollision" type="CollisionShape2D" parent="Player"]
 position = Vector2(0, 3)
 scale = Vector2(0.9275, 0.9275)
 shape = SubResource("CapsuleShape2D_fitw2")
+
+[node name="FeetCollision" type="CollisionShape2D" parent="Player"]
+position = Vector2(0, 15.9675)
+scale = Vector2(0.425, 0.212)
+shape = SubResource("RectangleShape2D_ttswn")
 
 [node name="state_machine" type="Node" parent="Player" node_paths=PackedStringArray("starting_state")]
 script = ExtResource("28_5qg3x")
@@ -1388,20 +1539,14 @@ collide_with_areas = true
 
 [node name="PhantomCamera2D" type="Node2D" parent="Player"]
 script = ExtResource("36_ivnci")
-follow_mode = 5
 zoom = Vector2(2.2, 2.2)
-snap_to_pixel = true
-tween_resource = SubResource("Resource_scgcu")
-inactive_update_mode = 1
-follow_damping = true
-follow_damping_value = Vector2(0.01, 0.01)
-dead_zone_width = 0.066
-dead_zone_height = 0.328
+tween_resource = SubResource("Resource_27frh")
 draw_limits = true
 limit_target = NodePath("../../Screen1/CameraLimit/CollisionShape2D")
 
 [node name="VisibleOnScreenNotifier2D" type="VisibleOnScreenNotifier2D" parent="Player"]
-scale = Vector2(0.7, 1)
+position = Vector2(-7.15256e-07, 2)
+scale = Vector2(0.9, 1.6)
 
 [node name="ForegroundMap" type="TileMap" parent="."]
 texture_filter = 1
@@ -1461,7 +1606,6 @@ format = 2
 [connection signal="body_entered" from="Screen5/CanvasGroup/DeathZone4" to="Screen5/PlayerRespawner" method="_on_death_zone_body_entered"]
 [connection signal="body_entered" from="Screen5/CanvasGroup/DeathZone5" to="Screen5/PlayerRespawner" method="_on_death_zone_body_entered"]
 [connection signal="body_entered" from="Screen5/CanvasGroup/DeathZone6" to="Screen5/PlayerRespawner" method="_on_death_zone_body_entered"]
-[connection signal="body_entered" from="Screen6/bounce_shroom" to="Screen6/bounce_shroom" method="_on_body_entered"]
 [connection signal="body_entered" from="Screen6/CanvasGroup/DeathZone" to="Screen6/PlayerRespawner" method="_on_death_zone_body_entered"]
 [connection signal="body_entered" from="Screen6/CanvasGroup/DeathZone2" to="Screen6/PlayerRespawner" method="_on_death_zone_body_entered"]
 [connection signal="body_entered" from="Screen6/CanvasGroup/DeathZone3" to="Screen6/PlayerRespawner" method="_on_death_zone_body_entered"]
@@ -1480,7 +1624,6 @@ format = 2
 [connection signal="body_entered" from="Screen7/CanvasGroup/DeathZone10" to="Screen7/PlayerRespawner" method="_on_death_zone_body_entered"]
 [connection signal="body_entered" from="Screen7/CanvasGroup/DeathZone11" to="Screen7/PlayerRespawner" method="_on_death_zone_body_entered"]
 [connection signal="body_entered" from="Screen8/DeathZone" to="Screen8/PlayerRespawner" method="_on_death_zone_body_entered"]
-[connection signal="body_entered" from="Screen9/bounce_shroom" to="Screen9/bounce_shroom" method="_on_body_entered"]
 [connection signal="body_entered" from="Screen9/CanvasGroup/DeathZone" to="Screen9/PlayerRespawner" method="_on_death_zone_body_entered"]
 [connection signal="body_entered" from="Screen9/CanvasGroup/DeathZone2" to="Screen9/PlayerRespawner" method="_on_death_zone_body_entered"]
 [connection signal="body_entered" from="Screen9/CanvasGroup/DeathZone3" to="Screen9/PlayerRespawner" method="_on_death_zone_body_entered"]
@@ -1489,8 +1632,6 @@ format = 2
 [connection signal="body_entered" from="Screen9/CanvasGroup/DeathZone7" to="Screen9/PlayerRespawner" method="_on_death_zone_body_entered"]
 [connection signal="body_entered" from="Screen9/CanvasGroup/DeathZone8" to="Screen9/PlayerRespawner" method="_on_death_zone_body_entered"]
 [connection signal="body_entered" from="Screen9/CanvasGroup/DeathZone9" to="Screen9/PlayerRespawner" method="_on_death_zone_body_entered"]
-[connection signal="body_entered" from="Screen10/bounce_shroom2" to="Screen10/bounce_shroom2" method="_on_body_entered"]
-[connection signal="body_entered" from="Screen10/bounce_shroom" to="Screen10/bounce_shroom" method="_on_body_entered"]
 [connection signal="body_entered" from="Screen10/CanvasGroup/DeathZone" to="Screen10/PlayerRespawner" method="_on_death_zone_body_entered"]
 [connection signal="body_entered" from="Screen10/CanvasGroup/DeathZone2" to="Screen10/PlayerRespawner" method="_on_death_zone_body_entered"]
 [connection signal="body_entered" from="Screen10/CanvasGroup/DeathZone3" to="Screen10/PlayerRespawner" method="_on_death_zone_body_entered"]

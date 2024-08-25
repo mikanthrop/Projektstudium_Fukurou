@@ -13,6 +13,7 @@ func _ready():
 
 
 func _physics_process(delta):
+	# check for feet collision with player
 	var bodies = get_overlapping_bodies()
 	for body in bodies: 
 		if body is Player:
