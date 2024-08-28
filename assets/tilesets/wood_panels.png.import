@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://ryl1a2ewyxke"
-path="res://.godot/imported/wood_panels..png-c605deb9c944b7c689ac4716f14fb467.ctex"
+uid="uid://by66f3ktft4pr"
+path="res://.godot/imported/wood_panels.png-1ed46c345d17b7229d165873423692a2.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/tilesets/wood_panels..png"
-dest_files=["res://.godot/imported/wood_panels..png-c605deb9c944b7c689ac4716f14fb467.ctex"]
+source_file="res://assets/tilesets/wood_panels.png"
+dest_files=["res://.godot/imported/wood_panels.png-1ed46c345d17b7229d165873423692a2.ctex"]
 
 [params]
 
