@@ -1,8 +1,10 @@
-[gd_scene load_steps=80 format=3 uid="uid://b6igcblpn6cqb"]
+[gd_scene load_steps=82 format=3 uid="uid://b6igcblpn6cqb"]
 
 [ext_resource type="TileSet" uid="uid://dy7gudh215rfa" path="res://assets/tilesets/tile_atlas.tres" id="1_0drl6"]
 [ext_resource type="Script" path="res://assets/scripts/GameLogic/smoother.gd" id="1_4g1m0"]
+[ext_resource type="AudioStream" uid="uid://c6xp73eneequ7" path="res://assets/Sounds/Fukuro_Theme_RM (online-audio-converter.com).mp3" id="1_asnqu"]
 [ext_resource type="PackedScene" uid="uid://c5fothc6h3nlb" path="res://assets/prefabs/player_respawner.tscn" id="1_l6wbb"]
+[ext_resource type="Script" path="res://assets/scripts/GameLogic/Part2.gd" id="1_setjd"]
 [ext_resource type="Texture2D" uid="uid://tnmlrq7auch8" path="res://assets/tilesets/background_tiles/background_cave.png" id="1_yahcb"]
 [ext_resource type="Script" path="res://assets/scripts/Camera/transitions.gd" id="2_5uc35"]
 [ext_resource type="Texture2D" uid="uid://dt48l3ngg5o4f" path="res://assets/sprites/NPCs/moth/moth_png.png" id="2_hi10g"]
@@ -581,6 +583,12 @@ transition = 0
 ease = 2
 
 [node name="Part2" type="Node2D"]
+script = ExtResource("1_setjd")
+
+[node name="BackgroundMusic" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("1_asnqu")
+volume_db = -17.712
+autoplay = true
 
 [node name="Smoother" type="Node" parent="."]
 script = ExtResource("1_4g1m0")

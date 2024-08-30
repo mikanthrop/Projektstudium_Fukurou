@@ -1,6 +1,7 @@
-[gd_scene load_steps=79 format=3 uid="uid://dcmj68qtvrdqr"]
+[gd_scene load_steps=81 format=3 uid="uid://dcmj68qtvrdqr"]
 
 [ext_resource type="Script" path="res://assets/scripts/GameLogic/smoother.gd" id="1_2pjpc"]
+[ext_resource type="Script" path="res://assets/scripts/GameLogic/Part1.gd" id="1_vgbqm"]
 [ext_resource type="Script" path="res://assets/scripts/Camera/transitions.gd" id="2_388ln"]
 [ext_resource type="Script" path="res://addons/phantom_camera/scripts/phantom_camera_host/phantom_camera_host.gd" id="2_gjprr"]
 [ext_resource type="Texture2D" uid="uid://im2kemouup06" path="res://assets/sprites/background/parallax_layers/Parallax_sky.png" id="3_7ne14"]
@@ -45,6 +46,7 @@
 [ext_resource type="Script" path="res://addons/phantom_camera/scripts/phantom_camera/phantom_camera_2d.gd" id="36_ivnci"]
 [ext_resource type="Script" path="res://addons/phantom_camera/scripts/resources/tween_resource.gd" id="37_ndc5g"]
 [ext_resource type="TileSet" uid="uid://dtj4ms23lom7j" path="res://assets/tilesets/non_interactable_tiles.tres" id="44_5iafq"]
+[ext_resource type="AudioStream" uid="uid://c6xp73eneequ7" path="res://assets/Sounds/Fukuro_Theme_RM (online-audio-converter.com).mp3" id="46_6ikn0"]
 
 [sub_resource type="TileMapPattern" id="TileMapPattern_m02eu"]
 tile_data = PackedInt32Array(851968, 65536, 0, 917504, 65536, 1, 851969, 0, 0, 917505, 0, 1, 720898, 131072, 0, 786434, 131072, 1, 851970, 393216, 2, 917506, 393216, 2, 589827, 327680, 1, 655363, 393216, 2, 720899, 393216, 2, 786435, 393216, 1, 851971, 393216, 2, 917507, 393216, 2, 458756, 327680, 1, 524292, 393216, 2, 589828, 393216, 1, 655364, 393216, 2, 720900, 393216, 2, 786436, 393216, 2, 851972, 393216, 2, 917508, 393216, 1, 458757, 393216, 2, 524293, 393216, 2, 589829, 393216, 2, 655365, 393216, 2, 720901, 393216, 2, 786437, 393216, 2, 851973, 393216, 2, 917509, 393216, 2, 393222, 327680, 1, 458758, 393216, 2, 524294, 393216, 2, 589830, 393216, 2, 655366, 393216, 2, 720902, 393216, 2, 786438, 393216, 2, 851974, 393216, 2, 917510, 393216, 2, 262151, 327680, 1, 327687, 393216, 2, 393223, 393216, 2, 458759, 393216, 2, 524295, 393216, 2, 589831, 393216, 2, 655367, 393216, 1, 720903, 393216, 2, 786439, 393216, 2, 851975, 393216, 2, 917511, 327680, 0, 196616, 327680, 1, 262152, 393216, 2, 327688, 393216, 2, 393224, 393216, 2, 458760, 393216, 2, 524296, 393216, 1, 589832, 393216, 2, 655368, 393216, 2, 720904, 393216, 2, 786440, 393216, 1, 851976, 393216, 2, 131081, 327680, 1, 196617, 393216, 2, 262153, 393216, 1, 327689, 393216, 2, 393225, 393216, 2, 458761, 393216, 2, 524297, 393216, 2, 589833, 393216, 2, 655369, 393216, 2, 720905, 393216, 2, 786441, 393216, 2, 851977, 327680, 0, 10, 327680, 1, 65546, 393216, 2, 131082, 393216, 2, 196618, 393216, 2, 262154, 393216, 2, 327690, 393216, 2, 393226, 393216, 2, 458762, 393216, 2, 524298, 393216, 2, 589834, 393216, 2, 655370, 393216, 2, 720906, 393216, 2, 786442, 327680, 0, 393227, 0, 0, 458763, 0, 1, 524299, 393216, 2, 589835, 393216, 1, 655371, 393216, 2, 720907, 393216, 2, 393228, 65536, 0, 458764, 65536, 1, 524300, 393216, 2, 589836, 393216, 2, 655372, 393216, 2, 720908, 327680, 0, 393229, 131072, 0, 458765, 131072, 1, 524301, 393216, 2, 589837, 393216, 2, 655373, 327680, 0)
@@ -594,6 +596,12 @@ transition = 0
 ease = 2
 
 [node name="main" type="Node2D"]
+script = ExtResource("1_vgbqm")
+
+[node name="BackgroundMusic" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("46_6ikn0")
+volume_db = -17.712
+autoplay = true
 
 [node name="Smoother" type="Node" parent="."]
 script = ExtResource("1_2pjpc")
