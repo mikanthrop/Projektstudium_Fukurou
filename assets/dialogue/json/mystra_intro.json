@@ -1,0 +1,122 @@
+[
+	{
+		"commands_raw": "Mystra: Oh, a new face. Who are you?\n\n?> Continue -> Fuku_1",
+		"gnode_name": "start",
+		"id": 0,
+		"name": "start",
+		"position": [
+			-20,
+			120
+		]
+	},
+	{
+		"commands_raw": "Fuku: Fuku.\n\n?> Continue -> Mystra_2",
+		"gnode_name": "fuku_1",
+		"id": 1,
+		"name": "Fuku_1",
+		"position": [
+			100,
+			160
+		]
+	},
+	{
+		"commands_raw": "Mystra: Hello Fuku. The Wind calls me Mystra.\n\n?> Continue -> Mystra_3",
+		"gnode_name": "mystra_2",
+		"id": 2,
+		"name": "Mystra_2",
+		"position": [
+			220,
+			120
+		]
+	},
+	{
+		"commands_raw": "Mystra: But you seem sad, exhausted, annoyed. Why Fuku?\n\n?> Continue -> Fuku_2",
+		"gnode_name": "mystra_3",
+		"id": 3,
+		"name": "Mystra_3",
+		"position": [
+			340,
+			120
+		]
+	},
+	{
+		"commands_raw": "Fuku: Those bats just forced me down such a stupid path.\n\n?> Continue -> Mystra_4",
+		"gnode_name": "fuku_2",
+		"id": 4,
+		"name": "Fuku_2",
+		"position": [
+			460,
+			160
+		]
+	},
+	{
+		"commands_raw": "Mystra: Mean. It's mean.\n\n?> Continue -> Mystra_5\n",
+		"gnode_name": "mystra_4",
+		"id": 5,
+		"name": "Mystra_4",
+		"position": [
+			580,
+			120
+		]
+	},
+	{
+		"commands_raw": "Mystra: The wind says you need help.\n\n?> Continue -> Fuku_3",
+		"gnode_name": "mystra_5",
+		"id": 6,
+		"name": "Mystra_5",
+		"position": [
+			700,
+			120
+		]
+	},
+	{
+		"commands_raw": "Fuku: Aah yes. And what does it say?\n\n?> Continue -> Mystra_6",
+		"gnode_name": "fuku_3",
+		"id": 7,
+		"name": "Fuku_3",
+		"position": [
+			820,
+			160
+		]
+	},
+	{
+		"commands_raw": "Mystra: Path difficult, problems big. Hmm. How to help...\n\n?> Continue -> Mystra_7",
+		"gnode_name": "mystra_6",
+		"id": 8,
+		"name": "Mystra_6",
+		"position": [
+			940,
+			120
+		]
+	},
+	{
+		"commands_raw": "Mystra: Oh I got it, I know! Wind agrees too!\n\n?> Continue -> Fuku_4",
+		"gnode_name": "mystra_7",
+		"id": 9,
+		"name": "Mystra_7",
+		"position": [
+			1060,
+			120
+		]
+	},
+	{
+		"commands_raw": "Fuku: Listen, you seem really nice. \nBut since when can the wind talk?\n\n?> Continue -> Mystra_8",
+		"gnode_name": "fuku_4",
+		"id": 10,
+		"name": "Fuku_4",
+		"position": [
+			1180,
+			160
+		]
+	},
+	{
+		"commands_raw": "Mystra: Oh, he talks. He talks a lot. But never mind.\nHe wants to help now. We're helping now.\n",
+		"gnode_name": "mystra_8",
+		"id": 11,
+		"name": "Mystra_8",
+		"position": [
+			1300,
+			120
+		]
+	}
+]

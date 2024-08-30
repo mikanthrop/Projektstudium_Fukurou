@@ -1,4 +1,4 @@
-[gd_scene load_steps=80 format=3 uid="uid://dcmj68qtvrdqr"]
+[gd_scene load_steps=79 format=3 uid="uid://dcmj68qtvrdqr"]
 
 [ext_resource type="Script" path="res://assets/scripts/GameLogic/smoother.gd" id="1_2pjpc"]
 [ext_resource type="Script" path="res://assets/scripts/Camera/transitions.gd" id="2_388ln"]
@@ -34,11 +34,10 @@
 [ext_resource type="Texture2D" uid="uid://cbl4kcv1rqeco" path="res://assets/sprites/Fuku/Fuku_animation_spritesheet.png" id="27_ysj4e"]
 [ext_resource type="Script" path="res://assets/scripts/Player/movement/state_machine.gd" id="28_5qg3x"]
 [ext_resource type="Script" path="res://assets/scripts/Player/movement/idling.gd" id="29_6dhl2"]
-[ext_resource type="JSON" path="res://assets/dialogue/json/end_of_demo.json" id="29_61dhd"]
 [ext_resource type="PackedScene" uid="uid://xr47otq3rvrg" path="res://assets/prefabs/letter_krapost.tscn" id="29_dshww"]
-[ext_resource type="Curve2D" uid="uid://df3s430kcq2j1" path="res://assets/prefabs/leaf_in_wind_Screen8_big.tres" id="30_47nv8"]
 [ext_resource type="Script" path="res://assets/scripts/Player/movement/walking.gd" id="30_p8276"]
 [ext_resource type="Script" path="res://assets/scripts/Player/movement/jumping.gd" id="31_ewhy8"]
+[ext_resource type="JSON" path="res://assets/dialogue/json/mystra_intro.json" id="32_ayk0s"]
 [ext_resource type="AudioStream" uid="uid://dswsqo8fo4ge8" path="res://assets/Sounds/JumpSoundFlapOne.mp3" id="32_qurn1"]
 [ext_resource type="Script" path="res://assets/scripts/Player/movement/falling.gd" id="33_6jev1"]
 [ext_resource type="Script" path="res://assets/scripts/Player/movement/dashing.gd" id="34_4s6v0"]
@@ -851,10 +850,6 @@ script = ExtResource("12_8wgew")
 position = Vector2(480, 142)
 scale = Vector2(0.45164, 0.45164)
 
-[node name="MovingPlattform" parent="Screen4,5" instance=ExtResource("14_6lujn")]
-position = Vector2(443, 262)
-scale = Vector2(0.432131, 0.432131)
-
 [node name="OnewayPlatform" parent="Screen4,5" instance=ExtResource("13_lkpxc")]
 position = Vector2(409, 188)
 scale = Vector2(0.85515, 0.85515)
@@ -945,6 +940,7 @@ scale = Vector2(0.436023, 0.436023)
 curve = ExtResource("15_6i48u")
 speed = 0.35
 float_duration = 1.0
+loop = false
 
 [node name="CanvasGroup" type="CanvasGroup" parent="Screen5"]
 position = Vector2(-1, 0)
@@ -1002,6 +998,8 @@ loop = false
 [node name="MovingPlattform" parent="Screen6" instance=ExtResource("14_6lujn")]
 position = Vector2(210, 326)
 scale = Vector2(0.556912, 0.556912)
+speed = 0.0
+float_duration = 0.0
 
 [node name="CrumblingPlatform2" parent="Screen6" instance=ExtResource("9_8r7v8")]
 position = Vector2(200, 93)
@@ -1151,14 +1149,13 @@ shape = SubResource("RectangleShape2D_pjcj0")
 script = ExtResource("12_8wgew")
 
 [node name="DeathZone" parent="Screen8" instance=ExtResource("10_kvjo3")]
-position = Vector2(368, 506)
-scale = Vector2(17.08, 1)
+position = Vector2(368, 536.055)
+scale = Vector2(17.08, 4)
 
 [node name="MovingPlattform3" parent="Screen8" instance=ExtResource("14_6lujn")]
 position = Vector2(303.238, 190)
 scale = Vector2(0.407129, 0.407129)
-curve = ExtResource("30_47nv8")
-speed = 1.0
+speed = 0.5
 float_duration = 1.0
 loop = false
 
@@ -1166,7 +1163,7 @@ loop = false
 position = Vector2(426.238, 211)
 scale = Vector2(0.42022, 0.42022)
 curve = ExtResource("24_db1h7")
-speed = 1.0
+speed = 0.5
 float_duration = 1.0
 loop = false
 
@@ -1381,10 +1378,14 @@ scale = Vector2(1.5873, -0.494176)
 position = Vector2(376, 165)
 scale = Vector2(2.3873, -0.494176)
 
+[node name="DialogueHandler" parent="Screen11" instance=ExtResource("12_j21eq")]
+position = Vector2(443, 204)
+dialogue_json = ExtResource("32_ayk0s")
+
 [node name="Dialogue_Demo_End" parent="Screen11" instance=ExtResource("12_j21eq")]
 visible = false
 position = Vector2(388, 196)
-dialogue_json = ExtResource("29_61dhd")
+dialogue_json = ExtResource("32_ayk0s")
 dialogue_style = ExtResource("26_kofxh")
 updatable = true
 
@@ -1601,6 +1602,7 @@ layer_0/tile_data = PackedInt32Array(1638807, 196608, 1, 1704343, 196608, 1, 176
 [connection signal="body_entered" from="Screen7/CanvasGroup/DeathZone9" to="Screen7/PlayerRespawner" method="_on_death_zone_body_entered"]
 [connection signal="body_entered" from="Screen7/CanvasGroup/DeathZone10" to="Screen7/PlayerRespawner" method="_on_death_zone_body_entered"]
 [connection signal="body_entered" from="Screen7/CanvasGroup/DeathZone11" to="Screen7/PlayerRespawner" method="_on_death_zone_body_entered"]
+[connection signal="body_entered" from="Screen8/DeathZone" to="Screen8/PlayerRespawner" method="_on_death_zone_body_entered"]
 [connection signal="body_entered" from="Screen9/CanvasGroup/DeathZone" to="Screen9/PlayerRespawner" method="_on_death_zone_body_entered"]
 [connection signal="body_entered" from="Screen9/CanvasGroup/DeathZone2" to="Screen9/PlayerRespawner" method="_on_death_zone_body_entered"]
 [connection signal="body_entered" from="Screen9/CanvasGroup/DeathZone3" to="Screen9/PlayerRespawner" method="_on_death_zone_body_entered"]

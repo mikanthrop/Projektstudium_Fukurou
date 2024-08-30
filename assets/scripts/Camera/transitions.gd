@@ -12,6 +12,7 @@ func _ready() -> void:
 	for child in children: 
 		if child is Camera_Limit: 
 			screen_limits.append(child)
+			print(child, " has been appended to screen_limits array")
 
 
 func _on_visible_on_screen_notifier_2d_screen_exited():
