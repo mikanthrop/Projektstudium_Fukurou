@@ -1,0 +1,10 @@
+[gd_scene load_steps=2 format=3 uid="uid://876xm701pkqb"]
+
+[ext_resource type="TileSet" uid="uid://dy7gudh215rfa" path="res://assets/tilesets/tile_atlas.tres" id="1_qd1j8"]
+
+[node name="Screen14" type="Node2D"]
+
+[node name="TileMap" type="TileMap" parent="."]
+texture_filter = 1
+tile_set = ExtResource("1_qd1j8")
+format = 2

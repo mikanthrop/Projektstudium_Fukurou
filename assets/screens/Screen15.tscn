@@ -1,6 +1,5 @@
-[gd_scene load_steps=10 format=3 uid="uid://dj6suur7bggn2"]
+[gd_scene load_steps=9 format=3 uid="uid://dj6suur7bggn2"]
 
-[ext_resource type="Texture2D" uid="uid://c6fvpfgdt6lkv" path="res://assets/screens/Screenshot 2024-08-19 183137.png" id="1_lyfgb"]
 [ext_resource type="TileSet" uid="uid://dy7gudh215rfa" path="res://assets/tilesets/tile_atlas.tres" id="1_sri5d"]
 [ext_resource type="Texture2D" uid="uid://7uetrkljkody" path="res://assets/sprites/collectables/piu_post_brief.png" id="3_wwuik"]
 [ext_resource type="PackedScene" uid="uid://cgk81jkjl5b0r" path="res://assets/prefabs/moving_plattform_small.tscn" id="4_yqrt3"]
@@ -11,12 +10,6 @@
 [ext_resource type="PackedScene" uid="uid://cfvxij5pedplm" path="res://assets/prefabs/Obstacles/death_zone.tscn" id="9_3qc0t"]
 
 [node name="Screen14" type="Node2D"]
-
-[node name="Sprite2D" type="Sprite2D" parent="."]
-visible = false
-position = Vector2(514.744, 202)
-scale = Vector2(1.43262, 1.43262)
-texture = ExtResource("1_lyfgb")
 
 [node name="TileMap" type="TileMap" parent="."]
 texture_filter = 1
