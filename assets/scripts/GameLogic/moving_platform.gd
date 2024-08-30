@@ -14,6 +14,7 @@ extends Path2D
 @onready var path: PathFollow2D = $PathFollow2D
 @onready var timer: Timer = $FloatTimer
 @onready var collision_shape: CollisionShape2D = $AnimatableBody2D/CollisionShape2D
+@onready var sprite: Sprite2D = $AnimatableBody2D/Sprite2D
 
 # logic variables
 var approximate_beginning: float = 0.02
@@ -61,12 +62,16 @@ func _physics_process(delta: float) -> void:
 	# If the platform is not looping and has reached the end, disable the collision shape
 	if (not loop and path.get_progress_ratio() > approximate_ending):
 		collision_shape.disabled = true
-		print("Platform reached the end. Collision shape disabled.")
+		sprite.visible = false
+		var beginning: float = 0.0
+		path.set_progress_ratio(beginning)
 
 
 func _on_float_timer_timeout() -> void:
 	timer_started = false
 	movement_paused = false
+	collision_shape.disabled = false
+	sprite.visible = true
 	if (path.get_progress_ratio() <= approximate_beginning):
 		upward_movement = true
 		path.set_progress_ratio(approximate_beginning + offset)

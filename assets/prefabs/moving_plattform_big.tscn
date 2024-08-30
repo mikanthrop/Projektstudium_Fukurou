@@ -1,5 +1,6 @@
-[gd_scene load_steps=7 format=3 uid="uid://bdpksvvhgfls5"]
+[gd_scene load_steps=8 format=3 uid="uid://bdpksvvhgfls5"]
 
+[ext_resource type="Curve2D" uid="uid://df3s430kcq2j1" path="res://assets/prefabs/leaf_in_wind_Screen8_big.tres" id="1_dc6t7"]
 [ext_resource type="Script" path="res://assets/scripts/GameLogic/moving_platform.gd" id="1_uy7js"]
 [ext_resource type="Texture2D" uid="uid://ckbe63cbo00b6" path="res://assets/sprites/obstacles/leaf_3tiles.png" id="2_3qcey"]
 
@@ -17,11 +18,13 @@ _data = {
 }
 
 [node name="MovingPlattform" type="Path2D"]
+curve = ExtResource("1_dc6t7")
 script = ExtResource("1_uy7js")
 metadata/_edit_group_ = true
 
 [node name="PathFollow2D" type="PathFollow2D" parent="."]
-rotation = -1.5708
+position = Vector2(-15.3213, 194.042)
+rotation = 1.5708
 
 [node name="RemoteTransform2D" type="RemoteTransform2D" parent="PathFollow2D"]
 remote_path = NodePath("../../AnimatableBody2D")
@@ -29,6 +32,7 @@ update_rotation = false
 update_scale = false
 
 [node name="AnimatableBody2D" type="AnimatableBody2D" parent="."]
+position = Vector2(-15.3213, 194.042)
 rotation = -1.5708
 collision_layer = 2
 physics_material_override = SubResource("PhysicsMaterial_0anxl")
