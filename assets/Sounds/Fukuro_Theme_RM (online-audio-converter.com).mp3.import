@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://c6xp73eneequ7"
+path="res://.godot/imported/Fukuro_Theme_RM (online-audio-converter.com).mp3-d884b3a7440eb66dcfac78325077733d.mp3str"
+
+[deps]
+
+source_file="res://assets/Sounds/Fukuro_Theme_RM (online-audio-converter.com).mp3"
+dest_files=["res://.godot/imported/Fukuro_Theme_RM (online-audio-converter.com).mp3-d884b3a7440eb66dcfac78325077733d.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4
