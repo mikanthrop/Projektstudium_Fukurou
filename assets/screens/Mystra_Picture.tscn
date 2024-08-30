@@ -1,0 +1,10 @@
+[gd_scene load_steps=2 format=3 uid="uid://cidwwo4aw40cx"]
+
+[ext_resource type="Texture2D" uid="uid://bk2r10x0ddvhv" path="res://assets/sprites/Pictures/Mystra_Conjures_Wind.jpg" id="1_41mxl"]
+
+[node name="Mystra_Picture" type="Node2D"]
+
+[node name="Image" type="Sprite2D" parent="."]
+scale = Vector2(0.63, 0.63)
+texture = ExtResource("1_41mxl")
+centered = false
