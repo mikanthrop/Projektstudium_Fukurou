@@ -44,4 +44,4 @@ func _on_ez_dialogue_end_of_dialogue_reached():
 	print("Dialogue path: ", dialogue_json.resource_path)
 	var mystra_dialogue: String = "res://assets/dialogue/json/mystra_intro.json"
 	if dialogue_json.resource_path == mystra_dialogue: 
-		load("res://assets/screens/Mystra_Picture.tscn")
+		get_tree().change_scene_to_file("res://assets/screens/Mystra_Picture.tscn")

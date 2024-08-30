@@ -70,7 +70,7 @@
 		]
 	},
 	{
-		"commands_raw": "Fuku: Aah yes. And what does it say?\n\n?> Continue -> Mystra_6",
+		"commands_raw": "Fuku: Ooookay. Does it say anything else, or...?\n\n?> Continue -> Mystra_6",
 		"gnode_name": "fuku_3",
 		"id": 7,
 		"name": "Fuku_3",
@@ -80,7 +80,7 @@
 		]
 	},
 	{
-		"commands_raw": "Mystra: Path difficult, problems big. Hmm. How to help...\n\n?> Continue -> Mystra_7",
+		"commands_raw": "Mystra: Path difficult, problems big. Hmm. \nHow to help...\n\n?> Continue -> Mystra_7",
 		"gnode_name": "mystra_6",
 		"id": 8,
 		"name": "Mystra_6",
@@ -110,12 +110,22 @@
 		]
 	},
 	{
-		"commands_raw": "Mystra: Oh, he talks. He talks a lot. But never mind.\nHe wants to help now. We're helping now.\n",
+		"commands_raw": "Mystra: Oh, he talks. He talks a lot. But never mind.\nHe wants to help now. We're helping now.\n\n?> Continue -> End",
 		"gnode_name": "mystra_8",
 		"id": 11,
 		"name": "Mystra_8",
 		"position": [
 			1300,
+			120
+		]
+	},
+	{
+		"commands_raw": "Mystra and Wind help",
+		"gnode_name": "end",
+		"id": 12,
+		"name": "End",
+		"position": [
+			1420,
 			120
 		]
 	}
