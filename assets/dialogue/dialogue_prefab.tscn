@@ -34,6 +34,8 @@ texture_filter = 1
 layout_mode = 2
 theme = ExtResource("3_daywc")
 label_settings = ExtResource("3_7vlni")
+horizontal_alignment = 1
+vertical_alignment = 1
 
 [node name="EzDialogue" type="Node" parent="."]
 script = ExtResource("4_edso6")

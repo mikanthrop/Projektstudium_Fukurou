@@ -1374,13 +1374,7 @@ scale = Vector2(1.61384, -0.494176)
 [node name="DialogueHandler" parent="Screen11" instance=ExtResource("12_j21eq")]
 position = Vector2(443, 204)
 dialogue_json = ExtResource("32_ayk0s")
-
-[node name="Dialogue_Demo_End" parent="Screen11" instance=ExtResource("12_j21eq")]
-visible = false
-position = Vector2(388, 196)
-dialogue_json = ExtResource("32_ayk0s")
 dialogue_style = ExtResource("26_kofxh")
-updatable = true
 
 [node name="Letter_Krapost" parent="Screen11" instance=ExtResource("29_dshww")]
 position = Vector2(718.79, 80.52)

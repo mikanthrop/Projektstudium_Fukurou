@@ -1,0 +1,9 @@
+[gd_resource type="LabelSettings" load_steps=2 format=3 uid="uid://dymogltf1d231"]
+
+[ext_resource type="FontFile" uid="uid://dtphq7pl4kve7" path="res://addons/ez_dialogue/main_screen/ProggyVector Regular.ttf" id="1_sqcry"]
+
+[resource]
+font = ExtResource("1_sqcry")
+font_size = 22
+shadow_size = 6
+shadow_color = Color(0.360784, 0.568627, 0.894118, 1)

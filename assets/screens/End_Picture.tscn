@@ -1,0 +1,40 @@
+[gd_scene load_steps=4 format=3 uid="uid://dtcub8wxrb5vf"]
+
+[ext_resource type="Script" path="res://assets/scripts/GameLogic/End_Picture.gd" id="1_bv52r"]
+[ext_resource type="Texture2D" uid="uid://d3s0h2o1rptot" path="res://assets/sprites/Pictures/Batboys.jpg" id="1_tuoq8"]
+[ext_resource type="LabelSettings" uid="uid://dymogltf1d231" path="res://assets/dialogue/end_screen.tres" id="3_34wds"]
+
+[node name="EndPicture" type="Node2D"]
+script = ExtResource("1_bv52r")
+
+[node name="Image" type="Sprite2D" parent="."]
+scale = Vector2(0.63, 0.63)
+texture = ExtResource("1_tuoq8")
+centered = false
+
+[node name="GoBackToStartButton" type="Button" parent="."]
+offset_left = 814.0
+offset_top = 609.0
+offset_right = 1209.0
+offset_bottom = 680.0
+metadata/_edit_group_ = true
+
+[node name="StartAgain!" type="Label" parent="GoBackToStartButton"]
+layout_mode = 0
+offset_right = 397.0
+offset_bottom = 68.0
+text = "Start again!"
+label_settings = ExtResource("3_34wds")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="ThankYouMessage" type="Label" parent="."]
+offset_right = 1209.0
+offset_bottom = 119.0
+text = "Thank you for playing the Fukurou Demo! We hope you enjoyed Fuku's journey so far!"
+label_settings = ExtResource("3_34wds")
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 1
+
+[connection signal="pressed" from="GoBackToStartButton" to="." method="_on_go_back_to_start_button_pressed"]

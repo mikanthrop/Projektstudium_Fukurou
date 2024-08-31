@@ -1,8 +1,8 @@
 [gd_resource type="Theme" load_steps=2 format=3 uid="uid://btwb5xdfxwk35"]
 
-[ext_resource type="FontFile" uid="uid://druxsk4n8p322" path="res://assets/dialogue/fonts/ARCADECLASSIC.TTF" id="1_howxs"]
+[ext_resource type="FontFile" uid="uid://dtphq7pl4kve7" path="res://addons/ez_dialogue/main_screen/ProggyVector Regular.ttf" id="1_qo67p"]
 
 [resource]
-default_font = ExtResource("1_howxs")
-default_font_size = 10
+default_font = ExtResource("1_qo67p")
+default_font_size = 12
 Button/font_sizes/font_size = 10

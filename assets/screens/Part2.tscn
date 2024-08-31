@@ -1,4 +1,4 @@
-[gd_scene load_steps=83 format=3 uid="uid://b6igcblpn6cqb"]
+[gd_scene load_steps=88 format=3 uid="uid://b6igcblpn6cqb"]
 
 [ext_resource type="TileSet" uid="uid://dy7gudh215rfa" path="res://assets/tilesets/tile_atlas.tres" id="1_0drl6"]
 [ext_resource type="Script" path="res://assets/scripts/GameLogic/smoother.gd" id="1_4g1m0"]
@@ -39,6 +39,8 @@
 [ext_resource type="PackedScene" uid="uid://bsfu2icddjyuk" path="res://assets/prefabs/Obstacles/oneway_platform_left.tscn" id="29_tr8vg"]
 [ext_resource type="Curve2D" uid="uid://cjchvbaqi4boy" path="res://assets/prefabs/leaf_in_wind_Screen8(2)_loop.tres" id="30_68mjh"]
 [ext_resource type="Curve2D" uid="uid://bfkc4mr0nfb8j" path="res://assets/prefabs/leaf_in_wind_Screen15_small.tres" id="31_tvlwc"]
+[ext_resource type="JSON" path="res://assets/dialogue/json/mystra_goodbye.json" id="32_5dfo5"]
+[ext_resource type="Theme" uid="uid://btwb5xdfxwk35" path="res://assets/themes/bat_boy_theme.tres" id="32_cthi6"]
 [ext_resource type="Curve2D" uid="uid://c3l67o1pkiwyq" path="res://assets/prefabs/leaf_in_wind_Screen15_big.tres" id="32_x3wra"]
 [ext_resource type="Script" path="res://assets/scripts/Player/player.gd" id="38_udbqo"]
 [ext_resource type="Texture2D" uid="uid://cbl4kcv1rqeco" path="res://assets/sprites/Fuku/Fuku_animation_spritesheet.png" id="39_8vuik"]
@@ -46,6 +48,7 @@
 [ext_resource type="Script" path="res://assets/scripts/Player/movement/idling.gd" id="41_mhoar"]
 [ext_resource type="Script" path="res://assets/scripts/Player/movement/walking.gd" id="42_8hohu"]
 [ext_resource type="Script" path="res://assets/scripts/Player/movement/jumping.gd" id="43_p8043"]
+[ext_resource type="Script" path="res://assets/scripts/GameLogic/EndScreenTransition.gd" id="44_ifxqm"]
 [ext_resource type="AudioStream" uid="uid://dswsqo8fo4ge8" path="res://assets/Sounds/JumpSoundFlapOne.mp3" id="44_xf2w1"]
 [ext_resource type="Script" path="res://assets/scripts/Player/movement/falling.gd" id="45_af06o"]
 [ext_resource type="Script" path="res://assets/scripts/Player/movement/dashing.gd" id="46_mc414"]
@@ -53,6 +56,7 @@
 [ext_resource type="Script" path="res://addons/phantom_camera/scripts/phantom_camera/phantom_camera_2d.gd" id="48_xiwbg"]
 [ext_resource type="Script" path="res://addons/phantom_camera/scripts/resources/tween_resource.gd" id="49_pj2vs"]
 [ext_resource type="PackedScene" uid="uid://nlq8bovvjncl" path="res://assets/prefabs/Obstacles/oneway_platform_hanging.tscn" id="53_7d6h5"]
+[ext_resource type="PackedScene" uid="uid://blbecmdcnemkw" path="res://assets/dialogue/dialogue_prefab.tscn" id="54_vak88"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_lluum"]
 texture = ExtResource("1_yahcb")
@@ -132,6 +136,9 @@ size = Vector2(509, 336)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_arjna"]
 size = Vector2(902, 304)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_y72vp"]
+size = Vector2(256, 308)
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_fitw2"]
 radius = 8.62534
@@ -950,6 +957,11 @@ scale = Vector2(1.4941, 1.4941)
 position = Vector2(184, 207)
 scale = Vector2(1.4941, 1.4941)
 
+[node name="DialogueHandler" parent="Screen11(2)" instance=ExtResource("54_vak88")]
+position = Vector2(445, 194)
+dialogue_json = ExtResource("32_5dfo5")
+dialogue_style = ExtResource("32_cthi6")
+
 [node name="CanvasGroup" type="CanvasGroup" parent="Screen11(2)"]
 
 [node name="DeathZone2" parent="Screen11(2)/CanvasGroup" instance=ExtResource("3_kf46s")]
@@ -1339,6 +1351,13 @@ scale = Vector2(1.25, 1.25)
 position = Vector2(130, 300)
 scale = Vector2(1.05, 1.05)
 
+[node name="EndScreenTransition" type="Area2D" parent="Screen17"]
+script = ExtResource("44_ifxqm")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Screen17/EndScreenTransition"]
+position = Vector2(778, 152)
+shape = SubResource("RectangleShape2D_y72vp")
+
 [node name="Player" type="CharacterBody2D" parent="."]
 position = Vector2(393, 125)
 collision_mask = 2
@@ -1538,5 +1557,6 @@ scale = Vector2(0.9, 1.6)
 [connection signal="body_entered" from="Screen15/CanvasGroup/DeathZone" to="Screen15/PlayerRespawner" method="_on_death_zone_body_entered"]
 [connection signal="body_entered" from="Screen15/CanvasGroup/DeathZone2" to="Screen15/PlayerRespawner" method="_on_death_zone_body_entered"]
 [connection signal="body_entered" from="Screen15/CanvasGroup/DeathZone3" to="Screen15/PlayerRespawner" method="_on_death_zone_body_entered"]
+[connection signal="body_entered" from="Screen17/EndScreenTransition" to="Screen17/EndScreenTransition" method="_on_body_entered"]
 [connection signal="timeout" from="Player/DashTimer" to="Player/state_machine/dashing" method="_on_dash_timer_timeout"]
 [connection signal="screen_exited" from="Player/VisibleOnScreenNotifier2D" to="Camera2D" method="_on_visible_on_screen_notifier_2d_screen_exited"]
