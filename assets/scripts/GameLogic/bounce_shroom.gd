@@ -27,7 +27,6 @@ func _on_body_entered(body):
 			## set player upward velocity to the jump_velocity times movement_multiplier
 			player.velocity = jump_direction * jump_velocity * movement_multiplier 
 			player.move_and_slide()
-			print("player velocity bounce shroom: ", jump_direction, " * ", jump_velocity, " * ", movement_multiplier, " = ", player.velocity)
 
 
 ## calculates jump_velocity based on jump_direction 
@@ -36,12 +35,10 @@ func calculate_jump_velocity(player: Player) -> float:
 	var jump_velocity: float;
 	if jump_direction == Vector2.UP:
 		jump_velocity = ((2.0 * player.JUMP_HEIGHT) / player.JUMP_TIME_TO_PEAK)
-		print("bounce shroom: ", jump_velocity)
 	
 	## downwards bounce
 	elif jump_direction == Vector2.DOWN:
 		jump_velocity = ((2.0 * player.JUMP_HEIGHT) / player.JUMP_TIME_TO_PEAK)
-		print("bounce shroom: ", jump_velocity)
 	
 	## no implemented jump_direction used
 	else: 

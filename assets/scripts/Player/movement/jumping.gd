@@ -18,8 +18,7 @@ var additional_horizontal_velocity: float = 0.0
 func enter() -> void: 
 	super()
 	jumpOne.play()
-	print("changed state to jumping")
-	print("JUMP_VELOCITY: ", JUMP_VELOCITY, " | JUMP_GRAVITY: ", JUMP_GRAVITY)
+	
 	# set player velocity to calculated jump velocity
 	parent.velocity.y = JUMP_VELOCITY
 	# Store the initial horizontal velocity and muliply with the Momentum Modifier 
@@ -27,7 +26,6 @@ func enter() -> void:
 	# Apply some of the initial horizontal momentum to the jump
 	parent.velocity.x += additional_horizontal_velocity 
 	
-	print("parent velocity x: ", parent.velocity.x)
 	coyote_timer.stop()
 
 func exit() -> void: 
@@ -50,7 +48,6 @@ func _process_physics(delta: float) -> Base_State:
 	parent.velocity.y += JUMP_GRAVITY * delta
 	# add delta to jump_height_timer
 	jump_height_timer += delta
-	print("state jumping: parent velocity at ", parent.velocity.y)
 	
 	# checking for player falling
 	if parent.velocity.y > 0 or jump_height_timer == parent.JUMP_TIME_TO_PEAK:

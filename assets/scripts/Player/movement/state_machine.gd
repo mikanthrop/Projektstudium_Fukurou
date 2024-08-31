@@ -18,7 +18,6 @@ func init(_parent: Player) -> void:
 func change_state(new_state: Base_State) -> void: 
 	if current_state: 
 		current_state.exit()
-	print("State Machine gives event to ", new_state, ".")
 	current_state = new_state
 	current_state.enter()
 

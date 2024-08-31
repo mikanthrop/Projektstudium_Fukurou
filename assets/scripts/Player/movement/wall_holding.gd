@@ -10,9 +10,7 @@ var pos: Vector2
 func enter() -> void: 
 	super()
 	holding.play()
-	print("changed state to wall_holding")
 	pos = parent.get_position_delta()
-	print("all holding at position: ", pos)
 
 
 func exit() -> void:

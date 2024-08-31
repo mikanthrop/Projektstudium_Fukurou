@@ -9,7 +9,6 @@ var tracked_letters = {
 
 func add_letter() -> void:
 	tracked_letters["collected_letters"] = tracked_letters["collected_letters"] + 1
-	print("collected a letter. Now ", tracked_letters["collected_letters"], " have been collected.")
 	check_all_letters_collected()
 
 

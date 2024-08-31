@@ -25,7 +25,6 @@ func _on_death_zone_body_entered(body) -> void:
 			# Reset Player's transform and enable player movement
 			player.global_position = self.global_position
 			player.velocity = Vector2(0,0);
-			print("in respawner: reset player's position")
 			await get_tree().create_timer(0.1).timeout
 	
 	# restart player methods

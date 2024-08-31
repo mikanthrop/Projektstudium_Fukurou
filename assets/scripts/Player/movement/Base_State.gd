@@ -16,8 +16,7 @@ extends Node
 var gravity: int = ProjectSettings.get_setting("physics/2d/default_gravity")
 
 func enter() -> void:
-	print("entered")
-	#parent.animations.play(animation_name)
+	pass
 
 func exit() -> void:
 	pass

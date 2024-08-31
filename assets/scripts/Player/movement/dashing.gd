@@ -18,16 +18,12 @@ var right: int = 1
 func enter() -> void:
 	super()
 	dashSound.play()
-	print("changed state to dashing")
-	
 	# set flag
 	parent.has_dashed = true
-	print("Dashflag set")
 	# Start the dash timer
 	dash_timer.wait_time = dash_timer_length
 	dash_timer.one_shot = true
 	dash_timer.start()
-	print("state dashing: enter: dash_timer time: ", dash_timer.time_left)
 	# set player speed to 0,0 for full control over dash direction
 	parent.velocity = Vector2(0, 0)
 	
@@ -63,17 +59,13 @@ func exit() -> void:
 
 
 func process_input(event: InputEvent) -> Base_State:
-	print("state dashing: process input: ", event)
-	
 	return null
 
 
 func _process_physics(_delta: float) -> Base_State:
 	# Handle physics logic during the dash (if needed)
 	parent.velocity = dash_direction * parent.DASH_SPEED
-	print("state dashing: physics: dash_direction: ", dash_direction)
 	parent.move_and_slide()
-	
 	return null
 
 
@@ -85,8 +77,6 @@ func process_frame(_delta: float) -> Base_State:
 		var anim_length : float = parent.animation_player.get_animation(animation_name).get_length()
 		var custom_speed : float = anim_length / dash_timer_length
 		parent.animation_player.play(animation_name, -1, custom_speed, false)
-		# currently player can slide while holding dash in last frame of dash animation
-	
 	
 	# transitions to next state
 	if Input.is_action_pressed("jump"):
@@ -112,8 +102,6 @@ func process_frame(_delta: float) -> Base_State:
 			return fall_state
 		return idle_state
 	return null
-	
-	
 
 
 func _on_dash_timer_timeout() -> void:

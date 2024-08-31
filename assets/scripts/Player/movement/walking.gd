@@ -8,10 +8,7 @@ class_name Walk_State
 
 # called when state is changed to walking
 func enter() -> void: 
-	
 	walking.play()
-	super()
-	print("changed state to walking")
 	
 	if parent.velocity.x == 0:
 		parent.velocity.x += parent.MOVE_SPEED
@@ -22,6 +19,8 @@ func exit() -> void:
 	
 	parent.has_jumped = false
 	parent.has_dashed = false
+	
+	coyote_timer.stop()
 	coyote_timer.start()
 
 
@@ -43,7 +42,6 @@ func process_input(_event: InputEvent) -> Base_State:
 # handles actual movement and returns states that change without needing inputs
 func _process_physics(delta: float) -> Base_State:
 	parent.velocity.y += gravity*delta
-	print("state walking: parent velocity x: ",  parent.velocity.x)
 	# if player has negativ y velocity change state to falling
 	if parent.velocity.y < 0 and !parent.is_on_floor():
 		return idle_state

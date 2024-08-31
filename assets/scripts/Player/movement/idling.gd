@@ -8,7 +8,6 @@ class_name Idle_State
 
 func enter() -> void: 
 	super()
-	print("changed state to idling")
 	
 	# set jump and dash flags to false 
 	parent.has_jumped = false
@@ -16,6 +15,8 @@ func enter() -> void:
 	
 	# set parent velocity to zero
 	parent.velocity.x = 0
+	
+	coyote_timer.stop()
 	
 
 

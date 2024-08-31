@@ -9,10 +9,7 @@ var camera: PhantomCamera2D
 
 ## transition logic
 func _on_body_exited(body):
-	print("player exited transition area")
 	if body is Player:
-		print("player entered transition area")
-		print("player's global position: ", body.global_position)
 		player_pos = body.global_position
 		camera = body.get_node("PhantomCamera2D")
 		#
@@ -46,7 +43,6 @@ func _on_visible_on_screen_notifier_2d_screen_exited() -> void:
 		# check if the player is inside the limit
 		if player_pos != Vector2.ZERO:
 			if limit.shape.get_rect().has_point(player_pos):
-				print("% contains the player")
 				camera.set_limit_target(limit.get_path())
 		## if not, continue searching
 		

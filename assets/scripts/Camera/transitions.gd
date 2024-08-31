@@ -12,29 +12,20 @@ func _ready() -> void:
 	for child in children: 
 		if child is Camera_Limit: 
 			screen_limits.append(child)
-			print(child, " has been appended to screen_limits array")
 
 
+# When the player leaves the screen, find him in a different one
 func _on_visible_on_screen_notifier_2d_screen_exited():
-	print("player left screen!")
 	var index: int = 0
+	# search in every screen_limit
 	for limit in screen_limits: 
-		print("searching for player in limit ", index)
 		var shape_rect: Rect2 = limit.get_shape().get_rect()
-		#var shape_recti: Rect2i = Rect2i(shape_rect)
-		
-		#print("player position: ", player.global_position)
-		#print("limit position: ", limit.global_position)
-		#print("limit dimensions: ", shape_recti.size)
-		print("limit has position of player: ", shape_rect.has_point(player.position))
-		print("limit contains position of player: ", contains_point(limit, player.global_position))
 		
 		if !shape_rect.has_area():
 			push_error("%s has no area!" % limit.name)
 			break
 		# check if the player is inside the limit
 		if contains_point(limit, player.global_position):
-			print("limit ", index, " contains the player")
 			cam.limit_target = limit.get_path()
 		index = index + 1
 		## if not, continue searching
@@ -45,12 +36,8 @@ func contains_point(shape: CollisionShape2D, point: Vector2):
 	var start : Vector2 = shape.global_position - Vector2(rect.size.x/2, rect.size.y/2)
 	var end : Vector2 = start + rect.size
 	
-	print("global position of limit start: ", start)
-	print("global position of limit end: ", end)
-	
+	# If the player is inside the limits
 	if start.x < point.x and end.x > point.x:
-		print("point is inside x range")
 		if start.y < point.y and end.y > point.y: 
-			print("point is inside y range")
 			return true
 	return false
