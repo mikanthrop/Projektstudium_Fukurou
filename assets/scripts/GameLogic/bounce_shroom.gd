@@ -40,6 +40,14 @@ func calculate_jump_velocity(player: Player) -> float:
 	elif jump_direction == Vector2.DOWN:
 		jump_velocity = ((2.0 * player.JUMP_HEIGHT) / player.JUMP_TIME_TO_PEAK)
 	
+	## Leftside bounce
+	elif jump_direction == Vector2.LEFT:
+		jump_velocity = ((2.0 * player.JUMP_HEIGHT) / player.JUMP_TIME_TO_PEAK)
+	
+	## Rightside bounce
+	elif jump_direction == Vector2.RIGHT:
+		jump_velocity = ((2.0 * player.JUMP_HEIGHT) / player.JUMP_TIME_TO_PEAK)
+	
 	## no implemented jump_direction used
 	else: 
 		push_error("jump_direction isn't a valid direction. only supports (0,-1) and (0,1).")
