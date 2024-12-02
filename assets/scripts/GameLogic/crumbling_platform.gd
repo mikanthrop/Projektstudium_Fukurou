@@ -20,7 +20,7 @@ func _physics_process(delta):
 			var children: Array[Node] = body.get_children()
 			for child in children: 
 				if child.name == "FeetCollision" and body.is_on_floor:
-					self.set_position(Vector2(self.get_position().x, self.get_position().y + animation_offset)) 
+					self.set_position(Vector2(self.get_position().x, self.get_position().y)) 
 					set_physics_process(false)
 					animation_player.play("tremble")
 					tremble_timer.start()
@@ -36,6 +36,6 @@ func _on_animation_player_animation_finished_fall(anim_name):
 
 
 func _on_respawn_timer_timeout():
-	self.set_position(Vector2(self.get_position().x, self.get_position().y - animation_offset))
 	set_physics_process(true)
+	self.set_position(Vector2(self.get_position().x, self.get_position().y - animation_offset))
 	animation_player.play("idle")

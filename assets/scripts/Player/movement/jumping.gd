@@ -18,6 +18,7 @@ var additional_horizontal_velocity: float = 0.0
 func enter() -> void: 
 	super()
 	jumpOne.play()
+	print("jump")
 	
 	# set player velocity to calculated jump velocity
 	parent.velocity.y = JUMP_VELOCITY

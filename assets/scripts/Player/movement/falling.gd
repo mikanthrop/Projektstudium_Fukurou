@@ -6,9 +6,11 @@ class_name Fall_State
 
 @onready var FALL_GRAVITY: float =  (-1) * ((-2 * parent.JUMP_HEIGHT) / (parent.JUMP_TIME_TO_DESCENT * parent.JUMP_TIME_TO_DESCENT))
 
+@onready var initial_velocity = Vector2(0,0)
 
 func enter() -> void:
 	super()
+	initial_velocity = parent.velocity
 
 
 func process_input(_event: InputEvent) -> Base_State: 

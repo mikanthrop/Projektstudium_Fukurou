@@ -1,4 +1,4 @@
-[gd_scene load_steps=88 format=3 uid="uid://b6igcblpn6cqb"]
+[gd_scene load_steps=87 format=3 uid="uid://b6igcblpn6cqb"]
 
 [ext_resource type="TileSet" uid="uid://dy7gudh215rfa" path="res://assets/tilesets/tile_atlas.tres" id="1_0drl6"]
 [ext_resource type="Script" path="res://assets/scripts/GameLogic/smoother.gd" id="1_4g1m0"]
@@ -28,7 +28,6 @@
 [ext_resource type="Curve2D" uid="uid://s88t4edhbkyy" path="res://assets/prefabs/leaf_in_wind_Screen14_small1.tres" id="14_c0ey8"]
 [ext_resource type="Curve2D" uid="uid://s71u0sjtbvu3" path="res://assets/prefabs/leaf_in_wind_Screen8(2)_big.tres" id="15_0tl1q"]
 [ext_resource type="Curve2D" uid="uid://cbgolc2qe1lod" path="res://assets/prefabs/leaf_in_wind_Screen14_big2.tres" id="15_5ixa8"]
-[ext_resource type="Curve2D" uid="uid://u35jp8a8a4bc" path="res://assets/prefabs/leaf_in_wind_Screen14_small2.tres" id="16_1stoe"]
 [ext_resource type="Curve2D" uid="uid://b28ua6y84kqo5" path="res://assets/prefabs/leaf_in_wind_Screen8(2)_small.tres" id="17_1lr2j"]
 [ext_resource type="Curve2D" uid="uid://cuotxtrxulbsj" path="res://assets/prefabs/leaf_in_wind_Screen10_1.tres" id="21_168hc"]
 [ext_resource type="Curve2D" uid="uid://dg1rx44l0uydn" path="res://assets/prefabs/leaf_in_wind_Screen9(2)_1.tres" id="24_rmi3f"]
@@ -721,11 +720,11 @@ position = Vector2(696, 376)
 scale = Vector2(3.11936, 1)
 
 [node name="CrumblingPlatform" parent="Screen2_1" instance=ExtResource("5_juxqt")]
-position = Vector2(296, 237)
+position = Vector2(60, 232)
 scale = Vector2(1.4941, 1.4941)
 
 [node name="CrumblingPlatform2" parent="Screen2_1" instance=ExtResource("5_juxqt")]
-position = Vector2(184, 207)
+position = Vector2(105, 251)
 scale = Vector2(1.4941, 1.4941)
 
 [node name="DialogueHandler" parent="Screen2_1" instance=ExtResource("54_vak88")]
@@ -965,13 +964,6 @@ curve = ExtResource("15_5ixa8")
 speed = 1.4
 float_duration = 1.6
 
-[node name="MovingPlattform2" parent="Screen2_4" instance=ExtResource("29_q14vk")]
-position = Vector2(188, 356)
-scale = Vector2(0.439729, 0.439729)
-curve = ExtResource("16_1stoe")
-speed = 1.2
-float_duration = 1.2
-
 [node name="Letter_Krapost" parent="Screen2_4" instance=ExtResource("8_bs70x")]
 position = Vector2(335, 398)
 
@@ -1098,10 +1090,26 @@ scale = Vector2(1.25, 1.25)
 position = Vector2(320, 263)
 scale = Vector2(1.25, 1.25)
 
-[node name="bounce_shroom3" parent="Screen2_5" instance=ExtResource("5_pfj35")]
-position = Vector2(845, 261)
+[node name="bounce_shroom4" parent="Screen2_5" instance=ExtResource("5_pfj35")]
+position = Vector2(901, 311)
 scale = Vector2(1.25, 1.25)
-jump_direction = Vector2(1, 0)
+
+[node name="bounce_shroom3" parent="Screen2_5" instance=ExtResource("5_pfj35")]
+position = Vector2(787, 263)
+rotation = 0.541052
+scale = Vector2(1.25, 1.25)
+
+[node name="bounce_shroom5" parent="Screen2_5" instance=ExtResource("5_pfj35")]
+position = Vector2(456, 216)
+rotation = -1.5708
+scale = Vector2(1.25, 1.25)
+jump_direction = Vector2(-1, 0)
+
+[node name="bounce_shroom6" parent="Screen2_5" instance=ExtResource("5_pfj35")]
+position = Vector2(296, 330)
+rotation = -1.5708
+scale = Vector2(1.25, 1.25)
+jump_direction = Vector2(-1, 0)
 
 [node name="CanvasGroup" type="CanvasGroup" parent="Screen2_5"]
 position = Vector2(-16, 0)
