@@ -1,4 +1,4 @@
-[gd_scene load_steps=87 format=3 uid="uid://b6igcblpn6cqb"]
+[gd_scene load_steps=89 format=3 uid="uid://b6igcblpn6cqb"]
 
 [ext_resource type="TileSet" uid="uid://dy7gudh215rfa" path="res://assets/tilesets/tile_atlas.tres" id="1_0drl6"]
 [ext_resource type="Script" path="res://assets/scripts/GameLogic/smoother.gd" id="1_4g1m0"]
@@ -20,6 +20,7 @@
 [ext_resource type="Texture2D" uid="uid://7yg501kl6ol8" path="res://assets/sprites/background/parallax_layers/Parallax_Layer1.png" id="6_kokyg"]
 [ext_resource type="PackedScene" uid="uid://xr47otq3rvrg" path="res://assets/prefabs/letter_krapost.tscn" id="8_bs70x"]
 [ext_resource type="Curve2D" uid="uid://qagck51q1wje" path="res://assets/prefabs/leaf_in_wind_Screen13_small.tres" id="8_li3gk"]
+[ext_resource type="Texture2D" uid="uid://cte0y01swclcj" path="res://assets/sprites/background/parallax_layers/Blueshift.png" id="9_t7f5n"]
 [ext_resource type="Script" path="res://assets/scripts/Camera/Camera_Limit.gd" id="10_3uvl3"]
 [ext_resource type="Curve2D" uid="uid://d36enaiitpsvc" path="res://assets/prefabs/leaf_in_wind_Screen13_big2.tres" id="10_an7i5"]
 [ext_resource type="Curve2D" uid="uid://byb7tf6py4qfy" path="res://assets/prefabs/leaf_in_wind_Screen12.tres" id="10_g6wec"]
@@ -56,6 +57,7 @@
 [ext_resource type="Script" path="res://addons/phantom_camera/scripts/resources/tween_resource.gd" id="49_pj2vs"]
 [ext_resource type="PackedScene" uid="uid://nlq8bovvjncl" path="res://assets/prefabs/Obstacles/oneway_platform_hanging.tscn" id="53_7d6h5"]
 [ext_resource type="PackedScene" uid="uid://blbecmdcnemkw" path="res://assets/dialogue/dialogue_prefab.tscn" id="54_vak88"]
+[ext_resource type="PackedScene" uid="uid://1vajvme13vkg" path="res://assets/prefabs/Obstacles/dash_shroom.tscn" id="58_r2qoj"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_lluum"]
 texture = ExtResource("1_yahcb")
@@ -647,6 +649,11 @@ motion_mirroring = Vector2(1536, 0)
 [node name="Sprite2D" type="Sprite2D" parent="OutsideParallax/ParallaxLayer3"]
 scale = Vector2(0.8, 0.8)
 texture = ExtResource("6_kokyg")
+
+[node name="Blueshift" type="ParallaxLayer" parent="OutsideParallax"]
+
+[node name="Sprite2D" type="Sprite2D" parent="OutsideParallax/Blueshift"]
+texture = ExtResource("9_t7f5n")
 
 [node name="CaveBackground" type="TileMap" parent="."]
 texture_filter = 1
@@ -1550,6 +1557,10 @@ limit_target = NodePath("../../Screen2_1/CameraLimit/CollisionShape2D")
 [node name="VisibleOnScreenNotifier2D" type="VisibleOnScreenNotifier2D" parent="Player"]
 position = Vector2(-7.15256e-07, 2)
 scale = Vector2(0.9, 1.6)
+
+[node name="DashShroom" parent="." instance=ExtResource("58_r2qoj")]
+position = Vector2(218, 166)
+rotation = 0.359538
 
 [connection signal="body_entered" from="Screen2_1/DeathZone" to="Screen2_1/PlayerRespawner" method="_on_death_zone_body_entered"]
 [connection signal="body_entered" from="Screen2_2/CanvasGroup/DeathZone" to="Screen2_2/PlayerRespawner" method="_on_death_zone_body_entered"]

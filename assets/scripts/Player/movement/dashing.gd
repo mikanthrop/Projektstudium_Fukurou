@@ -7,55 +7,72 @@ class_name Dash_State
 @onready var dash_speed_modifier: float = parent.DASH_SPEED * parent.MOVE_SPEED
 @onready var dash_timer_length: float = parent.DASH_DISTANCE / parent.DASH_SPEED
 @onready var dashSound= $dashSound
-var dash_direction: Vector2
+@onready var dash_direction: Vector2
 var up: int = -1
 var down: int = 1
 var left: int = -1
 var right: int = 1
+var null_vector: Vector2 = Vector2(0,0)
 
+func set_dash_direction(dir: Vector2) -> void:
+	dash_direction = dir
 
+func get_dash_direction() -> Vector2:
+	return dash_direction
 
 func enter() -> void:
 	super()
 	dashSound.play()
-	# set flag
-	parent.has_dashed = true
+	
+	# set flag only if state was not induced from the outside, i.e. dash_direction
+	# is still the null_vector
+	if get_dash_direction() == null_vector:
+		print("the dashing state was entered normallly thus the dash flag has been set to true")
+		parent.has_dashed = true
+	
 	# Start the dash timer
 	dash_timer.wait_time = dash_timer_length
 	dash_timer.one_shot = true
 	dash_timer.start()
 	# set player speed to 0,0 for full control over dash direction
-	parent.velocity = Vector2(0, 0)
+	parent.velocity = null_vector
 	
-	# eight-directional dashing
-	if Input.is_action_pressed("move_left") and Input.is_action_pressed("move_up"):
-		dash_direction = Vector2(left, up).normalized()
+	# when the state is induced from the outside, the dash direction has already
+	# been changed and therefore the dash_direction doesn't have to be calculated
+	# anymore
+	if get_dash_direction() != null_vector:
+		pass
+	# calculating eight-directional dashing depending on which inputs are given
+	elif Input.is_action_pressed("move_left") and Input.is_action_pressed("move_up"):
+		set_dash_direction(Vector2(left, up).normalized())
 		parent.set_facing_direction(left)
 	elif Input.is_action_pressed("move_left") and Input.is_action_pressed("move_down"):
-		dash_direction = Vector2(left, down).normalized()
+		set_dash_direction(Vector2(left, down).normalized())
 		parent.set_facing_direction(left)
 	elif Input.is_action_pressed("move_right") and Input.is_action_pressed("move_up"):
-		dash_direction = Vector2(right, up).normalized()
+		set_dash_direction(Vector2(right, up).normalized())
 		parent.set_facing_direction(right)
 	elif Input.is_action_pressed("move_right") and Input.is_action_pressed("move_down"): 
-		dash_direction = Vector2(right, down).normalized()
+		set_dash_direction(Vector2(right, down).normalized())
 		parent.set_facing_direction(right)
 	elif Input.is_action_pressed("move_left"): 
-		dash_direction = Vector2(left, 0)
+		set_dash_direction(Vector2(left, 0))
 		parent.set_facing_direction(left)
 	elif Input.is_action_pressed("move_right"):
-		dash_direction = Vector2(right, 0)
+		set_dash_direction(Vector2(right, 0))
 		parent.set_facing_direction(right)
 	elif Input.is_action_pressed("move_up"): 
-		dash_direction = Vector2(0, up)
+		set_dash_direction(Vector2(0, up))
 	elif Input.is_action_pressed("move_down"):
-		dash_direction = Vector2(0, down)
+		set_dash_direction(Vector2(0, down))
 	else: 
-		dash_direction = Vector2(parent.facing_direction, 0)
+		set_dash_direction(Vector2(parent.facing_direction, 0))
 
 
 func exit() -> void:
-	pass
+	# set dash_direction back to null_vector to be able to check for induction
+	# again the next time the state is called
+	set_dash_direction(null_vector)
 
 
 func process_input(event: InputEvent) -> Base_State:

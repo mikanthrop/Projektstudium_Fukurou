@@ -53,6 +53,19 @@ var gravity = ProjectSettings.get_setting("physics/2d/default_gravity")
 var can_wall_hold: String = "can_wall_hold"
 var raycast_length: int = 13
 
+# GETTER & SETTER
+func set_has_jumped(flag: bool) -> void:
+	has_jumped = flag
+
+func get_has_jumped() -> bool:
+	return has_jumped
+
+
+func set_has_dashed(flag: bool) -> void:
+	has_dashed = flag
+
+func get_has_dashed() -> bool:
+	return has_dashed
 
 # initialize state_machine on boot
 func _ready() -> void:
@@ -76,6 +89,11 @@ func _physics_process(delta: float) -> void:
 # give other processing to state machine
 func _process(delta: float) -> void: 
 	state_machine.process_frame(delta)
+
+
+# induce state into statemachine from the outside
+func _change_state(new_state: Base_State) -> void:
+	state_machine.change_state(new_state)
 
 
 ## Function to change the player's facing direction
