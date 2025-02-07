@@ -35,6 +35,13 @@ func _on_body_entered(body):
 			## set player upward velocity to the jump_velocity times movement_multiplier
 			## player.velocity = jump_direction * jump_velocity * movement_multiplier 
 			player.move_and_slide()
+			
+		# since the dash_shroom should technically be seen as ground, the 
+		# dash_flag and jump_flag should be reset
+		if player.get_has_dashed():
+			player.set_has_dashed(false)
+		if player.get_has_jumped():
+			player.set_has_jumped(false)
 
 
 ## calculates jump_velocity based on jump_direction 

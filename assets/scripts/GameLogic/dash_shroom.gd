@@ -5,6 +5,7 @@ extends Area2D
 
 var shroom_dash_direction: Vector2
 var dashing: Base_State
+var animation_name: StringName = "bounce"
 
 # Gets the rotation from the sprite and normalizes its direction to use for the 
 # dash direction when the player comes in contact with the Area2D
@@ -23,7 +24,7 @@ func _process(delta):
 func _on_body_entered(body):
 	
 	if body is Player:
-		# TODO setting sounds to play as soon as sounds are available
+		boing.play()
 		
 		var player: Player = owner.get_node_or_null(NodePath(body.name))
 		
@@ -41,5 +42,5 @@ func _on_body_entered(body):
 		print(dashing.get_dash_direction())
 		
 		if player:
-				# TODO set animations to play as soon as they are available
+				animation_player.play(animation_name)
 				player._change_state(dashing)
